@@ -74,6 +74,10 @@ function normalizeStore(store: Partial<PropertyAdminStore>): PropertyAdminStore 
   };
 }
 
+function getCustomDescription(record: ManagedPropertyRecord) {
+  return `${record.description ?? ""}`.trim();
+}
+
 function formatPrice(value: number) {
   return value.toLocaleString("en-US");
 }
@@ -203,6 +207,14 @@ function buildManagedDescription(record: ManagedPropertyRecord) {
   const locationLabel = getLocationLabel(record.locationSlug);
   const compoundLabel = getCompoundLabel(record);
   const furnishingLabel = furnishingLabels[record.furnishing];
+  const customDescription = getCustomDescription(record);
+
+  if (customDescription) {
+    return {
+      ar: customDescription,
+      en: customDescription,
+    } satisfies LocalizedText;
+  }
 
   return {
     ar:
@@ -403,6 +415,7 @@ function propertyToEditableRecord(property: Property): ManagedPropertyRecord {
     propertyType: property.propertyType,
     bedrooms: property.bedrooms,
     coastalVillage: resolveCoastalVillageKey(property),
+    description: property.description.ar,
     size: property.size,
     bathrooms: property.bathrooms,
     finishing: inferFinishing(property),
@@ -556,6 +569,7 @@ export async function getEditablePropertyBySlug(
       propertyType: managedMatch.propertyType,
       bedrooms: managedMatch.bedrooms,
       coastalVillage: managedMatch.coastalVillage,
+      description: getCustomDescription(managedMatch),
       size: managedMatch.size,
       bathrooms: managedMatch.bathrooms,
       finishing: managedMatch.finishing,
@@ -577,6 +591,7 @@ export async function getEditablePropertyBySlug(
       propertyType: overrideMatch.propertyType,
       bedrooms: overrideMatch.bedrooms,
       coastalVillage: overrideMatch.coastalVillage,
+      description: getCustomDescription(overrideMatch),
       size: overrideMatch.size,
       bathrooms: overrideMatch.bathrooms,
       finishing: overrideMatch.finishing,
@@ -607,6 +622,7 @@ export async function getEditablePropertyBySlug(
     propertyType: record.propertyType,
     bedrooms: record.bedrooms,
     coastalVillage: record.coastalVillage,
+    description: getCustomDescription(record),
     size: record.size,
     bathrooms: record.bathrooms,
     finishing: record.finishing,
@@ -630,6 +646,7 @@ export async function updatePropertyRecord(
     propertyType: payload.propertyType,
     bedrooms: payload.bedrooms,
     coastalVillage: payload.coastalVillage,
+    description: payload.description.trim(),
     size: payload.size,
     bathrooms: payload.bathrooms,
     finishing: payload.finishing,

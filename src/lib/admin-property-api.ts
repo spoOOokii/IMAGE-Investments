@@ -42,6 +42,7 @@ const UPLOADS_DIR = path.join(
 );
 const MAX_FILES = 10;
 const MAX_FILE_SIZE_BYTES = 8 * 1024 * 1024;
+const MAX_DESCRIPTION_LENGTH = 2000;
 const allowedMimeTypes = new Set([
   "image/jpeg",
   "image/png",
@@ -86,6 +87,7 @@ export function parseCreatePayload(
   const propertyType = getTextValue(payload, "propertyType");
   const bedrooms = Number(getTextValue(payload, "bedrooms"));
   const coastalVillage = getTextValue(payload, "coastalVillage");
+  const description = getTextValue(payload, "description");
   const size = Number(getTextValue(payload, "size"));
   const bathrooms = Number(getTextValue(payload, "bathrooms"));
   const finishing = getTextValue(payload, "finishing") as ManagedFinishing;
@@ -108,6 +110,10 @@ export function parseCreatePayload(
 
   if (locationSlug === "north-coast" && !allowedCoastalVillages.has(coastalVillage)) {
     return badRequest("Invalid coastal village");
+  }
+
+  if (description.length > MAX_DESCRIPTION_LENGTH) {
+    return badRequest("Description must be 2000 characters or less");
   }
 
   if (!Number.isFinite(size) || size <= 0) {
@@ -149,6 +155,7 @@ export function parseCreatePayload(
     propertyType: propertyType as CreateManagedPropertyPayload["propertyType"],
     bedrooms,
     coastalVillage: locationSlug === "north-coast" ? coastalVillage : "",
+    description,
     size,
     bathrooms,
     finishing,

@@ -10,6 +10,7 @@ export type ManagedPropertyRecord = {
   propertyType: PropertyType;
   bedrooms: number;
   coastalVillage: string;
+  description: string;
   size: number;
   bathrooms: number;
   finishing: ManagedFinishing;
@@ -61,6 +62,7 @@ export type CreateManagedPropertyPayload = {
   propertyType: PropertyType;
   bedrooms: number;
   coastalVillage: string;
+  description: string;
   size: number;
   bathrooms: number;
   finishing: ManagedFinishing;
@@ -79,6 +81,7 @@ export type AdminEditableProperty = {
   propertyType: PropertyType;
   bedrooms: number;
   coastalVillage: string;
+  description: string;
   size: number;
   bathrooms: number;
   finishing: ManagedFinishing;

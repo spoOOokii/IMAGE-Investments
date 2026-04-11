@@ -17,6 +17,7 @@ type FormState = {
   propertyType: string;
   bedrooms: string;
   coastalVillage: string;
+  description: string;
   size: string;
   bathrooms: string;
   finishing: string;
@@ -36,6 +37,7 @@ const defaultState: FormState = {
   propertyType: "",
   bedrooms: "",
   coastalVillage: "",
+  description: "",
   size: "",
   bathrooms: "",
   finishing: "",
@@ -52,15 +54,16 @@ export function AdminPropertyForm({
   const router = useRouter();
   const [formState, setFormState] = useState<FormState>(
     initialProperty
-      ? {
-          locationSlug: initialProperty.locationSlug,
-          propertyType: initialProperty.propertyType,
-          bedrooms: `${initialProperty.bedrooms}`,
-          coastalVillage: initialProperty.coastalVillage,
-          size: `${initialProperty.size}`,
-          bathrooms: `${initialProperty.bathrooms}`,
-          finishing: initialProperty.finishing,
-          furnishing: initialProperty.furnishing,
+        ? {
+            locationSlug: initialProperty.locationSlug,
+            propertyType: initialProperty.propertyType,
+            bedrooms: `${initialProperty.bedrooms}`,
+            coastalVillage: initialProperty.coastalVillage,
+            description: initialProperty.description,
+            size: `${initialProperty.size}`,
+            bathrooms: `${initialProperty.bathrooms}`,
+            finishing: initialProperty.finishing,
+            furnishing: initialProperty.furnishing,
           listingType: initialProperty.listingType,
           price: initialProperty.price ? `${initialProperty.price}` : "",
           contactPhone: initialProperty.contactPhone,
@@ -129,6 +132,7 @@ export function AdminPropertyForm({
 
   const showCoastalVillage = formState.locationSlug === "north-coast";
   const showPrice = formState.listingType === "sale";
+  const descriptionLimit = 2000;
 
   function updateField<Key extends keyof FormState>(key: Key, value: FormState[Key]) {
     setFormState((current) => ({
@@ -153,6 +157,7 @@ export function AdminPropertyForm({
       payload.set("propertyType", formState.propertyType);
       payload.set("bedrooms", formState.bedrooms);
       payload.set("coastalVillage", showCoastalVillage ? formState.coastalVillage : "");
+      payload.set("description", formState.description);
       payload.set("size", formState.size);
       payload.set("bathrooms", formState.bathrooms);
       payload.set("finishing", formState.finishing);
@@ -363,6 +368,30 @@ export function AdminPropertyForm({
             placeholder="رقم الهاتف الخاص بالوحدة"
             className={inputClassName}
           />
+        </div>
+
+        <div className="mt-6">
+          <label
+            htmlFor="property-description"
+            className="mb-3 block text-sm font-semibold text-[var(--color-ink)]"
+          >
+            وصف الوحدة
+          </label>
+          <textarea
+            id="property-description"
+            rows={6}
+            maxLength={descriptionLimit}
+            value={formState.description}
+            onChange={(event) => updateField("description", event.target.value)}
+            placeholder="اكتب وصف الوحدة بالتفصيل، وسيظهر في صفحة الوحدة على الموقع."
+            className={`${inputClassName} min-h-[170px] resize-y`}
+          />
+          <div className="mt-2 flex items-center justify-between gap-3 text-xs text-[var(--color-ink-soft)]">
+            <span>الحد الأقصى 2000 حرف.</span>
+            <span>
+              {formState.description.length}/{descriptionLimit}
+            </span>
+          </div>
         </div>
 
         <div className="mt-4">

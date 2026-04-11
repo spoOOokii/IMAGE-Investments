@@ -1,5 +1,62 @@
 {
-  "managedProperties": [],
+  "managedProperties": [
+    {
+      "locationSlug": "north-coast",
+      "propertyType": "chalet",
+      "bedrooms": 3,
+      "coastalVillage": "hacienda-bay",
+      "description": "🏖️ Senior Chalet for Sale at Hacienda Bay North coast\r\n🏖️ First Row1 ⛳ golF and lake\r\n🏖️ Prime location\r\n🏖️ Ground floor with Garden \r\n🏖️ Area : 220 m\r\n🏖️ Garden area : 320 m\r\n🏖️ Reception / Kitchen \r\n🏖️ Bedrooms 3 ( 2 masters)\r\n🏖️ Bathrooms 3\r\n🏖️ Driver room with bathroom / Nany room with bathroom\r\n🏖️ Fully Finished / Fully furnished \r\n🏖️ slot parking 2",
+      "size": 220,
+      "bathrooms": 3,
+      "finishing": "full",
+      "furnishing": "furnished",
+      "listingType": "sale",
+      "price": 14500000,
+      "contactPhone": "01286490599",
+      "imageUrls": [
+        "/uploads/properties/1775934067208-5794abc0-c3d1-4b3d-9736-976c4921a148.jpg",
+        "/uploads/properties/1775934067208-72237d22-31fa-4ef3-961f-f6f5926672ae.jpg",
+        "/uploads/properties/1775934067208-3b31b634-58e4-47df-9552-9b9e5ba6cc4e.jpg",
+        "/uploads/properties/1775934067208-0e123078-3806-4c47-9427-adba316b4526.jpg",
+        "/uploads/properties/1775934067208-0db08318-b1cf-4677-a844-91d0d8bba36c.jpg",
+        "/uploads/properties/1775934067208-8e837f9c-1cba-4209-89b4-e651dd0e9ce4.jpg"
+      ],
+      "slug": "managed-north-coast-chalet-hacienda-bay-sale-3br",
+      "tags": [
+        "prime"
+      ],
+      "createdAt": "2026-04-11T19:01:07.212Z",
+      "updatedAt": "2026-04-11T19:01:07.212Z"
+    },
+    {
+      "locationSlug": "north-coast",
+      "propertyType": "chalet",
+      "bedrooms": 2,
+      "coastalVillage": "amwaj",
+      "size": 146,
+      "bathrooms": 2,
+      "finishing": "full",
+      "furnishing": "furnished",
+      "listingType": "sale",
+      "price": 10650000,
+      "contactPhone": "01286394219",
+      "imageUrls": [
+        "/uploads/properties/1775917118157-a433b47e-6943-4e0d-8774-70e06c42a556.jpg",
+        "/uploads/properties/1775917118158-70c77331-eda5-44af-b355-2fb65b4ea55c.jpg",
+        "/uploads/properties/1775917118158-7cedec5a-3bfe-4dfb-b857-d18015d002cf.jpg",
+        "/uploads/properties/1775917118158-8b7dc067-368d-47a7-ba48-69ecec6f4452.jpg",
+        "/uploads/properties/1775917118159-15577a29-c071-48d8-80a1-658a4ab9a2d3.jpg",
+        "/uploads/properties/1775917118159-bbe17358-03cd-4389-b2b0-05462ebae749.jpg",
+        "/uploads/properties/1775917118159-a97e0960-a42e-4e48-8fdd-a2f48f1da6d4.jpg"
+      ],
+      "slug": "managed-north-coast-chalet-amwaj-sale-2br",
+      "tags": [
+        "prime"
+      ],
+      "createdAt": "2026-04-11T14:18:38.172Z",
+      "updatedAt": "2026-04-11T14:18:38.172Z"
+    }
+  ],
   "propertyOverrides": [
     {
       "slug": "hacienda-bay-villa-rent-6br-2m",
@@ -32,5 +89,9 @@
       "updatedAt": "2026-04-10T22:14:13.799Z"
     }
   ],
-  "hiddenPropertySlugs": []
+  "hiddenPropertySlugs": [
+    "hacienda-bay-villa-rent-6br-3m",
+    "hacienda-bay-villa-rent-5br-5m",
+    "hacienda-bay-villa-rent-5br-3m-private-pool"
+  ]
 }

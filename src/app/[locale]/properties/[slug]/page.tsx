@@ -1,13 +1,13 @@
-import { notFound } from "next/navigation";
+﻿import { notFound } from "next/navigation";
 
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { LeadForm } from "@/components/lead-form";
 import { PropertyCard } from "@/components/property-card";
 import { PropertyGallery } from "@/components/property-gallery";
 import { SectionHeading } from "@/components/section-heading";
-import { buildMetadata } from "@/lib/seo";
 import { getPropertyBySlug, getRelatedProperties } from "@/lib/cms";
 import { getUiCopy, isLocale, pickLocale } from "@/lib/i18n";
+import { buildMetadata } from "@/lib/seo";
 import { companyProfile, properties, propertyTypeLabels } from "@/lib/site-data";
 import {
   buildPhoneHref,
@@ -73,8 +73,7 @@ export default async function PropertyDetailsPage({
     propertyTypeLabels[property.propertyType],
     locale,
   );
-  const propertyContactPhone =
-    property.contactPhone ?? companyProfile.phoneDisplay;
+  const propertyContactPhone = property.contactPhone ?? companyProfile.phoneDisplay;
   const propertyWhatsAppHref = buildWhatsAppHref(
     propertyContactPhone,
     buildPropertyInquiryMessage({
@@ -84,6 +83,68 @@ export default async function PropertyDetailsPage({
     }),
   );
   const propertyPhoneHref = buildPhoneHref(propertyContactPhone);
+  const propertyDescription = pickLocale(property.description, locale).trim();
+  const isFurnished =
+    pickLocale(property.summary, "ar").includes("مفروش") ||
+    pickLocale(property.summary, "en").toLowerCase().includes("furnished");
+  const surroundingItems = [
+    {
+      label: copy.labels.bedrooms,
+      value:
+        locale === "ar"
+          ? `${property.bedrooms} غرف نوم`
+          : `${property.bedrooms} bedrooms`,
+    },
+    {
+      label: copy.labels.bathrooms,
+      value:
+        locale === "ar"
+          ? `${property.bathrooms} حمامات`
+          : `${property.bathrooms} bathrooms`,
+    },
+    {
+      label: copy.labels.finishing,
+      value: pickLocale(property.finishing, locale),
+    },
+    {
+      label: locale === "ar" ? "الفرش" : "Furnishing",
+      value:
+        locale === "ar"
+          ? isFurnished
+            ? "مفروش"
+            : "غير مفروش"
+          : isFurnished
+            ? "Furnished"
+            : "Unfurnished",
+    },
+    {
+      label: copy.labels.price,
+      value:
+        property.listingType === "rent"
+          ? locale === "ar"
+            ? "عند إرسال الطلب"
+            : "On inquiry"
+          : pickLocale(property.priceLabel, locale),
+    },
+  ];
+  const propertySpecs = [
+    {
+      label: locale === "ar" ? "المشروع" : "Compound",
+      value: pickLocale(property.compound, locale),
+    },
+    {
+      label: copy.labels.location,
+      value: pickLocale(property.locationName, locale),
+    },
+    {
+      label: copy.labels.propertyType,
+      value: propertyTypeLabel,
+    },
+    {
+      label: copy.labels.size,
+      value: locale === "ar" ? `${property.size} متر` : `${property.size} sqm`,
+    },
+  ];
 
   const propertySchema = {
     "@context": "https://schema.org",
@@ -133,88 +194,86 @@ export default async function PropertyDetailsPage({
       />
 
       <section className="container-shell pt-6">
-        <div className="luxury-dark gold-outline theme-on-dark overflow-hidden p-8 md:p-10">
-          <div className="text-xs uppercase tracking-[0.35em] text-[var(--color-gold-bright)]">
-            {pickLocale(property.locationName, locale)} •{" "}
-            {pickLocale(property.compound, locale)}
+        <div className="luxury-surface p-8 md:p-10">
+          <div className="text-xs text-[var(--color-muted)]">
+            {pickLocale(property.locationName, locale)} • {pickLocale(property.compound, locale)}
           </div>
-          <h1 className="display-heading mt-4 text-4xl font-bold md:text-6xl">
+          <h1 className="display-heading mt-5 max-w-5xl text-4xl font-bold leading-tight text-[var(--color-ink)] md:text-6xl">
             {pickLocale(property.title, locale)}
           </h1>
-          <p className="theme-on-dark-soft mt-4 max-w-3xl text-base leading-8 md:text-lg">
-            {pickLocale(property.description, locale)}
-          </p>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-            <div className="theme-on-dark-card rounded-[1.5rem] border px-5 py-4">
-              <div className="theme-on-dark-muted text-xs">{copy.labels.propertyType}</div>
-              <div className="mt-2 text-2xl font-bold">
-                {pickLocale(propertyTypeLabels[property.propertyType], locale)}
-              </div>
-            </div>
-            <div className="theme-on-dark-card rounded-[1.5rem] border px-5 py-4">
-              <div className="theme-on-dark-muted text-xs">{copy.labels.size}</div>
-              <div className="mt-2 text-2xl font-bold">{property.size} m²</div>
-            </div>
-            <div className="theme-on-dark-card rounded-[1.5rem] border px-5 py-4">
-              <div className="theme-on-dark-muted text-xs">{copy.labels.bedrooms}</div>
-              <div className="mt-2 text-2xl font-bold">{property.bedrooms}</div>
-            </div>
-            <div className="theme-on-dark-card rounded-[1.5rem] border px-5 py-4">
-              <div className="theme-on-dark-muted text-xs">{copy.labels.bathrooms}</div>
-              <div className="mt-2 text-2xl font-bold">{property.bathrooms}</div>
-            </div>
-          </div>
         </div>
       </section>
 
-      <section className="container-shell pt-18">
-        <div className="grid gap-8 xl:grid-cols-[1.15fr_0.85fr]">
+      <section className="container-shell pt-10">
+        <div className="grid gap-6 xl:grid-cols-[1.35fr_0.82fr_0.9fr]">
           <PropertyGallery
             images={property.gallery}
             alt={pickLocale(property.title, locale)}
           />
 
-          <div className="space-y-6">
-            <div className="luxury-surface p-6">
-              <h2 className="text-2xl font-bold text-[var(--color-ink)]">
-                {locale === "ar" ? "مواصفات الوحدة" : "Property Specifications"}
-              </h2>
-              <div className="mt-5 grid gap-4 sm:grid-cols-2">
-                <div className="rounded-[1.25rem] bg-[rgba(255,255,255,0.05)] p-4">
-                  <div className="text-xs text-[var(--color-muted)]">
-                    {copy.labels.finishing}
-                  </div>
-                  <div className="mt-2 font-semibold text-[var(--color-ink)]">
-                    {pickLocale(property.finishing, locale)}
-                  </div>
-                </div>
-                <div className="rounded-[1.25rem] bg-[rgba(255,255,255,0.05)] p-4">
-                  <div className="text-xs text-[var(--color-muted)]">
-                    {locale === "ar" ? "المشروع" : "Compound"}
-                  </div>
-                  <div className="mt-2 font-semibold text-[var(--color-ink)]">
-                    {pickLocale(property.compound, locale)}
+          <div className="luxury-surface p-6">
+            <h2 className="text-2xl font-bold text-[var(--color-ink)]">
+              {locale === "ar" ? "كل ما تحتاجه حول الوحدة" : "Everything around the unit"}
+            </h2>
+            <p className="mt-3 text-sm leading-7 text-[var(--color-ink-soft)]">
+              {locale === "ar"
+                ? "ملخص سريع يوضح تفاصيل الاستخدام والتشطيب والسعر الحالي."
+                : "A quick summary of livability, finishing, and current pricing."}
+            </p>
+            <div className="mt-5 grid gap-3">
+              {surroundingItems.map((item) => (
+                <div
+                  key={`${item.label}-${item.value}`}
+                  className="rounded-[1.25rem] border border-[var(--color-border)] bg-[rgba(255,255,255,0.04)] px-4 py-3"
+                >
+                  <div className="text-xs text-[var(--color-muted)]">{item.label}</div>
+                  <div className="mt-2 text-sm font-semibold leading-7 text-[var(--color-ink)]">
+                    {item.value}
                   </div>
                 </div>
-                <div className="rounded-[1.25rem] bg-[rgba(255,255,255,0.05)] p-4">
-                  <div className="text-xs text-[var(--color-muted)]">
-                    {copy.labels.location}
-                  </div>
-                  <div className="mt-2 font-semibold text-[var(--color-ink)]">
-                    {pickLocale(property.locationName, locale)}
-                  </div>
-                </div>
-                <div className="rounded-[1.25rem] bg-[rgba(255,255,255,0.05)] p-4">
-                  <div className="text-xs text-[var(--color-muted)]">
-                    {locale === "ar" ? "زاوية استثمارية" : "Investment Angle"}
-                  </div>
-                  <div className="mt-2 font-semibold text-[var(--color-ink)]">
-                    {pickLocale(property.investmentAngle, locale)}
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
+          </div>
 
+          <div className="luxury-surface p-6">
+            <h2 className="text-2xl font-bold text-[var(--color-ink)]">
+              {locale === "ar" ? "مواصفات الوحدة" : "Property Specifications"}
+            </h2>
+            <div className="mt-5 grid gap-4 sm:grid-cols-2 xl:grid-cols-1">
+              {propertySpecs.map((item) => (
+                <div
+                  key={item.label}
+                  className="rounded-[1.25rem] bg-[rgba(255,255,255,0.05)] p-4"
+                >
+                  <div className="text-xs text-[var(--color-muted)]">{item.label}</div>
+                  <div className="mt-2 font-semibold leading-7 text-[var(--color-ink)]">
+                    {item.value}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {propertyDescription ? (
+        <section className="container-shell pt-10">
+          <div className="luxury-surface p-8 md:p-10">
+            <div className="mx-auto max-w-4xl text-center">
+              <div className="text-xs text-[var(--color-muted)]">
+                {locale === "ar" ? "وصف الوحدة" : "Property Description"}
+              </div>
+              <p className="mt-5 text-sm leading-8 text-[var(--color-ink-soft)] md:text-base">
+                {propertyDescription}
+              </p>
+            </div>
+          </div>
+        </section>
+      ) : null}
+
+      <section className="container-shell pt-10">
+        <div className="grid gap-8 xl:grid-cols-2">
+          <div className="space-y-6">
             <LeadForm
               locale={locale}
               source="property-details"
@@ -233,9 +292,7 @@ export default async function PropertyDetailsPage({
                   ? "اكتب اسمك ورقم هاتفك ورسالتك، وسيتم فتح واتساب برسالة جاهزة توضح نوع الوحدة المطلوبة."
                   : "Enter your name, phone number, and message, and WhatsApp will open with a ready inquiry that includes the property type."
               }
-              submitLabel={
-                locale === "ar" ? "إرسال عبر واتساب" : "Send on WhatsApp"
-              }
+              submitLabel={locale === "ar" ? "إرسال عبر واتساب" : "Send on WhatsApp"}
             />
 
             <div className="grid gap-3 sm:grid-cols-2">
@@ -251,55 +308,12 @@ export default async function PropertyDetailsPage({
                 href={propertyPhoneHref}
                 className="rounded-full border border-[var(--color-border)] bg-[rgba(255,255,255,0.05)] px-5 py-3 text-center text-sm font-bold text-[var(--color-ink)]"
               >
-                {locale === "ar"
-                  ? "اتصل بمستشار عقاري"
-                  : "Call a Property Advisor"}
+                {locale === "ar" ? "اتصل بمستشار عقاري" : "Call a Property Advisor"}
               </a>
             </div>
           </div>
-        </div>
-      </section>
 
-      <section className="container-shell pt-18">
-        <div className="grid gap-8 xl:grid-cols-2">
-          <div>
-            <SectionHeading
-              eyebrow={copy.labels.nearbyAmenities}
-              title={
-                locale === "ar"
-                  ? "كل ما تحتاجه حول الوحدة"
-                  : "Everything that surrounds the unit"
-              }
-              description={
-                locale === "ar"
-                  ? "مرافق أساسية وترفيهية تزيد من قابلية السكن وإمكانات إعادة البيع."
-                  : "Core lifestyle and convenience infrastructure that boosts livability and resale demand."
-              }
-            />
-            <div className="grid gap-4 sm:grid-cols-2">
-              {property.amenities.map((amenity) => (
-                <div key={amenity.en} className="luxury-surface p-5">
-                  <div className="font-semibold text-[var(--color-ink)]">
-                    {pickLocale(amenity, locale)}
-                  </div>
-                </div>
-              ))}
-            </div>
-            {property.nearby.length ? (
-              <div className="mt-6 grid gap-4">
-                {property.nearby.map((item) => (
-                  <div
-                    key={item.en}
-                    className="rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(255,255,255,0.04)] px-5 py-4 shadow-sm"
-                  >
-                    {pickLocale(item, locale)}
-                  </div>
-                ))}
-              </div>
-            ) : null}
-          </div>
-
-          <div>
+          <div className="space-y-5">
             <SectionHeading
               eyebrow={copy.labels.map}
               title={
