@@ -1,0 +1,36 @@
+{
+  "managedProperties": [],
+  "propertyOverrides": [
+    {
+      "slug": "hacienda-bay-villa-rent-6br-2m",
+      "locationSlug": "north-coast",
+      "propertyType": "villa",
+      "bedrooms": 6,
+      "coastalVillage": "hacienda-bay",
+      "size": 97,
+      "bathrooms": 5,
+      "finishing": "full",
+      "furnishing": "unfurnished",
+      "listingType": "rent",
+      "price": null,
+      "contactPhone": "+201091096255",
+      "imageUrls": [
+        "/properties/lagoon-villa/1.jpg",
+        "/properties/lagoon-villa/2.jpg",
+        "/properties/lagoon-villa/3.jpg",
+        "/properties/lagoon-villa/4.jpg",
+        "/properties/lagoon-villa/5.jpg",
+        "/properties/lagoon-villa/6.jpg",
+        "/properties/lagoon-villa/7.jpg"
+      ],
+      "tags": [
+        "featured",
+        "ready",
+        "prime"
+      ],
+      "createdAt": "2026-04-10T22:14:13.799Z",
+      "updatedAt": "2026-04-10T22:14:13.799Z"
+    }
+  ],
+  "hiddenPropertySlugs": []
+}

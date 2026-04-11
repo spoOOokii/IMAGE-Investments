@@ -1,0 +1,16 @@
+<svg width="1600" height="1200" viewBox="0 0 1600 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1200" fill="#081728"/>
+  <rect x="80" y="80" width="1440" height="1040" rx="56" fill="url(#paint0_linear)" stroke="#CDA86D" stroke-opacity="0.28" stroke-width="4"/>
+  <path d="M320 760L560 520L760 700L980 460L1280 760V900H320V760Z" fill="#10243A" stroke="#E8D6B8" stroke-opacity="0.18" stroke-width="8"/>
+  <rect x="560" y="620" width="120" height="280" rx="24" fill="#CDA86D" fill-opacity="0.2"/>
+  <rect x="760" y="580" width="120" height="160" rx="24" fill="#CDA86D" fill-opacity="0.14"/>
+  <circle cx="1230" cy="340" r="72" fill="#CDA86D" fill-opacity="0.14"/>
+  <text x="800" y="300" fill="#EBD2A5" font-family="Georgia, serif" font-size="64" text-anchor="middle">Image Investments</text>
+  <text x="800" y="380" fill="#F7F2E8" font-family="Arial, sans-serif" font-size="44" text-anchor="middle">Premium Property Listing</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="180" y1="120" x2="1420" y2="1080" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#10243A"/>
+      <stop offset="1" stop-color="#0B1D31"/>
+    </linearGradient>
+  </defs>
+</svg>
