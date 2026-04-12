@@ -1,11 +1,11 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { PageHero } from "@/components/page-hero";
 import { SectionHeading } from "@/components/section-heading";
-import { buildMetadata } from "@/lib/seo";
 import { getAllLocations, getLocationProperties } from "@/lib/cms";
 import { isLocale, localizedPath, pickLocale } from "@/lib/i18n";
+import { buildMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -75,8 +75,8 @@ export default async function LocationsPage({
           }
           description={
             locale === "ar"
-              ? "كل منطقة تتضمن نظرة سريعة، أسباب الاستثمار، وأنواع العقارات المتاحة فيها."
-              : "Every location includes a quick market overview, investment reasons, and featured property types."
+              ? "كل منطقة تتضمن نظرة سريعة وأسباب الاستثمار فيها بصورة أوضح."
+              : "Every location includes a quick market overview and key investment reasons."
           }
         />
 
@@ -105,10 +105,7 @@ export default async function LocationsPage({
                 </p>
                 <div className="mt-5 flex items-center justify-between">
                   <span className="text-sm text-[var(--color-muted)]">
-                    {
-                      listingsCount.find((item) => item.slug === location.slug)
-                        ?.count
-                    }{" "}
+                    {listingsCount.find((item) => item.slug === location.slug)?.count}{" "}
                     {locale === "ar" ? "وحدات حالية" : "current listings"}
                   </span>
                   <span className="text-sm font-semibold text-[var(--color-gold)]">

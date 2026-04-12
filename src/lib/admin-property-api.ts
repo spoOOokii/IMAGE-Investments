@@ -1,4 +1,4 @@
-import { randomUUID } from "node:crypto";
+﻿import { randomUUID } from "node:crypto";
 import { promises as fs } from "node:fs";
 import path from "node:path";
 
@@ -16,8 +16,8 @@ import {
   staticTypeOptions,
 } from "@/lib/property-search";
 
-const allowedBedroomValues = new Set([2, 3, 4, 5, 6]);
-const allowedBathroomValues = new Set([2, 3, 4, 5, 6, 7, 8]);
+const allowedBedroomValues = new Set([1, 2, 3, 4, 5, 6, 7, 8]);
+const allowedBathroomValues = new Set([1, 2, 3, 4, 5, 6, 7, 8]);
 const allowedFinishingValues = new Set<ManagedFinishing>([
   "full",
   "semi",
@@ -225,3 +225,4 @@ export async function saveUploadedImages(files: File[]) {
 
   return savedPaths;
 }
+

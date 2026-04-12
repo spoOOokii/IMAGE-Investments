@@ -1,10 +1,10 @@
-import { notFound } from "next/navigation";
+﻿import { notFound } from "next/navigation";
 
 import { PageHero } from "@/components/page-hero";
 import { PropertyFilters } from "@/components/property-filters";
-import { buildMetadata } from "@/lib/seo";
 import { getAllProperties } from "@/lib/cms";
 import { isLocale } from "@/lib/i18n";
+import { buildMetadata } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
 
@@ -28,8 +28,8 @@ export async function generateMetadata({
         : "Properties | Apartments, Villas, and Chalets for Sale in Egypt",
     description:
       locale === "ar"
-        ? "تصفح عقارات مميزة في القاهرة الجديدة، الشيخ زايد، العاصمة الإدارية، الساحل الشمالي، والعين السخنة مع فلاتر متقدمة."
-        : "Browse premium Egyptian properties with advanced filters across New Cairo, Sheikh Zayed, the New Capital, the North Coast, and Ain Sokhna.",
+        ? "تصفح عقارات مميزة في القاهرة الجديدة، الشيخ زايد، العاصمة الإدارية، والساحل الشمالي مع فلاتر متقدمة."
+        : "Browse premium Egyptian properties with advanced filters across New Cairo, Sheikh Zayed, the New Capital, and the North Coast.",
   });
 }
 
@@ -57,12 +57,12 @@ export default async function PropertiesPage({
         }
         description={
           locale === "ar"
-            ? "اعرض الوحدات بحسب الموقع، النوع، وعدد الغرف."
-            : "Filter listings by location, property type, and bedrooms."
+            ? "اعرض الوحدات حسب الموقع، النوع، البيع أو الإيجار، وعدد الغرف."
+            : "Filter listings by location, type, sale or rent, and bedroom count."
         }
       />
 
-      <section className="container-shell py-18">
+      <section className="container-shell py-10 md:py-14">
         <PropertyFilters locale={locale} properties={properties} />
       </section>
     </>

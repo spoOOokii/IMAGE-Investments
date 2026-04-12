@@ -1,8 +1,10 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { useDeferredValue, useState } from "react";
 
+import { AnimatedSelect } from "@/components/animated-select";
+import { PropertyCard } from "@/components/property-card";
 import { getUiCopy, localizedPath, type Locale } from "@/lib/i18n";
 import {
   buildCoastalVillageOptions,
@@ -13,8 +15,6 @@ import {
   type PropertyFilterState,
 } from "@/lib/property-search";
 import type { Property } from "@/lib/site-data";
-import { AnimatedSelect } from "@/components/animated-select";
-import { PropertyCard } from "@/components/property-card";
 
 type PropertyFiltersProps = {
   locale: Locale;
@@ -28,23 +28,40 @@ export function PropertyFilters({
   mode = "full",
 }: PropertyFiltersProps) {
   const copy = getUiCopy(locale);
-  const [filters, setFilters] =
-    useState<PropertyFilterState>(defaultPropertyFilters);
+  const [filters, setFilters] = useState<PropertyFilterState>(defaultPropertyFilters);
   const deferredFilters = useDeferredValue(filters);
 
   const locationOptions = buildLocationOptions(locale);
   const typeOptions = buildTypeOptions(locale);
   const coastalVillageOptions = buildCoastalVillageOptions(locale);
-
   const filteredProperties = filterProperties(properties, deferredFilters);
-  const selectTriggerClassName =
-    "w-full rounded-2xl border border-[var(--color-border)] bg-[rgba(255,255,255,0.05)] px-4 py-3 text-sm text-[var(--color-ink)] outline-none transition-colors duration-300 ease-in-out focus-visible:border-[var(--color-gold)]";
-  const selectMenuClassName =
-    "border border-[rgba(235,210,165,0.16)] bg-[image:var(--dark-select-menu)] shadow-[0_20px_45px_rgba(4,12,24,0.52)] backdrop-blur-xl";
-  const selectOptionClassName =
-    "w-full px-4 py-3 text-start text-sm font-medium text-[var(--color-ink)] transition-colors duration-200 ease-in-out hover:bg-[rgba(255,255,255,0.06)] hover:text-[var(--color-gold-bright)]";
-  const selectedOptionClassName =
-    "bg-[rgba(205,168,109,0.22)] text-[var(--color-gold-bright)]";
+
+  const listingTypeFilterOptions = [
+    {
+      value: "",
+      label: locale === "ar" ? "بيع أو إيجار" : "Sale or Rent",
+    },
+    {
+      value: "sale",
+      label: locale === "ar" ? "للبيع" : "For Sale",
+    },
+    {
+      value: "rent",
+      label: locale === "ar" ? "للإيجار" : "For Rent",
+    },
+  ];
+
+  const bedroomFilterOptions = [
+    { value: "", label: copy.filters.bedrooms },
+    { value: "1", label: locale === "ar" ? "غرفة واحدة" : "1 bedroom" },
+    { value: "2", label: locale === "ar" ? "2 غرف" : "2 bedrooms" },
+    { value: "3", label: locale === "ar" ? "3 غرف" : "3 bedrooms" },
+    { value: "4", label: locale === "ar" ? "4 غرف" : "4 bedrooms" },
+    { value: "5", label: locale === "ar" ? "5 غرف" : "5 bedrooms" },
+    { value: "6", label: locale === "ar" ? "6 غرف" : "6 bedrooms" },
+    { value: "7", label: locale === "ar" ? "7 غرف" : "7 bedrooms" },
+    { value: "8", label: locale === "ar" ? "8+ غرف" : "8+ bedrooms" },
+  ];
 
   const locationFilterOptions = [
     { value: "", label: copy.filters.location },
@@ -58,22 +75,21 @@ export function PropertyFilters({
     { value: "", label: copy.filters.coastalVillage },
     ...coastalVillageOptions,
   ];
-  const bedroomFilterOptions = [
-    { value: "", label: copy.filters.bedrooms },
-    { value: "2", label: copy.filters.twoPlus },
-    { value: "3", label: copy.filters.threePlus },
-    { value: "4", label: copy.filters.fourPlus },
-    { value: "5", label: copy.filters.fivePlus },
-    { value: "6", label: copy.filters.sixPlus },
-  ];
+
+  const selectTriggerClassName =
+    "w-full rounded-2xl border border-[var(--color-border)] bg-[rgba(255,255,255,0.05)] px-4 py-3 text-sm text-[var(--color-ink)] outline-none transition-colors duration-300 ease-in-out focus-visible:border-[var(--color-gold)]";
+  const selectMenuClassName =
+    "border border-[rgba(235,210,165,0.16)] bg-[image:var(--dark-select-menu)] shadow-[0_20px_45px_rgba(4,12,24,0.52)] backdrop-blur-xl";
+  const selectOptionClassName =
+    "w-full px-4 py-3 text-start text-sm font-medium text-[var(--color-ink)] transition-colors duration-200 ease-in-out hover:bg-[rgba(255,255,255,0.06)] hover:text-[var(--color-gold-bright)]";
+  const selectedOptionClassName =
+    "bg-[rgba(205,168,109,0.22)] text-[var(--color-gold-bright)]";
 
   function updateFilter(key: keyof PropertyFilterState, value: string) {
     setFilters((current) => ({
       ...current,
       coastalVillage:
-        key === "location" && value !== "north-coast"
-          ? ""
-          : current.coastalVillage,
+        key === "location" && value !== "north-coast" ? "" : current.coastalVillage,
       [key]: value,
     }));
   }
@@ -84,15 +100,14 @@ export function PropertyFilters({
   const visibleProperties =
     mode === "compact" ? filteredProperties.slice(0, 3) : filteredProperties;
 
+  const gridColumns = showCoastalVillageFilter
+    ? "xl:grid-cols-5"
+    : "xl:grid-cols-4";
+
   return (
-    <section className="space-y-6">
+    <section className="space-y-6 rounded-[2rem] bg-[color:var(--page-bg-end)] px-1 py-1">
       <div className="luxury-surface p-4 md:p-6">
-        <div
-          className={[
-            "grid gap-3 md:grid-cols-2",
-            showCoastalVillageFilter ? "xl:grid-cols-4" : "xl:grid-cols-3",
-          ].join(" ")}
-        >
+        <div className={["grid gap-3 md:grid-cols-2", gridColumns].join(" ")}>
           <AnimatedSelect
             value={filters.location}
             onChange={(value) => updateFilter("location", value)}
@@ -109,6 +124,17 @@ export function PropertyFilters({
             onChange={(value) => updateFilter("type", value)}
             options={typeFilterOptions}
             placeholder={copy.filters.type}
+            triggerClassName={selectTriggerClassName}
+            menuClassName={selectMenuClassName}
+            optionClassName={selectOptionClassName}
+            selectedOptionClassName={selectedOptionClassName}
+          />
+
+          <AnimatedSelect
+            value={filters.listingType}
+            onChange={(value) => updateFilter("listingType", value)}
+            options={listingTypeFilterOptions}
+            placeholder={locale === "ar" ? "بيع أو إيجار" : "Sale or Rent"}
             triggerClassName={selectTriggerClassName}
             menuClassName={selectMenuClassName}
             optionClassName={selectOptionClassName}
@@ -141,28 +167,26 @@ export function PropertyFilters({
         </div>
       </div>
 
-      <div className="flex items-center justify-between gap-4">
-        <h3 className="text-lg font-bold text-[var(--color-ink)]">
-          {copy.labels.searchResults} ({filteredProperties.length})
-        </h3>
-        {mode === "compact" ? (
-          <Link
-            href={localizedPath(locale, "/properties")}
-            className="text-sm font-semibold text-[var(--color-gold)]"
-          >
-            {copy.actions.viewAll}
-          </Link>
-        ) : null}
+      <div className="px-2 py-1">
+        <div className="flex items-center justify-between gap-4">
+          <h3 className="text-lg font-bold text-[var(--color-ink)]">
+            {copy.labels.searchResults} ({filteredProperties.length})
+          </h3>
+          {mode === "compact" ? (
+            <Link
+              href={localizedPath(locale, "/properties")}
+              className="text-sm font-semibold text-[var(--color-gold)]"
+            >
+              {copy.actions.viewAll}
+            </Link>
+          ) : null}
+        </div>
       </div>
 
       {visibleProperties.length ? (
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-6 px-2 pb-2 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
           {visibleProperties.map((property) => (
-            <PropertyCard
-              key={property.slug}
-              locale={locale}
-              property={property}
-            />
+            <PropertyCard key={property.slug} locale={locale} property={property} />
           ))}
         </div>
       ) : (

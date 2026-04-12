@@ -1,13 +1,13 @@
-import { notFound } from "next/navigation";
+﻿import { notFound } from "next/navigation";
 
 import { LeadForm } from "@/components/lead-form";
 import { PageHero } from "@/components/page-hero";
 import { PropertyCard } from "@/components/property-card";
 import { SectionHeading } from "@/components/section-heading";
-import { buildMetadata } from "@/lib/seo";
 import { getLocationBySlug, getLocationProperties } from "@/lib/cms";
 import { isLocale, pickLocale } from "@/lib/i18n";
-import { locations, propertyTypeLabels } from "@/lib/site-data";
+import { buildMetadata } from "@/lib/seo";
+import { locations } from "@/lib/site-data";
 
 export const dynamic = "force-dynamic";
 
@@ -114,22 +114,6 @@ export default async function LocationDetailsPage({
                       {pickLocale(highlight.value, locale)}
                     </div>
                   </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="luxury-surface p-6">
-              <h3 className="text-2xl font-bold text-[var(--color-ink)]">
-                {locale === "ar" ? "أنواع العقارات المتاحة" : "Available Property Types"}
-              </h3>
-              <div className="mt-5 flex flex-wrap gap-3">
-                {location.propertyTypes.map((type) => (
-                  <span
-                    key={type}
-                    className="rounded-full bg-[rgba(255,255,255,0.06)] px-4 py-2 text-sm font-semibold text-[var(--color-ink)]"
-                  >
-                    {pickLocale(propertyTypeLabels[type], locale)}
-                  </span>
                 ))}
               </div>
             </div>

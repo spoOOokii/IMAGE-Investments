@@ -1,4 +1,4 @@
-export const locales = ["ar", "en"] as const;
+﻿export const locales = ["ar", "en"] as const;
 
 export type Locale = (typeof locales)[number];
 
@@ -86,7 +86,7 @@ export const uiCopy = {
       title: "ابحث عن عقارك المناسب",
       location: "المنطقة",
       type: "النوع",
-      coastalVillage: "القري الساحلية",
+      coastalVillage: "القرى الساحلية",
       price: "السعر",
       bedrooms: "عدد الغرف",
       paymentPlan: "نظام السداد",
@@ -129,7 +129,7 @@ export const uiCopy = {
       },
     },
     footerNote:
-      "إيمدج للاستثمارات تقدم استشارات عقارية واستثمارية عالية الجودة داخل أهم الأسواق المصرية مع تركيز على الشفافية، السرعة، والفرص المدروسة.",
+      "إيمدج للاستثمارات تقدم استشارات عقارية واستثمارية عالية الجودة داخل أهم الأسواق المصرية مع تركيز على الشفافية والسرعة والفرص المدروسة.",
     languageSwitch: "English",
   },
   en: {

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useRef, useState } from "react";
 
@@ -76,7 +76,7 @@ export function AnimatedSelect({
             isOpen ? "rotate-180" : ""
           }`}
         >
-          ˅
+          ▼
         </span>
       </button>
 
@@ -112,3 +112,4 @@ export function AnimatedSelect({
     </div>
   );
 }
+

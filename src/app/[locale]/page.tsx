@@ -1,25 +1,30 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { FeaturedPropertiesSlider } from "@/components/featured-properties-slider";
 import { LeadForm } from "@/components/lead-form";
-import { PropertyCard } from "@/components/property-card";
-import { PropertyFilters } from "@/components/property-filters";
 import { SectionHeading } from "@/components/section-heading";
-import { buildMetadata } from "@/lib/seo";
 import {
   getAllLocations,
-  getFeaturedDeals,
-  getFeaturedProperties,
+  getAllProperties,
   getHomeCollections,
 } from "@/lib/cms";
-import {
-  companyProfile,
-  propertyTypeLabels,
-} from "@/lib/site-data";
 import { getUiCopy, isLocale, localizedPath, pickLocale } from "@/lib/i18n";
+import { buildMetadata } from "@/lib/seo";
+import { companyProfile } from "@/lib/site-data";
 
 export const dynamic = "force-dynamic";
+
+function getRandomProperties<T>(items: T[], count: number) {
+  const shuffled = [...items];
+
+  for (let index = shuffled.length - 1; index > 0; index -= 1) {
+    const randomIndex = Math.floor(Math.random() * (index + 1));
+    [shuffled[index], shuffled[randomIndex]] = [shuffled[randomIndex], shuffled[index]];
+  }
+
+  return shuffled.slice(0, count);
+}
 
 export async function generateMetadata({
   params,
@@ -57,13 +62,13 @@ export default async function HomePage({
   }
 
   const copy = getUiCopy(locale);
-  const [featuredProperties, featuredDeals, allLocations, homeCollections] =
+  const [allProperties, allLocations, homeCollections] =
     await Promise.all([
-      getFeaturedProperties(),
-      getFeaturedDeals(),
+      getAllProperties(),
       getAllLocations(),
       getHomeCollections(),
     ]);
+  const randomProperties = getRandomProperties(allProperties, 8);
 
   const heroTitle =
     locale === "ar"
@@ -73,6 +78,10 @@ export default async function HomePage({
     locale === "ar"
       ? "اكتشف فرص عقارية مميزة في القاهرة الجديدة، العاصمة الإدارية، الشيخ زايد، الساحل الشمالي، والعين السخنة"
       : "Discover premium property opportunities across New Cairo, New Capital, Sheikh Zayed, North Coast, and Ain Sokhna";
+
+  function removeStatNumbers(value: string) {
+    return value.replace(/[+0-9٠-٩]/g, "").trim();
+  }
 
   const homeSchema = {
     "@context": "https://schema.org",
@@ -89,7 +98,7 @@ export default async function HomePage({
           addressCountry: "EG",
         },
       },
-      ...featuredProperties.slice(0, 3).map((property) => ({
+      ...randomProperties.slice(0, 3).map((property) => ({
         "@type": "Residence",
         name: property.title.en,
         image: property.gallery[0],
@@ -157,7 +166,6 @@ export default async function HomePage({
                 {copy.actions.whatsapp}
               </a>
             </div>
-
           </div>
 
           <div className="luxury-dark gold-outline theme-on-dark self-start p-6 md:p-8">
@@ -195,33 +203,13 @@ export default async function HomePage({
         </div>
       </section>
 
-      <section className="container-shell -mt-10 relative z-10">
-        <PropertyFilters locale={locale} properties={featuredProperties} mode="compact" />
-      </section>
-
       <section className="container-shell pt-18">
-        <SectionHeading
-          eyebrow={locale === "ar" ? "عقارات مختارة" : "Featured Properties"}
-          title={
-            locale === "ar"
-              ? "واجهة فاخرة تعرض العقارات المميزة بأعلى جودة"
-              : "A premium showcase for high-conviction featured inventory"
-          }
-          description={
-            locale === "ar"
-              ? "اعرض أفضل الوحدات بصورة واضحة وتفاصيل مباشرة تساعد العميل على اتخاذ قرار أسرع."
-              : "Showcase your strongest units with clear details and a presentation designed for faster decision-making."
-          }
-          action={
-            <Link
-              href={localizedPath(locale, "/properties")}
-              className="theme-neutral-button rounded-full px-5 py-3 text-sm font-semibold"
-            >
-              {copy.actions.viewAll}
-            </Link>
-          }
-        />
-        <FeaturedPropertiesSlider locale={locale} properties={featuredProperties} />
+        <div className="mb-8 pt-12">
+          <span className="section-kicker">
+            {locale === "ar" ? "وحدات متنوعة" : "Random Properties"}
+          </span>
+        </div>
+        <FeaturedPropertiesSlider locale={locale} properties={randomProperties} />
       </section>
 
       <section className="container-shell pt-18">
@@ -242,7 +230,7 @@ export default async function HomePage({
           {homeCollections.categories.map((category) => (
             <div key={category.slug} className="luxury-surface p-6">
               <div className="text-sm font-bold text-[var(--color-gold)]">
-                {pickLocale(category.stat, locale)}
+                {removeStatNumbers(pickLocale(category.stat, locale))}
               </div>
               <h3 className="mt-3 text-2xl font-bold text-[var(--color-ink)]">
                 {pickLocale(category.label, locale)}
@@ -250,11 +238,6 @@ export default async function HomePage({
               <p className="mt-3 text-sm leading-7 text-[var(--color-ink-soft)]">
                 {pickLocale(category.description, locale)}
               </p>
-              <div className="mt-6 text-sm font-semibold text-[var(--color-ink)]">
-                {category.types
-                  .map((type) => pickLocale(propertyTypeLabels[type], locale))
-                  .join(" • ")}
-              </div>
             </div>
           ))}
         </div>
@@ -318,27 +301,6 @@ export default async function HomePage({
 
       <section className="container-shell pt-18">
         <SectionHeading
-          eyebrow={locale === "ar" ? "فرص مميزة" : "Featured Opportunities"}
-          title={
-            locale === "ar"
-              ? "وحدات مختارة بميزة واضحة وفرص جاهزة لاتخاذ القرار"
-              : "Curated opportunities selected for clear buyer value"
-          }
-          description={
-            locale === "ar"
-              ? "هذه الوحدات تم اختيارها لقوة الموقع، ندرة المعروض، أو جودة المنتج في نفس الفئة."
-              : "These units stand out through location strength, limited supply, or product quality in their segment."
-          }
-        />
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {featuredDeals.slice(0, 3).map((property) => (
-            <PropertyCard key={property.slug} locale={locale} property={property} />
-          ))}
-        </div>
-      </section>
-
-      <section className="container-shell pt-18">
-        <SectionHeading
           eyebrow={locale === "ar" ? "لماذا نحن" : "Why Choose Us"}
           title={
             locale === "ar"
@@ -368,11 +330,7 @@ export default async function HomePage({
       <section className="container-shell pt-18">
         <SectionHeading
           eyebrow={locale === "ar" ? "الأسئلة الشائعة" : "FAQ"}
-          title={
-            locale === "ar"
-              ? "الأسئلة الشائعة"
-              : "Frequently asked questions"
-          }
+          title={locale === "ar" ? "الأسئلة الشائعة" : "Frequently asked questions"}
           description={
             locale === "ar"
               ? "إجابات سريعة على أكثر الأسئلة شيوعًا لدى المشترين والمستثمرين."
@@ -414,3 +372,4 @@ export default async function HomePage({
     </>
   );
 }
+

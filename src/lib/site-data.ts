@@ -1,4 +1,4 @@
-import type { Locale } from "@/lib/i18n";
+﻿import type { Locale } from "@/lib/i18n";
 
 export type LocalizedText = Record<Locale, string>;
 
@@ -920,6 +920,46 @@ export const categories = [
     },
     types: ["townhouse", "twinhouse"] as PropertyType[],
     stat: { ar: "أفضل توازن في الفئة", en: "Well-balanced segment" },
+  },
+  {
+    slug: "duplexes",
+    label: { ar: "دوبلكس", en: "Duplexes" },
+    description: {
+      ar: "وحدات واسعة تناسب العائلات الباحثة عن توزيع أفضل للمساحات ومستوى معيشة عملي.",
+      en: "Spacious homes for families seeking better zoning, comfort, and practical layouts.",
+    },
+    types: ["duplex"] as PropertyType[],
+    stat: { ar: "مساحات عائلية مميزة", en: "Family-sized layouts" },
+  },
+  {
+    slug: "ivillas",
+    label: { ar: "آي فيلا", en: "iVilla" },
+    description: {
+      ar: "منتج يجمع بين إحساس الفيلا ومرونة التكلفة داخل مجتمعات سكنية راقية.",
+      en: "A hybrid product that blends villa living with stronger cost efficiency.",
+    },
+    types: ["ivilla"] as PropertyType[],
+    stat: { ar: "بديل ذكي للفيلا", en: "Smart villa alternative" },
+  },
+  {
+    slug: "cabanas",
+    label: { ar: "كابانا", en: "Cabana" },
+    description: {
+      ar: "وحدات مصيفية مميزة قريبة من البحر وحمامات السباحة لأسلوب حياة أكثر رفاهية.",
+      en: "Resort-style units close to beaches and pools for a more elevated seasonal lifestyle.",
+    },
+    types: ["cabana"] as PropertyType[],
+    stat: { ar: "منتج ساحلي فاخر", en: "Premium coastal product" },
+  },
+  {
+    slug: "studios",
+    label: { ar: "استوديو", en: "Studios" },
+    description: {
+      ar: "خيار مناسب للمستثمرين والوحدات الصغيرة ذات التشغيل السهل والتكلفة الأخف.",
+      en: "A practical entry product for investors and compact living with easier operation.",
+    },
+    types: ["studio"] as PropertyType[],
+    stat: { ar: "وحدات صغيرة ذكية", en: "Smart compact units" },
   },
 ];
 

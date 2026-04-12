@@ -84,10 +84,22 @@ export default async function PropertyDetailsPage({
   );
   const propertyPhoneHref = buildPhoneHref(propertyContactPhone);
   const propertyDescription = pickLocale(property.description, locale).trim();
+  const isRentListing = property.listingType === "rent";
   const isFurnished =
     pickLocale(property.summary, "ar").includes("مفروش") ||
     pickLocale(property.summary, "en").toLowerCase().includes("furnished");
   const surroundingItems = [
+    {
+      label: locale === "ar" ? "نوع العرض" : "Listing Type",
+      value:
+        locale === "ar"
+          ? isRentListing
+            ? "للإيجار"
+            : "للبيع"
+          : isRentListing
+            ? "For Rent"
+            : "For Sale",
+    },
     {
       label: copy.labels.bedrooms,
       value:
@@ -114,18 +126,17 @@ export default async function PropertyDetailsPage({
             ? "مفروش"
             : "غير مفروش"
           : isFurnished
-            ? "Furnished"
-            : "Unfurnished",
+          ? "Furnished"
+          : "Unfurnished",
     },
-    {
-      label: copy.labels.price,
-      value:
-        property.listingType === "rent"
-          ? locale === "ar"
-            ? "عند إرسال الطلب"
-            : "On inquiry"
-          : pickLocale(property.priceLabel, locale),
-    },
+    ...(!isRentListing
+      ? [
+          {
+            label: copy.labels.price,
+            value: pickLocale(property.priceLabel, locale),
+          },
+        ]
+      : []),
   ];
   const propertySpecs = [
     {
@@ -205,52 +216,56 @@ export default async function PropertyDetailsPage({
       </section>
 
       <section className="container-shell pt-10">
-        <div className="grid gap-6 xl:grid-cols-[1.35fr_0.82fr_0.9fr]">
+        <div className="grid gap-6 xl:grid-cols-[1.45fr_1.05fr]">
           <PropertyGallery
             images={property.gallery}
             alt={pickLocale(property.title, locale)}
           />
 
-          <div className="luxury-surface p-6">
-            <h2 className="text-2xl font-bold text-[var(--color-ink)]">
-              {locale === "ar" ? "كل ما تحتاجه حول الوحدة" : "Everything around the unit"}
-            </h2>
-            <p className="mt-3 text-sm leading-7 text-[var(--color-ink-soft)]">
-              {locale === "ar"
-                ? "ملخص سريع يوضح تفاصيل الاستخدام والتشطيب والسعر الحالي."
-                : "A quick summary of livability, finishing, and current pricing."}
-            </p>
-            <div className="mt-5 grid gap-3">
-              {surroundingItems.map((item) => (
-                <div
-                  key={`${item.label}-${item.value}`}
-                  className="rounded-[1.25rem] border border-[var(--color-border)] bg-[rgba(255,255,255,0.04)] px-4 py-3"
-                >
-                  <div className="text-xs text-[var(--color-muted)]">{item.label}</div>
-                  <div className="mt-2 text-sm font-semibold leading-7 text-[var(--color-ink)]">
-                    {item.value}
-                  </div>
+          <div className="luxury-surface p-6 md:p-7">
+            <div className="grid gap-7">
+              <div>
+                <h2 className="text-2xl font-bold text-[var(--color-ink)]">
+                  {locale === "ar" ? "كل ما تحتاجه حول الوحدة" : "Everything around the unit"}
+                </h2>
+                <p className="mt-3 text-sm leading-7 text-[var(--color-ink-soft)]">
+                  {locale === "ar"
+                    ? "ملخص سريع يوضح تفاصيل الاستخدام والتشطيب وحالة العرض الحالية."
+                    : "A quick summary of livability, finishing, and the current listing status."}
+                </p>
+                <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                  {surroundingItems.map((item) => (
+                    <div
+                      key={`${item.label}-${item.value}`}
+                      className="rounded-[1.25rem] border border-[var(--color-border)] bg-[rgba(255,255,255,0.04)] px-4 py-3"
+                    >
+                      <div className="text-xs text-[var(--color-muted)]">{item.label}</div>
+                      <div className="mt-2 text-sm font-semibold leading-7 text-[var(--color-ink)]">
+                        {item.value}
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
-          </div>
+              </div>
 
-          <div className="luxury-surface p-6">
-            <h2 className="text-2xl font-bold text-[var(--color-ink)]">
-              {locale === "ar" ? "مواصفات الوحدة" : "Property Specifications"}
-            </h2>
-            <div className="mt-5 grid gap-4 sm:grid-cols-2 xl:grid-cols-1">
-              {propertySpecs.map((item) => (
-                <div
-                  key={item.label}
-                  className="rounded-[1.25rem] bg-[rgba(255,255,255,0.05)] p-4"
-                >
-                  <div className="text-xs text-[var(--color-muted)]">{item.label}</div>
-                  <div className="mt-2 font-semibold leading-7 text-[var(--color-ink)]">
-                    {item.value}
-                  </div>
+              <div className="border-t border-[var(--color-border)] pt-6">
+                <h2 className="text-2xl font-bold text-[var(--color-ink)]">
+                  {locale === "ar" ? "مواصفات الوحدة" : "Property Specifications"}
+                </h2>
+                <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                  {propertySpecs.map((item) => (
+                    <div
+                      key={item.label}
+                      className="rounded-[1.25rem] border border-[var(--color-border)] bg-[rgba(255,255,255,0.05)] p-4"
+                    >
+                      <div className="text-xs text-[var(--color-muted)]">{item.label}</div>
+                      <div className="mt-2 font-semibold leading-7 text-[var(--color-ink)]">
+                        {item.value}
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
             </div>
           </div>
         </div>
@@ -354,7 +369,7 @@ export default async function PropertyDetailsPage({
                 : "Additional opportunities that may better match your size, location, or property-type preference."
             }
           />
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
             {relatedProperties.map((related) => (
               <PropertyCard key={related.slug} locale={locale} property={related} />
             ))}

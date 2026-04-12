@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -67,13 +67,16 @@ export function AdminPropertiesDashboard() {
     ...buildCoastalVillageOptions("ar"),
   ];
   const bedroomOptions = [
-    { value: "", label: "عدد الغرف" },
-    { value: "2", label: "2+غرف" },
-    { value: "3", label: "3+غرف" },
-    { value: "4", label: "4+غرف" },
-    { value: "5", label: "5+غرف" },
-    { value: "6", label: "6+غرف" },
-  ];
+  { value: "", label: "عدد الغرف" },
+  { value: "1", label: "غرفة واحدة" },
+  { value: "2", label: "2 غرف" },
+  { value: "3", label: "3 غرف" },
+  { value: "4", label: "4 غرف" },
+  { value: "5", label: "5 غرف" },
+  { value: "6", label: "6 غرف" },
+  { value: "7", label: "7 غرف" },
+  { value: "8", label: "8+ غرف" },
+];
   const selectTriggerClassName =
     "w-full rounded-2xl border border-[var(--color-border)] bg-[rgba(255,255,255,0.05)] px-4 py-3 text-sm text-[var(--color-ink)] outline-none transition-colors duration-300 ease-in-out focus-visible:border-[var(--color-gold)]";
   const selectMenuClassName =
@@ -452,3 +455,4 @@ export function AdminPropertiesDashboard() {
     </div>
   );
 }
+

@@ -5,6 +5,60 @@
       "propertyType": "chalet",
       "bedrooms": 3,
       "coastalVillage": "hacienda-bay",
+      "description": "🏖️ Senior Chalet for Sale at Hacienda Bay North coast\r\n🏖️ First Row1 ⛳ golF and lake\r\n🏖️ Prime location\r\n🏖️ Ground floor with Garden \r\n🏖️ Area : 220 m\r\n🏖️ Garden area : 320 m\r\n🏖️ Reception / Kitchen \r\n🏖️ Bedrooms 3 ( 2 masters)\r\n🏖️ Bathrooms 3\r\n🏖️ Driver room with bathroom / Nany room with bathroom\r\n🏖️ Fully Finished / Fully furnished \r\n🏖️A/C\r\n🏖️ slot parking 2",
+      "size": 220,
+      "bathrooms": 3,
+      "finishing": "full",
+      "furnishing": "furnished",
+      "listingType": "sale",
+      "price": 14500000,
+      "contactPhone": "01286490599",
+      "imageUrls": [
+        "/uploads/properties/1775955056564-c2321cf7-cdec-41bd-b2c9-46204376d0d2.jpg",
+        "/uploads/properties/1775955056564-3ed1f371-452b-4c80-87c0-2435ca383fc9.jpg",
+        "/uploads/properties/1775955056564-2a293cf0-a9a9-41a2-959a-20eba7560e9d.jpg",
+        "/uploads/properties/1775955056564-979b412a-d517-4108-8653-8af635eb7da7.jpg"
+      ],
+      "slug": "managed-north-coast-chalet-hacienda-bay-sale-3br-2",
+      "tags": [
+        "prime"
+      ],
+      "createdAt": "2026-04-12T00:50:56.568Z",
+      "updatedAt": "2026-04-12T00:50:56.568Z"
+    },
+    {
+      "locationSlug": "north-coast",
+      "propertyType": "chalet",
+      "bedrooms": 2,
+      "coastalVillage": "marassi",
+      "description": "Marassi Marina \r\nChalet For Sale \r\nNear Pool & Marina \r\n\r\nArea 80 m\r\n1 Bedroom \r\n1 Bathroom \r\nKitchen \r\nReception \r\nFully A/C\r\nFully Furnished",
+      "size": 80,
+      "bathrooms": 2,
+      "finishing": "full",
+      "furnishing": "furnished",
+      "listingType": "sale",
+      "price": 14000000,
+      "contactPhone": "01200092764",
+      "imageUrls": [
+        "/uploads/properties/1775936614297-f1be443f-e2ce-4390-aac9-80e1e4e64f48.jpg",
+        "/uploads/properties/1775936614297-4befcc25-2e05-4765-8f4e-7850922fe680.jpg",
+        "/uploads/properties/1775936614297-b147cb12-a7a2-4a00-835b-469f411640d8.jpg",
+        "/uploads/properties/1775936614297-f21967c2-9a7b-4beb-94c2-4d74415c6766.jpg",
+        "/uploads/properties/1775936614297-11eb109f-5b38-4452-b245-7fcc8733df06.jpg",
+        "/uploads/properties/1775936614297-38d5470b-6d6a-4f53-9555-20373b81d9d0.jpg"
+      ],
+      "slug": "managed-north-coast-chalet-marassi-sale-2br",
+      "tags": [
+        "prime"
+      ],
+      "createdAt": "2026-04-11T19:43:34.301Z",
+      "updatedAt": "2026-04-11T19:43:34.301Z"
+    },
+    {
+      "locationSlug": "north-coast",
+      "propertyType": "chalet",
+      "bedrooms": 3,
+      "coastalVillage": "hacienda-bay",
       "description": "🏖️ Senior Chalet for Sale at Hacienda Bay North coast\r\n🏖️ First Row1 ⛳ golF and lake\r\n🏖️ Prime location\r\n🏖️ Ground floor with Garden \r\n🏖️ Area : 220 m\r\n🏖️ Garden area : 320 m\r\n🏖️ Reception / Kitchen \r\n🏖️ Bedrooms 3 ( 2 masters)\r\n🏖️ Bathrooms 3\r\n🏖️ Driver room with bathroom / Nany room with bathroom\r\n🏖️ Fully Finished / Fully furnished \r\n🏖️ slot parking 2",
       "size": 220,
       "bathrooms": 3,
@@ -92,6 +146,7 @@
   "hiddenPropertySlugs": [
     "hacienda-bay-villa-rent-6br-3m",
     "hacienda-bay-villa-rent-5br-5m",
-    "hacienda-bay-villa-rent-5br-3m-private-pool"
+    "hacienda-bay-villa-rent-5br-3m-private-pool",
+    "hacienda-bay-chalet-rent-3br-2m"
   ]
 }
