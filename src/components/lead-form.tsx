@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 
@@ -19,6 +19,7 @@ type LeadFormProps = {
   propertySlug?: string;
   propertyTitle?: string;
   propertyTypeLabel?: string;
+  propertyDetails?: string[];
   contactMode?: "whatsapp";
   whatsappPhoneNumber?: string;
 };
@@ -31,6 +32,7 @@ export function LeadForm({
   theme = "light",
   propertyTitle,
   propertyTypeLabel,
+  propertyDetails,
   whatsappPhoneNumber,
 }: LeadFormProps) {
   const copy = getUiCopy(locale);
@@ -48,6 +50,7 @@ export function LeadForm({
         title ??
         (locale === "ar" ? "استشارة عقارية" : "Real estate inquiry"),
       propertyType: propertyTypeLabel,
+      propertyDetails,
       fullName: `${formData.get("fullName") ?? ""}`.trim(),
       phone: `${formData.get("phone") ?? ""}`.trim(),
       message: `${formData.get("message") ?? ""}`.trim(),

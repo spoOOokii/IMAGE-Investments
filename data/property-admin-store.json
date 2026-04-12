@@ -1,11 +1,42 @@
 {
   "managedProperties": [
     {
+      "slug": "desktop-sale-1-amwaj-penthouse",
+      "locationSlug": "north-coast",
+      "propertyType": "penthouse",
+      "bedrooms": 3,
+      "coastalVillage": "amwaj",
+      "description": "اقل من سعر السوق لسرعه البيع🏄🏊🤽\nللبيع شاليه بينتهاس مميز  فى أمواچ_الساحل الشمالي 🏡🌊🌊\nباطلاله مباشره علي حمام سباحه مباشرة 🌊 🌊\nمساحه 146 م\n3نوم\n2حمام\nريسبشن\nمطبخ\nروف\nللبيع يشمل الفرش والاجهزة\nالسعر10.650.000",
+      "size": 146,
+      "bathrooms": 2,
+      "finishing": "full",
+      "furnishing": "furnished",
+      "listingType": "sale",
+      "price": 10650000,
+      "contactPhone": "01286394219",
+      "imageUrls": [
+        "/uploads/properties/desktop-sale/units/1/desktop-sale-folder-1-1.jpeg",
+        "/uploads/properties/desktop-sale/units/1/desktop-sale-folder-1-2.jpeg",
+        "/uploads/properties/desktop-sale/units/1/desktop-sale-folder-1-3.jpeg",
+        "/uploads/properties/desktop-sale/units/1/desktop-sale-folder-1-4.jpeg",
+        "/uploads/properties/desktop-sale/units/1/desktop-sale-folder-1-5.jpeg",
+        "/uploads/properties/desktop-sale/units/1/desktop-sale-folder-1-6.jpeg",
+        "/uploads/properties/desktop-sale/units/1/desktop-sale-folder-1-7.jpeg"
+      ],
+      "tags": [
+        "prime",
+        "underMarket"
+      ],
+      "createdAt": "2026-04-12T22:00:02.626Z",
+      "updatedAt": "2026-04-12T22:00:02.626Z"
+    },
+    {
+      "slug": "desktop-sale-2-hacienda-bay-chalet",
       "locationSlug": "north-coast",
       "propertyType": "chalet",
       "bedrooms": 3,
       "coastalVillage": "hacienda-bay",
-      "description": "🏖️ Senior Chalet for Sale at Hacienda Bay North coast\r\n🏖️ First Row1 ⛳ golF and lake\r\n🏖️ Prime location\r\n🏖️ Ground floor with Garden \r\n🏖️ Area : 220 m\r\n🏖️ Garden area : 320 m\r\n🏖️ Reception / Kitchen \r\n🏖️ Bedrooms 3 ( 2 masters)\r\n🏖️ Bathrooms 3\r\n🏖️ Driver room with bathroom / Nany room with bathroom\r\n🏖️ Fully Finished / Fully furnished \r\n🏖️A/C\r\n🏖️ slot parking 2",
+      "description": "🏖️ Senior Chalet for Sale at Hacienda Bay North coast\n🏖️ First Row1 ⛳ golF and lake\n🏖️ Prime location\n🏖️ Ground floor with Garden\n🏖️ Area : 220 m\n🏖️ Garden area : 320 m\n🏖️ Reception / Kitchen\n🏖️ Bedrooms 3 ( 2 masters)\n🏖️ Bathrooms 3\n🏖️ Driver room with bathroom / Nany room with bathroom\n🏖️ Fully Finished / Fully furnished\n🏖️ slot parking 2\n🏖️Price: 14.500.000",
       "size": 220,
       "bathrooms": 3,
       "finishing": "full",
@@ -14,17 +45,794 @@
       "price": 14500000,
       "contactPhone": "01286490599",
       "imageUrls": [
-        "/uploads/properties/1775955056564-c2321cf7-cdec-41bd-b2c9-46204376d0d2.jpg",
-        "/uploads/properties/1775955056564-3ed1f371-452b-4c80-87c0-2435ca383fc9.jpg",
-        "/uploads/properties/1775955056564-2a293cf0-a9a9-41a2-959a-20eba7560e9d.jpg",
-        "/uploads/properties/1775955056564-979b412a-d517-4108-8653-8af635eb7da7.jpg"
+        "/uploads/properties/desktop-sale/units/2/desktop-sale-folder-2-1.jpeg",
+        "/uploads/properties/desktop-sale/units/2/desktop-sale-folder-2-2.jpeg",
+        "/uploads/properties/desktop-sale/units/2/desktop-sale-folder-2-3.jpeg",
+        "/uploads/properties/desktop-sale/units/2/desktop-sale-folder-2-4.jpeg",
+        "/uploads/properties/desktop-sale/units/2/desktop-sale-folder-2-5.jpeg",
+        "/uploads/properties/desktop-sale/units/2/desktop-sale-folder-2-6.jpeg"
       ],
-      "slug": "managed-north-coast-chalet-hacienda-bay-sale-3br-2",
       "tags": [
         "prime"
       ],
-      "createdAt": "2026-04-12T00:50:56.568Z",
-      "updatedAt": "2026-04-12T00:50:56.568Z"
+      "createdAt": "2026-04-12T22:00:02.641Z",
+      "updatedAt": "2026-04-12T22:00:02.641Z"
+    },
+    {
+      "slug": "desktop-sale-3-hacienda-bay-villa",
+      "locationSlug": "north-coast",
+      "propertyType": "villa",
+      "bedrooms": 4,
+      "coastalVillage": "hacienda-bay",
+      "description": "villa stand alone sea front with private pool for sale @ hacienda Bay north cost\nLand area: 720\nBUA: 340 m\nGarden 500 m\nPrivate pool:120m\nConsists of\nReception & Dining\nKitchen\n4 master bedrooms\n6 bathroom\nSemi Finished\nReady to move\nUnder market price\nPrime location\nFirst Row sea\nPrice 50.950.000\nInstallment: 12.115.208\nQ: 904.000",
+      "size": 340,
+      "bathrooms": 6,
+      "finishing": "semi",
+      "furnishing": "unfurnished",
+      "listingType": "sale",
+      "price": 50950000,
+      "contactPhone": "01228397313",
+      "imageUrls": [
+        "/uploads/properties/desktop-sale/units/3/desktop-sale-folder-3-1.jpeg",
+        "/uploads/properties/desktop-sale/units/3/desktop-sale-folder-3-2.jpeg",
+        "/uploads/properties/desktop-sale/units/3/desktop-sale-folder-3-3.jpeg",
+        "/uploads/properties/desktop-sale/units/3/desktop-sale-folder-3-4.jpeg",
+        "/uploads/properties/desktop-sale/units/3/desktop-sale-folder-3-5.jpeg",
+        "/uploads/properties/desktop-sale/units/3/desktop-sale-folder-3-6.jpeg"
+      ],
+      "tags": [
+        "prime",
+        "underMarket"
+      ],
+      "createdAt": "2026-04-12T22:00:02.651Z",
+      "updatedAt": "2026-04-12T22:00:02.651Z"
+    },
+    {
+      "slug": "desktop-sale-4-marassi-chalet",
+      "locationSlug": "north-coast",
+      "propertyType": "chalet",
+      "bedrooms": 1,
+      "coastalVillage": "marassi",
+      "description": "Marassi Marina\nChalet For Sale\nNear Pool & Marina\nArea 80 m\n1 Bedroom\n1 Bathroom\nKitchen\nReception\nFully A/C\nFully Furnished\nPrice 14,000,000",
+      "size": 80,
+      "bathrooms": 1,
+      "finishing": "full",
+      "furnishing": "furnished",
+      "listingType": "sale",
+      "price": 14000000,
+      "contactPhone": "01200092764",
+      "imageUrls": [
+        "/uploads/properties/desktop-sale/units/4/desktop-sale-folder-4-1.jpeg",
+        "/uploads/properties/desktop-sale/units/4/desktop-sale-folder-4-2.jpeg",
+        "/uploads/properties/desktop-sale/units/4/desktop-sale-folder-4-3.jpeg",
+        "/uploads/properties/desktop-sale/units/4/desktop-sale-folder-4-4.jpeg",
+        "/uploads/properties/desktop-sale/units/4/desktop-sale-folder-4-5.jpeg",
+        "/uploads/properties/desktop-sale/units/4/desktop-sale-folder-4-6.jpeg"
+      ],
+      "tags": [
+        "prime"
+      ],
+      "createdAt": "2026-04-12T22:00:02.663Z",
+      "updatedAt": "2026-04-12T22:00:02.663Z"
+    },
+    {
+      "slug": "desktop-sale-5-hacienda-bay-chalet",
+      "locationSlug": "north-coast",
+      "propertyType": "chalet",
+      "bedrooms": 3,
+      "coastalVillage": "hacienda-bay",
+      "description": "🏖️ Senior Chalet for Sale at Hacienda Bay North coast\n🏖️ First Row1 ⛳ golF and lake\n🏖️ Prime location\n🏖️ Ground floor with Garden\n🏖️ Area : 220 m\n🏖️ Garden area : 320 m\n🏖️ Reception / Kitchen\n🏖️ Bedrooms 3 ( 2 masters)\n🏖️ Bathrooms 3\n🏖️ Driver room with bathroom / Nany room with bathroom\n🏖️ Fully Finished / Fully furnished\n🏖️A/C\n🏖️ slot parking 2\n🏖️Price: 14.500.000",
+      "size": 220,
+      "bathrooms": 3,
+      "finishing": "full",
+      "furnishing": "furnished",
+      "listingType": "sale",
+      "price": 14500000,
+      "contactPhone": "01286490599",
+      "imageUrls": [
+        "/uploads/properties/desktop-sale/units/5/desktop-sale-folder-5-1.jpeg",
+        "/uploads/properties/desktop-sale/units/5/desktop-sale-folder-5-2.jpeg",
+        "/uploads/properties/desktop-sale/units/5/desktop-sale-folder-5-3.jpeg",
+        "/uploads/properties/desktop-sale/units/5/desktop-sale-folder-5-4.jpeg"
+      ],
+      "tags": [
+        "prime"
+      ],
+      "createdAt": "2026-04-12T22:00:02.670Z",
+      "updatedAt": "2026-04-12T22:00:02.670Z"
+    },
+    {
+      "slug": "desktop-sale-6-marassi-chalet",
+      "locationSlug": "north-coast",
+      "propertyType": "chalet",
+      "bedrooms": 2,
+      "coastalVillage": "marassi",
+      "description": "Marassi Marina Views\nChalet For Sale\nGround With Garden\nView Lagoon\nArea 131 m\nGarden 65 m\n2 Bedrooms - 1 Master\n2 Bathrooms\nKitchen\nReception\nFully A C\nD.p 23,500,000\nInstallments 3,500,000\nTotal 27,000,000",
+      "size": 131,
+      "bathrooms": 2,
+      "finishing": "full",
+      "furnishing": "unfurnished",
+      "listingType": "sale",
+      "price": 27000000,
+      "contactPhone": "01200092764",
+      "imageUrls": [
+        "/uploads/properties/desktop-sale/units/6/desktop-sale-folder-6-1.jpeg",
+        "/uploads/properties/desktop-sale/units/6/desktop-sale-folder-6-2.jpeg",
+        "/uploads/properties/desktop-sale/units/6/desktop-sale-folder-6-3.jpeg",
+        "/uploads/properties/desktop-sale/units/6/desktop-sale-folder-6-4.jpeg",
+        "/uploads/properties/desktop-sale/units/6/desktop-sale-folder-6-5.jpeg"
+      ],
+      "tags": [
+        "prime"
+      ],
+      "createdAt": "2026-04-12T22:00:02.680Z",
+      "updatedAt": "2026-04-12T22:00:02.680Z"
+    },
+    {
+      "slug": "desktop-sale-9-marassi-chalet",
+      "locationSlug": "north-coast",
+      "propertyType": "chalet",
+      "bedrooms": 2,
+      "coastalVillage": "marassi",
+      "description": "Marassi Marina\nChalet For Sale\nFacing North\nSecond Row Marina\nNear Pool\nArea 130 m\n2 Bedrooms\n2 Bathrooms\nKitchen\nReception\nFully A-C\nFully Furnished\nPrice 23,000,000\nCode AZ25",
+      "size": 130,
+      "bathrooms": 2,
+      "finishing": "full",
+      "furnishing": "furnished",
+      "listingType": "sale",
+      "price": 23000000,
+      "contactPhone": "01200092764",
+      "imageUrls": [
+        "/uploads/properties/desktop-sale/units/4/desktop-sale-folder-4-1.jpeg",
+        "/uploads/properties/desktop-sale/units/4/desktop-sale-folder-4-2.jpeg",
+        "/uploads/properties/desktop-sale/units/4/desktop-sale-folder-4-3.jpeg",
+        "/uploads/properties/desktop-sale/units/4/desktop-sale-folder-4-4.jpeg",
+        "/uploads/properties/desktop-sale/units/4/desktop-sale-folder-4-5.jpeg",
+        "/uploads/properties/desktop-sale/units/4/desktop-sale-folder-4-6.jpeg"
+      ],
+      "tags": [
+        "prime"
+      ],
+      "createdAt": "2026-04-12T22:00:02.680Z",
+      "updatedAt": "2026-04-12T22:00:02.680Z"
+    },
+    {
+      "slug": "desktop-sale-10-hacienda-bay-villa",
+      "locationSlug": "north-coast",
+      "propertyType": "villa",
+      "bedrooms": 4,
+      "coastalVillage": "hacienda-bay",
+      "description": "Golf villa for sale @ hacienda Bay north cost\nLand area: 690\nBUA: 348m\nGarden 342m\nConsists of\nReception\nKitchen\n4 master bedrooms\n6 bathroom\nDriver room with bathroom\nNany room with bathroom\nFully Finished\nFully Furnished\nBahary\nReady to move\nPrice 30.000.000 قابل للتفاوض",
+      "size": 348,
+      "bathrooms": 6,
+      "finishing": "full",
+      "furnishing": "furnished",
+      "listingType": "sale",
+      "price": 30000000,
+      "contactPhone": "01228397313",
+      "imageUrls": [
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-1.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-2.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-3.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-4.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-5.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-6.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-7.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-8.jpeg"
+      ],
+      "tags": [
+        "prime"
+      ],
+      "createdAt": "2026-04-12T22:00:02.680Z",
+      "updatedAt": "2026-04-12T22:00:02.680Z"
+    },
+    {
+      "slug": "desktop-sale-11-amwaj-chalet",
+      "locationSlug": "north-coast",
+      "propertyType": "chalet",
+      "bedrooms": 3,
+      "coastalVillage": "amwaj",
+      "description": "اقل من سعر السوق لسرعه البيع🏄🏊🤽\nللبيع شاليه دور ارضي   مميز  فى أمواچ_الساحل الشمالي 🏡🌊🌊\nمساحه 146م\n٣نوم\n٢حمام\nريسبشن\nمطبخ\nحديقه علي البول 🌈\nللبيع يشمل الفرش والاجهزة\nالسعر10.750.000",
+      "size": 146,
+      "bathrooms": 2,
+      "finishing": "full",
+      "furnishing": "furnished",
+      "listingType": "sale",
+      "price": 10750000,
+      "contactPhone": "01286394219",
+      "imageUrls": [
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-1.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-2.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-3.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-4.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-5.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-6.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-7.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-8.jpeg"
+      ],
+      "tags": [
+        "prime",
+        "underMarket"
+      ],
+      "createdAt": "2026-04-12T22:00:02.680Z",
+      "updatedAt": "2026-04-12T22:00:02.680Z"
+    },
+    {
+      "slug": "desktop-sale-12-amwaj-penthouse",
+      "locationSlug": "north-coast",
+      "propertyType": "penthouse",
+      "bedrooms": 2,
+      "coastalVillage": "amwaj",
+      "description": "اقل من سعر السوق لسرعه البيع🏄🏊🤽\nللبيع penthouse مميز  فى أمواچ_الساحل الشمالي 🏡🌊🌊\nمساحه 127 م\n٢نوم\n٢حمام\nريسبشن\nمطبخ\nروف 🌈\nللبيع يشمل الفرش والاجهزة\nالسعر9.000.000",
+      "size": 127,
+      "bathrooms": 2,
+      "finishing": "full",
+      "furnishing": "furnished",
+      "listingType": "sale",
+      "price": 9000000,
+      "contactPhone": "01286394219",
+      "imageUrls": [
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-1.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-2.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-3.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-4.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-5.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-6.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-7.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-8.jpeg"
+      ],
+      "tags": [
+        "prime",
+        "underMarket"
+      ],
+      "createdAt": "2026-04-12T22:00:02.681Z",
+      "updatedAt": "2026-04-12T22:00:02.681Z"
+    },
+    {
+      "slug": "desktop-sale-13-hacienda-west-chalet",
+      "locationSlug": "north-coast",
+      "propertyType": "chalet",
+      "bedrooms": 2,
+      "coastalVillage": "hacienda-west",
+      "description": "Hacienda West - Palm Hills\nPhase : Almond\nSecond Floor\nArea 114 m\n2 Bedrooms - 1 Master\n2 Bathrooms\nKitchen\nReception\nFully Finished\nDelivery 6-2027\nD.p 6,950,000\nInstallments 3,778,410\nTotal 10,728,410\nNext Installment 3-2026\nNext Maintenance 12-2026 : 102,000",
+      "size": 114,
+      "bathrooms": 2,
+      "finishing": "full",
+      "furnishing": "unfurnished",
+      "listingType": "sale",
+      "price": 10728410,
+      "contactPhone": "01200092764",
+      "imageUrls": [
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-1.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-2.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-3.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-4.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-5.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-6.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-7.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-8.jpeg"
+      ],
+      "tags": [
+        "prime"
+      ],
+      "createdAt": "2026-04-12T22:00:02.681Z",
+      "updatedAt": "2026-04-12T22:00:02.681Z"
+    },
+    {
+      "slug": "desktop-sale-14-hacienda-west-chalet",
+      "locationSlug": "north-coast",
+      "propertyType": "chalet",
+      "bedrooms": 2,
+      "coastalVillage": "hacienda-west",
+      "description": "Hacienda West - Palm Hills\nPhase : Mastic\nArea 99 m\n2 Bedrooms - 1 Master\n2 Bathrooms\nKitchen\nReception\nFully Finished\nDelivery 2027\nD.p 5,720,000\nInstallments 4,070,000\nTotal 9,790,000\nNext Installment 5-2026\nNext Maintenance\n2-2027\n110,293\nاضافه صور هاسيندا ويست",
+      "size": 99,
+      "bathrooms": 2,
+      "finishing": "full",
+      "furnishing": "unfurnished",
+      "listingType": "sale",
+      "price": 9790000,
+      "contactPhone": "01200092764",
+      "imageUrls": [
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-1.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-2.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-3.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-4.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-5.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-6.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-7.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-8.jpeg"
+      ],
+      "tags": [
+        "prime"
+      ],
+      "createdAt": "2026-04-12T22:00:02.681Z",
+      "updatedAt": "2026-04-12T22:00:02.681Z"
+    },
+    {
+      "slug": "desktop-sale-15-hacienda-west-penthouse",
+      "locationSlug": "north-coast",
+      "propertyType": "penthouse",
+      "bedrooms": 2,
+      "coastalVillage": "hacienda-west",
+      "description": "penthouse corner for sale at hacienda west\n(almond)\nSea view\n4rd typical floor\nConsists of\nReception\nKitchen\n2 bedrooms\n3 bathrooms\nArea: Bua 111.5 + 21 penthouse + 53 Roof\nTotal area: 185.5\nDown payment: 8,000,000\nRemaining: 6,489,910\nDelivery date 12/2026",
+      "size": 111.5,
+      "bathrooms": 3,
+      "finishing": "full",
+      "furnishing": "unfurnished",
+      "listingType": "sale",
+      "price": 8000000,
+      "contactPhone": "01091096255",
+      "imageUrls": [
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-1.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-2.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-3.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-4.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-5.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-6.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-7.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-8.jpeg"
+      ],
+      "tags": [
+        "prime"
+      ],
+      "createdAt": "2026-04-12T22:00:02.681Z",
+      "updatedAt": "2026-04-12T22:00:02.681Z"
+    },
+    {
+      "slug": "desktop-sale-16-hacienda-west-penthouse",
+      "locationSlug": "north-coast",
+      "propertyType": "penthouse",
+      "bedrooms": 2,
+      "coastalVillage": "hacienda-west",
+      "description": "Chalet penthouse sea view for sale at hacienda west\nAlmond phase\n( 4rd typical floor )\nBua: 111.5\nRoof: 75\nConsists of\nReception\nKitchen\n2 bedrooms\n3 bathrooms\nDown payment: 7,800,000\nRemaining:6,729,000\nTotal: 14.529.000\nDelivery date 2026",
+      "size": 111.5,
+      "bathrooms": 3,
+      "finishing": "full",
+      "furnishing": "unfurnished",
+      "listingType": "sale",
+      "price": 14529000,
+      "contactPhone": "01091096255",
+      "imageUrls": [
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-1.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-2.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-3.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-4.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-5.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-6.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-7.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-8.jpeg"
+      ],
+      "tags": [
+        "prime"
+      ],
+      "createdAt": "2026-04-12T22:00:02.681Z",
+      "updatedAt": "2026-04-12T22:00:02.681Z"
+    },
+    {
+      "slug": "desktop-sale-17-hacienda-west-chalet",
+      "locationSlug": "north-coast",
+      "propertyType": "chalet",
+      "bedrooms": 2,
+      "coastalVillage": "hacienda-west",
+      "description": "Hacienda West - Palm Hills 💥\nUnder Market Price\nPhase : Mastic\nArea 99 m\n2 Bedrooms - 1 Master\n2 Bathrooms\nKitchen\nReception\nFully Finished\nDelivery 2027\nD.p 5,300,000\nInstallments 4,070,000\nTotal 9,370,000\nNext Installment 5-2026\nNext Maintenance\n2-2027\n110,293",
+      "size": 99,
+      "bathrooms": 2,
+      "finishing": "full",
+      "furnishing": "unfurnished",
+      "listingType": "sale",
+      "price": 9370000,
+      "contactPhone": "01200092764",
+      "imageUrls": [
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-1.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-2.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-3.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-4.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-5.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-6.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-7.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-8.jpeg"
+      ],
+      "tags": [
+        "prime",
+        "underMarket"
+      ],
+      "createdAt": "2026-04-12T22:00:02.681Z",
+      "updatedAt": "2026-04-12T22:00:02.681Z"
+    },
+    {
+      "slug": "desktop-sale-18-hacienda-west-chalet",
+      "locationSlug": "north-coast",
+      "propertyType": "chalet",
+      "bedrooms": 2,
+      "coastalVillage": "hacienda-west",
+      "description": "Update\nHacienda West - Palm Hills 💥\nPhase : Almond\nSecond Floor\nArea 114 m\n2 Bedrooms - 1 Master\n2 Bathrooms\nKitchen\nReception\nFully Finished\nDelivery 6-2027\nD.p 6,500,000\nInstallments 3,778,410\nTotal 10,278,410\nNext Installment 3-2026\nNext Maintenance 12-2026 : 102,000",
+      "size": 114,
+      "bathrooms": 2,
+      "finishing": "full",
+      "furnishing": "unfurnished",
+      "listingType": "sale",
+      "price": 10278410,
+      "contactPhone": "01200092764",
+      "imageUrls": [
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-1.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-2.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-3.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-4.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-5.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-6.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-7.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-8.jpeg"
+      ],
+      "tags": [
+        "prime"
+      ],
+      "createdAt": "2026-04-12T22:00:02.681Z",
+      "updatedAt": "2026-04-12T22:00:02.681Z"
+    },
+    {
+      "slug": "desktop-sale-19-hacienda-west-chalet",
+      "locationSlug": "north-coast",
+      "propertyType": "chalet",
+      "bedrooms": 2,
+      "coastalVillage": "hacienda-west",
+      "description": "Hacienda West - Mastic\nGround floor\nPrime Location\nArea 100 m\nGarden 35 m\n2 Bedrooms Master\n3 Bathrooms\nKitchen\nReception\nFully Finished\nDelivery 2027\nNext Installment 8-2027\nD.p 6,200,000\nInstallments 4,100,000\nTotal 10,300,000",
+      "size": 100,
+      "bathrooms": 3,
+      "finishing": "full",
+      "furnishing": "unfurnished",
+      "listingType": "sale",
+      "price": 10300000,
+      "contactPhone": "01091096255",
+      "imageUrls": [
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-1.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-2.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-3.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-4.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-5.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-6.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-7.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-8.jpeg"
+      ],
+      "tags": [
+        "prime"
+      ],
+      "createdAt": "2026-04-12T22:00:02.681Z",
+      "updatedAt": "2026-04-12T22:00:02.681Z"
+    },
+    {
+      "slug": "desktop-sale-20-hacienda-bay-chalet",
+      "locationSlug": "north-coast",
+      "propertyType": "chalet",
+      "bedrooms": 4,
+      "coastalVillage": "hacienda-bay",
+      "description": "Under market price\nPrime location\nSenior chalet for sale @hacienda bay north cost\n2nd row golf\nFirst floor with roof\nBUA: 220\nRoof :90\nConsists of\nReception\nKitchen\nBedrooms: 4\nMaster bedrooms 2\nBathroom: 3\nNo furnished\nFully Finished\nA/C\nPrice : 12.500.000",
+      "size": 220,
+      "bathrooms": 2,
+      "finishing": "full",
+      "furnishing": "furnished",
+      "listingType": "sale",
+      "price": 12500000,
+      "contactPhone": "01228397313",
+      "imageUrls": [
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-1.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-2.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-3.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-4.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-5.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-6.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-7.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-8.jpeg"
+      ],
+      "tags": [
+        "prime",
+        "underMarket"
+      ],
+      "createdAt": "2026-04-12T22:00:02.681Z",
+      "updatedAt": "2026-04-12T22:00:02.681Z"
+    },
+    {
+      "slug": "desktop-sale-21-hacienda-bay-chalet",
+      "locationSlug": "north-coast",
+      "propertyType": "chalet",
+      "bedrooms": 4,
+      "coastalVillage": "hacienda-bay",
+      "description": "Under market price\nPrime location\nSenior chalet for sale @hacienda bay north cost\n2nd row golf\nFirst floor with roof\nBUA: 220\nRoof :90\nConsists of\nReception\nKitchen\nBedrooms: 4\nMaster bedrooms 2\nBathroom: 3\nNo furnished\nFully Finished\nA/C\nPrice : 12.000.000",
+      "size": 220,
+      "bathrooms": 2,
+      "finishing": "full",
+      "furnishing": "furnished",
+      "listingType": "sale",
+      "price": 12000000,
+      "contactPhone": "01228397313",
+      "imageUrls": [
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-1.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-2.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-3.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-4.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-5.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-6.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-7.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-8.jpeg"
+      ],
+      "tags": [
+        "prime",
+        "underMarket"
+      ],
+      "createdAt": "2026-04-12T22:00:02.681Z",
+      "updatedAt": "2026-04-12T22:00:02.681Z"
+    },
+    {
+      "slug": "desktop-sale-22-hacienda-bay-chalet",
+      "locationSlug": "north-coast",
+      "propertyType": "chalet",
+      "bedrooms": 3,
+      "coastalVillage": "hacienda-bay",
+      "description": "Junior chalet for sale @hacienda bay north cost\nSecond row golf ⛳\nGround with Garden\nBUA: 175\nGarden :120m\nConsists of:>\nReception\nKitchen\nBedrooms: 3\nMaster bedrooms 2\nBathroom: 3\nFully furnished\nFully Finished\nPrice : 10.750.000",
+      "size": 175,
+      "bathrooms": 2,
+      "finishing": "full",
+      "furnishing": "furnished",
+      "listingType": "sale",
+      "price": 10750000,
+      "contactPhone": "01091096255",
+      "imageUrls": [
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-1.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-2.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-3.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-4.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-5.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-6.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-7.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-8.jpeg"
+      ],
+      "tags": [
+        "prime"
+      ],
+      "createdAt": "2026-04-12T22:00:02.681Z",
+      "updatedAt": "2026-04-12T22:00:02.681Z"
+    },
+    {
+      "slug": "desktop-sale-23-amwaj-chalet",
+      "locationSlug": "north-coast",
+      "propertyType": "chalet",
+      "bedrooms": 3,
+      "coastalVillage": "amwaj",
+      "description": "اقل من سعر السوق لسرعه البيع🏄🏊🤽\nللبيع شاليه دور اول  مميز  فى أمواچ_الساحل الشمالي 🏡🌊🌊\nمساحه 146 م\n3نوم\n2حمام\nريسبشن\nمطبخ\nللبيع يشمل الفرش والاجهزة\nالسعر9.000.000",
+      "size": 146,
+      "bathrooms": 2,
+      "finishing": "full",
+      "furnishing": "furnished",
+      "listingType": "sale",
+      "price": 9000000,
+      "contactPhone": "01286394219",
+      "imageUrls": [
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-1.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-2.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-3.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-4.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-5.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-6.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-7.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-8.jpeg"
+      ],
+      "tags": [
+        "prime",
+        "underMarket"
+      ],
+      "createdAt": "2026-04-12T22:00:02.681Z",
+      "updatedAt": "2026-04-12T22:00:02.681Z"
+    },
+    {
+      "slug": "desktop-sale-24-amwaj-chalet",
+      "locationSlug": "north-coast",
+      "propertyType": "chalet",
+      "bedrooms": 2,
+      "coastalVillage": "amwaj",
+      "description": "اقل من سعر السوق لسرعه البيع🏄🏊🤽\nللبيع شاليه بينتهاوس  مميز  فى أمواچ_الساحل الشمالي 🏡🌊🌊\nمساحه 115 م\n2نوم\n2حمام\nريسبشن\nمطبخ\nروف\nللبيع يشمل الفرش والاجهزة\nالسعر8.400.000",
+      "size": 115,
+      "bathrooms": 2,
+      "finishing": "full",
+      "furnishing": "furnished",
+      "listingType": "sale",
+      "price": 8400000,
+      "contactPhone": "01286394219",
+      "imageUrls": [
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-1.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-2.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-3.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-4.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-5.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-6.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-7.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-8.jpeg"
+      ],
+      "tags": [
+        "prime",
+        "underMarket"
+      ],
+      "createdAt": "2026-04-12T22:00:02.681Z",
+      "updatedAt": "2026-04-12T22:00:02.681Z"
+    },
+    {
+      "slug": "desktop-sale-25-hacienda-west-chalet",
+      "locationSlug": "north-coast",
+      "propertyType": "chalet",
+      "bedrooms": 2,
+      "coastalVillage": "hacienda-west",
+      "description": "CHALET & for sale @ hacienda west\nHazel phase\n2nd floor\nB.U.A: 92m\nTerrace: 15m\nConsists of\n2 bedrooms\n2 bathrooms\nReception & Dining\nKitchen\nFully Finished\nReady to move\nTotal price Chalet: 9.630.000\nDownpayment: 8.230.000\nRemaining: 1,400.000\nQ: 73.750\n+ Maintenance’s fully paid",
+      "size": 92,
+      "bathrooms": 2,
+      "finishing": "full",
+      "furnishing": "unfurnished",
+      "listingType": "sale",
+      "price": 9630000,
+      "contactPhone": "01228397313",
+      "imageUrls": [
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-1.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-2.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-3.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-4.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-5.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-6.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-7.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-8.jpeg"
+      ],
+      "tags": [
+        "prime"
+      ],
+      "createdAt": "2026-04-12T22:00:02.682Z",
+      "updatedAt": "2026-04-12T22:00:02.682Z"
+    },
+    {
+      "slug": "desktop-sale-26-amwaj-chalet",
+      "locationSlug": "north-coast",
+      "propertyType": "chalet",
+      "bedrooms": 2,
+      "coastalVillage": "amwaj",
+      "description": "اقل من سعر السوق لسرعه البيع🏄🏊🤽\nللبيع شاليه دور اول  مميز  فى أمواچ_الساحل الشمالي 🏡🌊🌊\nمساحه 120 م\n2نوم\n2حمام\nريسبشن\nمطبخ\nللبيع يشمل الفرش والاجهزة\nالسعر9.000.000",
+      "size": 120,
+      "bathrooms": 2,
+      "finishing": "full",
+      "furnishing": "furnished",
+      "listingType": "sale",
+      "price": 9000000,
+      "contactPhone": "01286394219",
+      "imageUrls": [
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-1.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-2.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-3.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-4.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-5.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-6.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-7.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-8.jpeg"
+      ],
+      "tags": [
+        "prime",
+        "underMarket"
+      ],
+      "createdAt": "2026-04-12T22:00:02.682Z",
+      "updatedAt": "2026-04-12T22:00:02.682Z"
+    },
+    {
+      "slug": "desktop-sale-27-amwaj-chalet",
+      "locationSlug": "north-coast",
+      "propertyType": "chalet",
+      "bedrooms": 3,
+      "coastalVillage": "amwaj",
+      "description": "اقل من سعر السوق لسرعه البيع🏄🏊🤽\nللبيع شاليه دور اول  مميز  فى أمواچ_الساحل الشمالي 🏡🌊🌊\nمساحه 146 م\n3نوم\n2حمام\nريسبشن\nمطبخ\nللبيع يشمل الفرش والاجهزة\nالسعر11.000.000",
+      "size": 146,
+      "bathrooms": 2,
+      "finishing": "full",
+      "furnishing": "furnished",
+      "listingType": "sale",
+      "price": 11000000,
+      "contactPhone": "01286394219",
+      "imageUrls": [
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-1.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-2.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-3.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-4.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-5.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-6.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-7.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-8.jpeg"
+      ],
+      "tags": [
+        "prime",
+        "underMarket"
+      ],
+      "createdAt": "2026-04-12T22:00:02.682Z",
+      "updatedAt": "2026-04-12T22:00:02.682Z"
+    },
+    {
+      "slug": "desktop-sale-28-amwaj-chalet",
+      "locationSlug": "north-coast",
+      "propertyType": "chalet",
+      "bedrooms": 2,
+      "coastalVillage": "amwaj",
+      "description": "اقل من سعر السوق لسرعه البيع🏄🏊🤽\nللبيع شاليه دور اول  مميز  فى أمواچ_الساحل الشمالي 🏡🌊🌊\nمساحه 120 م\n2نوم\n2حمام\nريسبشن\nمطبخ\nللبيع يشمل الفرش والاجهزة\nالسعر9.000.000",
+      "size": 120,
+      "bathrooms": 2,
+      "finishing": "full",
+      "furnishing": "furnished",
+      "listingType": "sale",
+      "price": 9000000,
+      "contactPhone": "01286394219",
+      "imageUrls": [
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-1.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-2.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-3.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-4.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-5.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-6.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-7.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-8.jpeg"
+      ],
+      "tags": [
+        "prime",
+        "underMarket"
+      ],
+      "createdAt": "2026-04-12T22:00:02.682Z",
+      "updatedAt": "2026-04-12T22:00:02.682Z"
+    },
+    {
+      "slug": "desktop-sale-29-hacienda-west-chalet",
+      "locationSlug": "north-coast",
+      "propertyType": "chalet",
+      "bedrooms": 3,
+      "coastalVillage": "hacienda-west",
+      "description": "Prime location\nHazel Chalet - for sale @ hacienda west\nGround with garden\nBUA: 150m\nGarden: 65m\nConsists of\nReception & Dining\nKitchen\n3 bedroom Master\n4 bathrooms\nFully finished\nReady to move\nMaintenance paid\nDown payment: 11.000.000\nInstallment: 1.509.000",
+      "size": 150,
+      "bathrooms": 4,
+      "finishing": "full",
+      "furnishing": "unfurnished",
+      "listingType": "sale",
+      "price": 11000000,
+      "contactPhone": "01228397313",
+      "imageUrls": [
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-1.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-2.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-3.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-4.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-5.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-6.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-7.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-8.jpeg"
+      ],
+      "tags": [
+        "prime"
+      ],
+      "createdAt": "2026-04-12T22:00:02.682Z",
+      "updatedAt": "2026-04-12T22:00:02.682Z"
+    },
+    {
+      "slug": "desktop-sale-30-marassi-chalet",
+      "locationSlug": "north-coast",
+      "propertyType": "chalet",
+      "bedrooms": 2,
+      "coastalVillage": "marassi",
+      "description": "Marassi Marina Views\nChalet For Sale\nGround With Garden\nView Lagoon\nArea 131 m\nGarden 65 m\n2 Bedrooms - 1 Master\n2 Bathrooms\nKitchen\nReception\nFully A C\nD.p 23,500,000\nInstallments 3,500,000\nTotal 27,000,000",
+      "size": 131,
+      "bathrooms": 2,
+      "finishing": "full",
+      "furnishing": "unfurnished",
+      "listingType": "sale",
+      "price": 27000000,
+      "contactPhone": "01200092764",
+      "imageUrls": [
+        "/uploads/properties/desktop-sale/units/4/desktop-sale-folder-4-1.jpeg",
+        "/uploads/properties/desktop-sale/units/4/desktop-sale-folder-4-2.jpeg",
+        "/uploads/properties/desktop-sale/units/4/desktop-sale-folder-4-3.jpeg",
+        "/uploads/properties/desktop-sale/units/4/desktop-sale-folder-4-4.jpeg",
+        "/uploads/properties/desktop-sale/units/4/desktop-sale-folder-4-5.jpeg",
+        "/uploads/properties/desktop-sale/units/4/desktop-sale-folder-4-6.jpeg"
+      ],
+      "tags": [
+        "prime"
+      ],
+      "createdAt": "2026-04-12T22:00:02.682Z",
+      "updatedAt": "2026-04-12T22:00:02.682Z"
     },
     {
       "locationSlug": "north-coast",
@@ -53,34 +861,6 @@
       ],
       "createdAt": "2026-04-11T19:43:34.301Z",
       "updatedAt": "2026-04-11T19:43:34.301Z"
-    },
-    {
-      "locationSlug": "north-coast",
-      "propertyType": "chalet",
-      "bedrooms": 3,
-      "coastalVillage": "hacienda-bay",
-      "description": "🏖️ Senior Chalet for Sale at Hacienda Bay North coast\r\n🏖️ First Row1 ⛳ golF and lake\r\n🏖️ Prime location\r\n🏖️ Ground floor with Garden \r\n🏖️ Area : 220 m\r\n🏖️ Garden area : 320 m\r\n🏖️ Reception / Kitchen \r\n🏖️ Bedrooms 3 ( 2 masters)\r\n🏖️ Bathrooms 3\r\n🏖️ Driver room with bathroom / Nany room with bathroom\r\n🏖️ Fully Finished / Fully furnished \r\n🏖️ slot parking 2",
-      "size": 220,
-      "bathrooms": 3,
-      "finishing": "full",
-      "furnishing": "furnished",
-      "listingType": "sale",
-      "price": 14500000,
-      "contactPhone": "01286490599",
-      "imageUrls": [
-        "/uploads/properties/1775934067208-5794abc0-c3d1-4b3d-9736-976c4921a148.jpg",
-        "/uploads/properties/1775934067208-72237d22-31fa-4ef3-961f-f6f5926672ae.jpg",
-        "/uploads/properties/1775934067208-3b31b634-58e4-47df-9552-9b9e5ba6cc4e.jpg",
-        "/uploads/properties/1775934067208-0e123078-3806-4c47-9427-adba316b4526.jpg",
-        "/uploads/properties/1775934067208-0db08318-b1cf-4677-a844-91d0d8bba36c.jpg",
-        "/uploads/properties/1775934067208-8e837f9c-1cba-4209-89b4-e651dd0e9ce4.jpg"
-      ],
-      "slug": "managed-north-coast-chalet-hacienda-bay-sale-3br",
-      "tags": [
-        "prime"
-      ],
-      "createdAt": "2026-04-11T19:01:07.212Z",
-      "updatedAt": "2026-04-11T19:01:07.212Z"
     },
     {
       "locationSlug": "north-coast",

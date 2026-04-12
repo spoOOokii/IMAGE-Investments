@@ -1,9 +1,10 @@
-import type { Locale } from "@/lib/i18n";
+﻿import type { Locale } from "@/lib/i18n";
 
 type PropertyInquiryMessageOptions = {
   locale: Locale;
   propertyTitle: string;
   propertyType?: string;
+  propertyDetails?: string[];
   fullName?: string;
   phone?: string;
   message?: string;
@@ -51,6 +52,7 @@ export function buildPropertyInquiryMessage({
   locale,
   propertyTitle,
   propertyType,
+  propertyDetails,
   fullName,
   phone,
   message,
@@ -61,6 +63,7 @@ export function buildPropertyInquiryMessage({
       "",
       propertyType ? `نوع الوحدة: ${propertyType}` : undefined,
       `اسم الوحدة: ${propertyTitle}`,
+      ...(propertyDetails ?? []),
       fullName ? `الاسم: ${fullName}` : undefined,
       phone ? `رقم الهاتف: ${phone}` : undefined,
       message ? `الرسالة: ${message}` : undefined,
@@ -72,6 +75,7 @@ export function buildPropertyInquiryMessage({
     "",
     propertyType ? `Property type: ${propertyType}` : undefined,
     `Property title: ${propertyTitle}`,
+    ...(propertyDetails ?? []),
     fullName ? `Name: ${fullName}` : undefined,
     phone ? `Phone: ${phone}` : undefined,
     message ? `Message: ${message}` : undefined,

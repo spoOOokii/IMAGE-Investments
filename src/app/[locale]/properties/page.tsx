@@ -52,13 +52,13 @@ export default async function PropertiesPage({
         eyebrow={locale === "ar" ? "العقارات" : "Properties"}
         title={
           locale === "ar"
-            ? "تصفح عقارات مصرية مميزة بفلاتر متقدمة"
-            : "Browse premium Egyptian property inventory with advanced filters"
+            ? "اكتشف وحدات مختارة تناسب أسلوب حياتك"
+            : "Discover curated properties that match your lifestyle"
         }
         description={
           locale === "ar"
-            ? "اعرض الوحدات حسب الموقع، النوع، البيع أو الإيجار، وعدد الغرف."
-            : "Filter listings by location, type, sale or rent, and bedroom count."
+            ? "استعرض العقارات المتاحة للبيع والإيجار حسب المنطقة، نوع الوحدة، وعدد الغرف بكل سهولة."
+            : "Browse sale and rental listings by area, property type, and bedroom count with ease."
         }
       />
 

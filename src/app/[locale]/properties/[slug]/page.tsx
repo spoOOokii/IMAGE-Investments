@@ -74,20 +74,54 @@ export default async function PropertyDetailsPage({
     locale,
   );
   const propertyContactPhone = property.contactPhone ?? companyProfile.phoneDisplay;
+  const propertyDescription = pickLocale(property.description, locale).trim();
+  const isRentListing = property.listingType === "rent";
+  const isFurnished =
+    pickLocale(property.summary, "ar").includes("مفروش") ||
+    pickLocale(property.summary, "en").toLowerCase().includes("furnished");
+  const propertyWhatsAppDetails = [
+    locale === "ar"
+      ? `نوع العرض: ${isRentListing ? "للإيجار" : "للبيع"}`
+      : `Listing type: ${isRentListing ? "For Rent" : "For Sale"}`,
+    locale === "ar"
+      ? `المشروع: ${pickLocale(property.compound, locale)}`
+      : `Compound: ${pickLocale(property.compound, locale)}`,
+    locale === "ar"
+      ? `الموقع: ${pickLocale(property.locationName, locale)}`
+      : `Location: ${pickLocale(property.locationName, locale)}`,
+    locale === "ar"
+      ? `المساحة: ${property.size} متر`
+      : `Size: ${property.size} sqm`,
+    locale === "ar"
+      ? `غرف النوم: ${property.bedrooms}`
+      : `Bedrooms: ${property.bedrooms}`,
+    locale === "ar"
+      ? `الحمامات: ${property.bathrooms}`
+      : `Bathrooms: ${property.bathrooms}`,
+    locale === "ar"
+      ? `التشطيب: ${pickLocale(property.finishing, locale)}`
+      : `Finishing: ${pickLocale(property.finishing, locale)}`,
+    locale === "ar"
+      ? `الفرش: ${isFurnished ? "مفروش" : "غير مفروش"}`
+      : `Furnishing: ${isFurnished ? "Furnished" : "Unfurnished"}`,
+    locale === "ar"
+      ? `${isRentListing ? "الحجز والاستعلام" : "السعر"}: ${
+          isRentListing ? "تواصل معنا" : pickLocale(property.priceLabel, locale)
+        }`
+      : `${isRentListing ? "Booking & Inquiry" : "Price"}: ${
+          isRentListing ? "Contact us" : pickLocale(property.priceLabel, locale)
+        }`,
+  ];
   const propertyWhatsAppHref = buildWhatsAppHref(
     propertyContactPhone,
     buildPropertyInquiryMessage({
       locale,
       propertyTitle: pickLocale(property.title, locale),
       propertyType: propertyTypeLabel,
+      propertyDetails: propertyWhatsAppDetails,
     }),
   );
   const propertyPhoneHref = buildPhoneHref(propertyContactPhone);
-  const propertyDescription = pickLocale(property.description, locale).trim();
-  const isRentListing = property.listingType === "rent";
-  const isFurnished =
-    pickLocale(property.summary, "ar").includes("مفروش") ||
-    pickLocale(property.summary, "en").toLowerCase().includes("furnished");
   const surroundingItems = [
     {
       label: locale === "ar" ? "نوع العرض" : "Listing Type",
@@ -296,6 +330,7 @@ export default async function PropertyDetailsPage({
               propertySlug={property.slug}
               propertyTitle={pickLocale(property.title, locale)}
               propertyTypeLabel={propertyTypeLabel}
+              propertyDetails={propertyWhatsAppDetails}
               whatsappPhoneNumber={propertyContactPhone}
               title={
                 locale === "ar"
