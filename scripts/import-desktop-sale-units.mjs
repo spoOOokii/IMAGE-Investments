@@ -1,8 +1,15 @@
-import { promises as fs } from "node:fs";
+﻿import { promises as fs } from "node:fs";
 import path from "node:path";
 
 const PROJECT_ROOT = process.cwd();
-const DESKTOP_SALE_DIR = path.join("C:", "Users", "used", "OneDrive", "Desktop", "بيع");
+const DESKTOP_SALE_DIR = path.join(
+  "C:",
+  "Users",
+  "used",
+  "OneDrive",
+  "Desktop",
+  "\u0628\u064a\u0639",
+);
 const STORE_PATH = path.join(PROJECT_ROOT, "data", "property-admin-store.json");
 const SOURCE_PATH = path.join(PROJECT_ROOT, "data", "desktop-sale-source.json");
 const UPLOAD_ROOT = path.join(
@@ -16,9 +23,9 @@ const FALLBACK_PHONE = "01091096255";
 const DEFAULT_TAGS = ["prime"];
 
 const villageFolderMap = {
-  amwaj: "امواج",
-  "hacienda-bay": "هايسندا باي",
-  "hacienda-west": "هايسندا ويست",
+  amwaj: "\u0627\u0645\u0648\u0627\u062c",
+  "hacienda-bay": "\u0647\u0627\u064a\u0633\u0646\u062f\u0627 \u0628\u0627\u064a",
+  "hacienda-west": "\u0647\u0627\u064a\u0633\u0646\u062f\u0627 \u0648\u064a\u0633\u062a",
 };
 
 function normalizeArabicDigits(value) {
@@ -52,31 +59,31 @@ function parsePhone(content) {
 function detectVillage(content, fileName) {
   const haystack = `${content}\n${fileName}`.toLowerCase();
 
-  if (haystack.includes("marassi") || haystack.includes("مراسي")) {
+  if (haystack.includes("marassi") || haystack.includes("\u0645\u0631\u0627\u0633\u064a")) {
     return "marassi";
   }
 
   if (
     haystack.includes("hacienda west") ||
-    haystack.includes("هاسيندا ويست") ||
-    haystack.includes("هايسندا ويست")
+    haystack.includes("\u0647\u0627\u0633\u064a\u0646\u062f\u0627 \u0648\u064a\u0633\u062a") ||
+    haystack.includes("\u0647\u0627\u064a\u0633\u0646\u062f\u0627 \u0648\u064a\u0633\u062a")
   ) {
     return "hacienda-west";
   }
 
   if (
     haystack.includes("hacienda bay") ||
-    haystack.includes("هاسيندا باي") ||
-    haystack.includes("هايسندا باي")
+    haystack.includes("\u0647\u0627\u0633\u064a\u0646\u062f\u0627 \u0628\u0627\u064a") ||
+    haystack.includes("\u0647\u0627\u064a\u0633\u0646\u062f\u0627 \u0628\u0627\u064a")
   ) {
     return "hacienda-bay";
   }
 
   if (
     haystack.includes("amwaj") ||
-    haystack.includes("أمواج") ||
-    haystack.includes("امواج") ||
-    haystack.includes("أمواچ")
+    haystack.includes("\u0623\u0645\u0648\u0627\u062c") ||
+    haystack.includes("\u0627\u0645\u0648\u0627\u062c") ||
+    haystack.includes("\u0623\u0645\u0648\u0627\u0686")
   ) {
     return "amwaj";
   }
@@ -87,20 +94,28 @@ function detectVillage(content, fileName) {
 function detectPropertyType(content, fileName) {
   const haystack = `${content}\n${fileName}`.toLowerCase();
 
-  if (haystack.includes("villa") || haystack.includes("فيلا")) {
+  if (haystack.includes("villa") || haystack.includes("\u0641\u064a\u0644\u0627")) {
     return "villa";
   }
 
   if (
     haystack.includes("penthouse") ||
-    haystack.includes("بنتهاوس") ||
-    haystack.includes("بينتهاس")
+    haystack.includes("\u0628\u0646\u062a\u0647\u0627\u0648\u0633") ||
+    haystack.includes("\u0628\u064a\u0646\u062a\u0647\u0627\u0633")
   ) {
     return "penthouse";
   }
 
-  if (haystack.includes("duplex") || haystack.includes("دوبلكس")) {
+  if (haystack.includes("duplex") || haystack.includes("\u062f\u0648\u0628\u0644\u0643\u0633")) {
     return "duplex";
+  }
+
+  if (haystack.includes("twin house") || haystack.includes("twinhouse")) {
+    return "twinhouse";
+  }
+
+  if (haystack.includes("town house") || haystack.includes("townhouse")) {
+    return "townhouse";
   }
 
   return "chalet";
@@ -150,8 +165,7 @@ function parseSize(content) {
   const normalized = normalizeArabicDigits(content);
   const patterns = [
     /b\.?\s*u\.?\s*a\.?\s*[:\-]?\s*([\d.,]+)/i,
-    /(?:area|مساحه|مساحة)\s*[:\-]?\s*([\d.,]+)/i,
-    /land area\s*[:\-]?\s*([\d.,]+)/i,
+    /(?:area|land area|مساحه|مساحة)\s*[:\-]?\s*([\d.,]+)/i,
   ];
 
   for (const pattern of patterns) {
@@ -174,6 +188,7 @@ function parsePrice(content) {
   const patterns = [
     /(?:price|السعر)\s*[:\-]?\s*([\d.,]+)/i,
     /total\s*[:\-]?\s*([\d.,]+)/i,
+    /d\.p\s*[:\-]?\s*([\d.,]+)/i,
     /([\d][\d.,]{5,})/,
   ];
 
@@ -198,7 +213,7 @@ function detectFinishing(content) {
   if (
     haystack.includes("semi finished") ||
     haystack.includes("semi-finished") ||
-    haystack.includes("نصف تشطيب")
+    haystack.includes("\u0646\u0635\u0641 \u062a\u0634\u0637\u064a\u0628")
   ) {
     return "semi";
   }
@@ -206,18 +221,9 @@ function detectFinishing(content) {
   if (
     haystack.includes("unfinished") ||
     haystack.includes("core and shell") ||
-    haystack.includes("عظم")
+    haystack.includes("\u0639\u0638\u0645")
   ) {
     return "unfinished";
-  }
-
-  if (
-    haystack.includes("fully finished") ||
-    haystack.includes("full finished") ||
-    haystack.includes("تشطيب كامل") ||
-    haystack.includes("ready to move")
-  ) {
-    return "full";
   }
 
   return "full";
@@ -229,7 +235,7 @@ function detectFurnishing(content) {
   if (
     haystack.includes("semi furnished") ||
     haystack.includes("semi-furnished") ||
-    haystack.includes("نصف مفروش")
+    haystack.includes("\u0646\u0635\u0641 \u0645\u0641\u0631\u0648\u0634")
   ) {
     return "semi-furnished";
   }
@@ -237,8 +243,8 @@ function detectFurnishing(content) {
   if (
     haystack.includes("fully furnished") ||
     haystack.includes("furnished") ||
-    haystack.includes("يشمل الفرش") ||
-    haystack.includes("مفروش")
+    haystack.includes("\u064a\u0634\u0645\u0644 \u0627\u0644\u0641\u0631\u0634") ||
+    haystack.includes("\u0645\u0641\u0631\u0648\u0634")
   ) {
     return "furnished";
   }
@@ -250,11 +256,18 @@ function buildTags(content) {
   const haystack = content.toLowerCase();
   const tags = new Set(DEFAULT_TAGS);
 
-  if (haystack.includes("under market") || haystack.includes("اقل من سعر السوق")) {
+  if (
+    haystack.includes("under market") ||
+    haystack.includes("\u0627\u0642\u0644 \u0645\u0646 \u0633\u0639\u0631 \u0627\u0644\u0633\u0648\u0642")
+  ) {
     tags.add("underMarket");
   }
 
-  if (haystack.includes("prime location") || haystack.includes("مميز")) {
+  if (
+    haystack.includes("prime location") ||
+    haystack.includes("\u0645\u0645\u064a\u0632") ||
+    haystack.includes("\u0644\u0642\u0637\u0647")
+  ) {
     tags.add("prime");
   }
 
@@ -291,10 +304,7 @@ async function writeJson(filePath, value) {
 async function listImageFiles(dirPath) {
   const items = await fs.readdir(dirPath, { withFileTypes: true });
   return items
-    .filter(
-      (item) =>
-        item.isFile() && /\.(jpg|jpeg|png|webp)$/i.test(item.name),
-    )
+    .filter((item) => item.isFile() && /\.(jpg|jpeg|png|webp)$/i.test(item.name))
     .map((item) => path.join(dirPath, item.name))
     .sort((first, second) => first.localeCompare(second));
 }
@@ -315,18 +325,36 @@ async function copyImageSet(sourceFiles, targetDir, filePrefix) {
     const targetPath = path.join(targetDir, targetName);
     await fs.copyFile(sourcePath, targetPath);
     copied.push(
-      `/${path
-        .relative(path.join(PROJECT_ROOT, "public"), targetPath)
-        .replace(/\\/g, "/")}`,
+      `/${path.relative(path.join(PROJECT_ROOT, "public"), targetPath).replace(/\\/g, "/")}`,
     );
   }
 
   return copied;
 }
 
+function rotateArray(items, offset) {
+  if (!items.length) {
+    return [];
+  }
+
+  const normalizedOffset = ((offset % items.length) + items.length) % items.length;
+  return [...items.slice(normalizedOffset), ...items.slice(0, normalizedOffset)];
+}
+
+function buildVillageVariant(urls, folderNumber, limit = 8) {
+  if (!urls.length) {
+    return [];
+  }
+
+  return rotateArray(urls, folderNumber - 1).slice(0, Math.min(limit, urls.length));
+}
+
 function buildMarassiGallery(store) {
   const marassiRecord = store.managedProperties.find(
-    (record) => record.coastalVillage === "marassi" && Array.isArray(record.imageUrls),
+    (record) =>
+      record.coastalVillage === "marassi" &&
+      Array.isArray(record.imageUrls) &&
+      record.imageUrls.length > 0,
   );
 
   return marassiRecord?.imageUrls?.length ? marassiRecord.imageUrls : [];
@@ -351,7 +379,7 @@ async function buildVillageGalleryCache() {
 
   for (const [villageSlug, folderName] of Object.entries(villageFolderMap)) {
     const sourceDir = path.join(DESKTOP_SALE_DIR, folderName);
-    const sourceFiles = (await listImageFiles(sourceDir)).slice(0, 8);
+    const sourceFiles = await listImageFiles(sourceDir);
     const targetDir = path.join(UPLOAD_ROOT, "villages", villageSlug);
     const urls = await copyImageSet(
       sourceFiles,
@@ -367,7 +395,9 @@ async function buildVillageGalleryCache() {
 async function main() {
   const store = await readJson(STORE_PATH);
   const sourceRecords = await readJson(SOURCE_PATH);
+
   await fs.rm(UPLOAD_ROOT, { recursive: true, force: true });
+
   const villageGalleryCache = await buildVillageGalleryCache();
   const marassiGallery = buildMarassiGallery(store);
   const importedRecords = [];
@@ -386,6 +416,8 @@ async function main() {
     const ownImages = Array.isArray(sourceRecord.ownImages)
       ? sourceRecord.ownImages.map((item) => String(item))
       : [];
+    const folderNumber = Number(folder) || 1;
+
     let imageUrls = [];
 
     if (ownImages.length) {
@@ -397,7 +429,7 @@ async function main() {
     } else if (village === "marassi" && marassiGallery.length) {
       imageUrls = marassiGallery;
     } else {
-      imageUrls = villageGalleryCache.get(village) ?? [];
+      imageUrls = buildVillageVariant(villageGalleryCache.get(village) ?? [], folderNumber);
     }
 
     const now = new Date().toISOString();

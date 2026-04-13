@@ -27,8 +27,8 @@
         "prime",
         "underMarket"
       ],
-      "createdAt": "2026-04-12T22:00:02.626Z",
-      "updatedAt": "2026-04-12T22:00:02.626Z"
+      "createdAt": "2026-04-13T02:45:31.168Z",
+      "updatedAt": "2026-04-13T02:45:31.168Z"
     },
     {
       "slug": "desktop-sale-2-hacienda-bay-chalet",
@@ -55,8 +55,8 @@
       "tags": [
         "prime"
       ],
-      "createdAt": "2026-04-12T22:00:02.641Z",
-      "updatedAt": "2026-04-12T22:00:02.641Z"
+      "createdAt": "2026-04-13T02:45:31.188Z",
+      "updatedAt": "2026-04-13T02:45:31.188Z"
     },
     {
       "slug": "desktop-sale-3-hacienda-bay-villa",
@@ -84,8 +84,8 @@
         "prime",
         "underMarket"
       ],
-      "createdAt": "2026-04-12T22:00:02.651Z",
-      "updatedAt": "2026-04-12T22:00:02.651Z"
+      "createdAt": "2026-04-13T02:45:31.215Z",
+      "updatedAt": "2026-04-13T02:45:31.215Z"
     },
     {
       "slug": "desktop-sale-4-marassi-chalet",
@@ -112,8 +112,8 @@
       "tags": [
         "prime"
       ],
-      "createdAt": "2026-04-12T22:00:02.663Z",
-      "updatedAt": "2026-04-12T22:00:02.663Z"
+      "createdAt": "2026-04-13T02:45:31.249Z",
+      "updatedAt": "2026-04-13T02:45:31.249Z"
     },
     {
       "slug": "desktop-sale-5-hacienda-bay-chalet",
@@ -138,8 +138,8 @@
       "tags": [
         "prime"
       ],
-      "createdAt": "2026-04-12T22:00:02.670Z",
-      "updatedAt": "2026-04-12T22:00:02.670Z"
+      "createdAt": "2026-04-13T02:45:31.270Z",
+      "updatedAt": "2026-04-13T02:45:31.270Z"
     },
     {
       "slug": "desktop-sale-6-marassi-chalet",
@@ -165,8 +165,86 @@
       "tags": [
         "prime"
       ],
-      "createdAt": "2026-04-12T22:00:02.680Z",
-      "updatedAt": "2026-04-12T22:00:02.680Z"
+      "createdAt": "2026-04-13T02:45:31.301Z",
+      "updatedAt": "2026-04-13T02:45:31.301Z"
+    },
+    {
+      "slug": "desktop-sale-7-amwaj-penthouse",
+      "locationSlug": "north-coast",
+      "propertyType": "penthouse",
+      "bedrooms": 3,
+      "coastalVillage": "amwaj",
+      "description": "اقل من سعر السوق لسرعه البيع🏄🏊🤽\nللبيع penthouse مميز  فى أمواچ_الساحل الشمالي 🏡🌊🌊\nمساحه 164 م\n٣نوم\n٢حمام\nريسبشن\nمطبخ\nروف 🌈\nللبيع يشمل الفرش والاجهزة\nالسعر10.600.000",
+      "size": 164,
+      "bathrooms": 2,
+      "finishing": "full",
+      "furnishing": "furnished",
+      "listingType": "sale",
+      "price": 10600000,
+      "contactPhone": "01286394219",
+      "imageUrls": [
+        "/uploads/properties/desktop-sale/units/7/desktop-sale-folder-7-1.jpeg",
+        "/uploads/properties/desktop-sale/units/7/desktop-sale-folder-7-2.jpeg",
+        "/uploads/properties/desktop-sale/units/7/desktop-sale-folder-7-3.jpeg"
+      ],
+      "tags": [
+        "prime",
+        "underMarket"
+      ],
+      "createdAt": "2026-04-13T02:45:31.315Z",
+      "updatedAt": "2026-04-13T02:45:31.315Z"
+    },
+    {
+      "slug": "desktop-sale-8-marassi-twinhouse",
+      "locationSlug": "north-coast",
+      "propertyType": "twinhouse",
+      "bedrooms": 4,
+      "coastalVillage": "marassi",
+      "description": "Marassi Blanca\nTwin House For Sale\nDirect Golf\nPrivate Pool\nArea 440 m\n4 Bedroom\n4 Bathrooms\nKitchen\nReception\nMaid Room\nGarage\nPrice 53,000,000",
+      "size": 440,
+      "bathrooms": 4,
+      "finishing": "full",
+      "furnishing": "unfurnished",
+      "listingType": "sale",
+      "price": 53000000,
+      "contactPhone": "01200092764",
+      "imageUrls": [
+        "/uploads/properties/desktop-sale/units/8/desktop-sale-folder-8-1.jpeg",
+        "/uploads/properties/desktop-sale/units/8/desktop-sale-folder-8-2.jpeg",
+        "/uploads/properties/desktop-sale/units/8/desktop-sale-folder-8-3.jpeg",
+        "/uploads/properties/desktop-sale/units/8/desktop-sale-folder-8-4.jpeg",
+        "/uploads/properties/desktop-sale/units/8/desktop-sale-folder-8-5.jpeg",
+        "/uploads/properties/desktop-sale/units/8/desktop-sale-folder-8-6.jpeg",
+        "/uploads/properties/desktop-sale/units/8/desktop-sale-folder-8-7.jpeg",
+        "/uploads/properties/desktop-sale/units/8/desktop-sale-folder-8-8.jpeg",
+        "/uploads/properties/desktop-sale/units/8/desktop-sale-folder-8-9.jpeg",
+        "/uploads/properties/desktop-sale/units/8/desktop-sale-folder-8-10.jpeg",
+        "/uploads/properties/desktop-sale/units/8/desktop-sale-folder-8-11.jpeg",
+        "/uploads/properties/desktop-sale/units/8/desktop-sale-folder-8-12.jpeg",
+        "/uploads/properties/desktop-sale/units/8/desktop-sale-folder-8-13.jpeg",
+        "/uploads/properties/desktop-sale/units/8/desktop-sale-folder-8-14.jpeg",
+        "/uploads/properties/desktop-sale/units/8/desktop-sale-folder-8-15.jpeg",
+        "/uploads/properties/desktop-sale/units/8/desktop-sale-folder-8-16.jpeg",
+        "/uploads/properties/desktop-sale/units/8/desktop-sale-folder-8-17.jpeg",
+        "/uploads/properties/desktop-sale/units/8/desktop-sale-folder-8-18.jpeg",
+        "/uploads/properties/desktop-sale/units/8/desktop-sale-folder-8-19.jpeg",
+        "/uploads/properties/desktop-sale/units/8/desktop-sale-folder-8-20.jpeg",
+        "/uploads/properties/desktop-sale/units/8/desktop-sale-folder-8-21.jpeg",
+        "/uploads/properties/desktop-sale/units/8/desktop-sale-folder-8-22.jpeg",
+        "/uploads/properties/desktop-sale/units/8/desktop-sale-folder-8-23.jpeg",
+        "/uploads/properties/desktop-sale/units/8/desktop-sale-folder-8-24.jpeg",
+        "/uploads/properties/desktop-sale/units/8/desktop-sale-folder-8-25.jpeg",
+        "/uploads/properties/desktop-sale/units/8/desktop-sale-folder-8-26.jpeg",
+        "/uploads/properties/desktop-sale/units/8/desktop-sale-folder-8-27.jpeg",
+        "/uploads/properties/desktop-sale/units/8/desktop-sale-folder-8-28.jpeg",
+        "/uploads/properties/desktop-sale/units/8/desktop-sale-folder-8-29.jpeg",
+        "/uploads/properties/desktop-sale/units/8/desktop-sale-folder-8-30.jpeg"
+      ],
+      "tags": [
+        "prime"
+      ],
+      "createdAt": "2026-04-13T02:45:31.424Z",
+      "updatedAt": "2026-04-13T02:45:31.424Z"
     },
     {
       "slug": "desktop-sale-9-marassi-chalet",
@@ -193,8 +271,8 @@
       "tags": [
         "prime"
       ],
-      "createdAt": "2026-04-12T22:00:02.680Z",
-      "updatedAt": "2026-04-12T22:00:02.680Z"
+      "createdAt": "2026-04-13T02:45:31.424Z",
+      "updatedAt": "2026-04-13T02:45:31.424Z"
     },
     {
       "slug": "desktop-sale-10-hacienda-bay-villa",
@@ -211,20 +289,20 @@
       "price": 30000000,
       "contactPhone": "01228397313",
       "imageUrls": [
-        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-1.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-2.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-3.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-4.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-5.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-6.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-7.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-8.jpeg"
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-10.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-11.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-12.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-13.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-14.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-15.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-16.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-17.jpeg"
       ],
       "tags": [
         "prime"
       ],
-      "createdAt": "2026-04-12T22:00:02.680Z",
-      "updatedAt": "2026-04-12T22:00:02.680Z"
+      "createdAt": "2026-04-13T02:45:31.425Z",
+      "updatedAt": "2026-04-13T02:45:31.425Z"
     },
     {
       "slug": "desktop-sale-11-amwaj-chalet",
@@ -241,21 +319,21 @@
       "price": 10750000,
       "contactPhone": "01286394219",
       "imageUrls": [
-        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-1.jpeg",
-        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-2.jpeg",
-        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-3.jpeg",
-        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-4.jpeg",
-        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-5.jpeg",
-        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-6.jpeg",
-        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-7.jpeg",
-        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-8.jpeg"
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-11.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-12.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-13.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-14.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-15.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-16.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-17.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-18.jpeg"
       ],
       "tags": [
         "prime",
         "underMarket"
       ],
-      "createdAt": "2026-04-12T22:00:02.680Z",
-      "updatedAt": "2026-04-12T22:00:02.680Z"
+      "createdAt": "2026-04-13T02:45:31.425Z",
+      "updatedAt": "2026-04-13T02:45:31.425Z"
     },
     {
       "slug": "desktop-sale-12-amwaj-penthouse",
@@ -272,21 +350,21 @@
       "price": 9000000,
       "contactPhone": "01286394219",
       "imageUrls": [
-        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-1.jpeg",
-        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-2.jpeg",
-        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-3.jpeg",
-        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-4.jpeg",
-        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-5.jpeg",
-        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-6.jpeg",
-        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-7.jpeg",
-        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-8.jpeg"
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-12.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-13.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-14.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-15.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-16.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-17.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-18.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-19.jpeg"
       ],
       "tags": [
         "prime",
         "underMarket"
       ],
-      "createdAt": "2026-04-12T22:00:02.681Z",
-      "updatedAt": "2026-04-12T22:00:02.681Z"
+      "createdAt": "2026-04-13T02:45:31.425Z",
+      "updatedAt": "2026-04-13T02:45:31.425Z"
     },
     {
       "slug": "desktop-sale-13-hacienda-west-chalet",
@@ -303,20 +381,20 @@
       "price": 10728410,
       "contactPhone": "01200092764",
       "imageUrls": [
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-1.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-2.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-3.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-4.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-5.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-6.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-7.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-8.jpeg"
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-13.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-14.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-15.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-16.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-17.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-18.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-19.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-20.jpeg"
       ],
       "tags": [
         "prime"
       ],
-      "createdAt": "2026-04-12T22:00:02.681Z",
-      "updatedAt": "2026-04-12T22:00:02.681Z"
+      "createdAt": "2026-04-13T02:45:31.425Z",
+      "updatedAt": "2026-04-13T02:45:31.425Z"
     },
     {
       "slug": "desktop-sale-14-hacienda-west-chalet",
@@ -333,20 +411,20 @@
       "price": 9790000,
       "contactPhone": "01200092764",
       "imageUrls": [
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-1.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-2.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-3.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-4.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-5.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-6.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-7.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-8.jpeg"
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-14.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-15.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-16.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-17.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-18.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-19.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-20.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-21.jpeg"
       ],
       "tags": [
         "prime"
       ],
-      "createdAt": "2026-04-12T22:00:02.681Z",
-      "updatedAt": "2026-04-12T22:00:02.681Z"
+      "createdAt": "2026-04-13T02:45:31.425Z",
+      "updatedAt": "2026-04-13T02:45:31.425Z"
     },
     {
       "slug": "desktop-sale-15-hacienda-west-penthouse",
@@ -363,20 +441,20 @@
       "price": 8000000,
       "contactPhone": "01091096255",
       "imageUrls": [
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-1.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-2.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-3.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-4.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-5.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-6.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-7.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-8.jpeg"
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-15.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-16.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-17.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-18.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-19.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-20.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-21.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-22.jpeg"
       ],
       "tags": [
         "prime"
       ],
-      "createdAt": "2026-04-12T22:00:02.681Z",
-      "updatedAt": "2026-04-12T22:00:02.681Z"
+      "createdAt": "2026-04-13T02:45:31.425Z",
+      "updatedAt": "2026-04-13T02:45:31.425Z"
     },
     {
       "slug": "desktop-sale-16-hacienda-west-penthouse",
@@ -393,20 +471,20 @@
       "price": 14529000,
       "contactPhone": "01091096255",
       "imageUrls": [
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-1.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-2.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-3.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-4.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-5.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-6.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-7.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-8.jpeg"
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-16.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-17.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-18.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-19.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-20.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-21.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-22.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-23.jpeg"
       ],
       "tags": [
         "prime"
       ],
-      "createdAt": "2026-04-12T22:00:02.681Z",
-      "updatedAt": "2026-04-12T22:00:02.681Z"
+      "createdAt": "2026-04-13T02:45:31.426Z",
+      "updatedAt": "2026-04-13T02:45:31.426Z"
     },
     {
       "slug": "desktop-sale-17-hacienda-west-chalet",
@@ -423,21 +501,21 @@
       "price": 9370000,
       "contactPhone": "01200092764",
       "imageUrls": [
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-1.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-2.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-3.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-4.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-5.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-6.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-7.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-8.jpeg"
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-17.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-18.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-19.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-20.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-21.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-22.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-23.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-24.jpeg"
       ],
       "tags": [
         "prime",
         "underMarket"
       ],
-      "createdAt": "2026-04-12T22:00:02.681Z",
-      "updatedAt": "2026-04-12T22:00:02.681Z"
+      "createdAt": "2026-04-13T02:45:31.426Z",
+      "updatedAt": "2026-04-13T02:45:31.426Z"
     },
     {
       "slug": "desktop-sale-18-hacienda-west-chalet",
@@ -454,20 +532,20 @@
       "price": 10278410,
       "contactPhone": "01200092764",
       "imageUrls": [
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-1.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-2.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-3.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-4.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-5.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-6.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-7.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-8.jpeg"
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-18.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-19.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-20.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-21.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-22.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-23.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-24.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-25.jpeg"
       ],
       "tags": [
         "prime"
       ],
-      "createdAt": "2026-04-12T22:00:02.681Z",
-      "updatedAt": "2026-04-12T22:00:02.681Z"
+      "createdAt": "2026-04-13T02:45:31.426Z",
+      "updatedAt": "2026-04-13T02:45:31.426Z"
     },
     {
       "slug": "desktop-sale-19-hacienda-west-chalet",
@@ -484,20 +562,20 @@
       "price": 10300000,
       "contactPhone": "01091096255",
       "imageUrls": [
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-1.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-2.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-3.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-4.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-5.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-6.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-7.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-8.jpeg"
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-19.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-20.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-21.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-22.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-23.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-24.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-25.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-26.jpeg"
       ],
       "tags": [
         "prime"
       ],
-      "createdAt": "2026-04-12T22:00:02.681Z",
-      "updatedAt": "2026-04-12T22:00:02.681Z"
+      "createdAt": "2026-04-13T02:45:31.426Z",
+      "updatedAt": "2026-04-13T02:45:31.426Z"
     },
     {
       "slug": "desktop-sale-20-hacienda-bay-chalet",
@@ -514,21 +592,21 @@
       "price": 12500000,
       "contactPhone": "01228397313",
       "imageUrls": [
-        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-1.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-2.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-3.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-4.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-5.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-6.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-7.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-8.jpeg"
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-20.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-21.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-22.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-23.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-24.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-25.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-26.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-27.jpeg"
       ],
       "tags": [
         "prime",
         "underMarket"
       ],
-      "createdAt": "2026-04-12T22:00:02.681Z",
-      "updatedAt": "2026-04-12T22:00:02.681Z"
+      "createdAt": "2026-04-13T02:45:31.426Z",
+      "updatedAt": "2026-04-13T02:45:31.426Z"
     },
     {
       "slug": "desktop-sale-21-hacienda-bay-chalet",
@@ -545,21 +623,21 @@
       "price": 12000000,
       "contactPhone": "01228397313",
       "imageUrls": [
-        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-1.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-2.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-3.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-4.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-5.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-6.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-7.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-8.jpeg"
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-21.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-22.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-23.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-24.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-25.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-26.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-27.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-28.jpeg"
       ],
       "tags": [
         "prime",
         "underMarket"
       ],
-      "createdAt": "2026-04-12T22:00:02.681Z",
-      "updatedAt": "2026-04-12T22:00:02.681Z"
+      "createdAt": "2026-04-13T02:45:31.426Z",
+      "updatedAt": "2026-04-13T02:45:31.426Z"
     },
     {
       "slug": "desktop-sale-22-hacienda-bay-chalet",
@@ -576,20 +654,20 @@
       "price": 10750000,
       "contactPhone": "01091096255",
       "imageUrls": [
-        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-1.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-2.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-3.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-4.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-5.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-6.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-7.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-8.jpeg"
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-22.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-23.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-24.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-25.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-26.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-27.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-28.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-bay/desktop-sale-village-hacienda-bay-29.jpeg"
       ],
       "tags": [
         "prime"
       ],
-      "createdAt": "2026-04-12T22:00:02.681Z",
-      "updatedAt": "2026-04-12T22:00:02.681Z"
+      "createdAt": "2026-04-13T02:45:31.426Z",
+      "updatedAt": "2026-04-13T02:45:31.426Z"
     },
     {
       "slug": "desktop-sale-23-amwaj-chalet",
@@ -606,21 +684,21 @@
       "price": 9000000,
       "contactPhone": "01286394219",
       "imageUrls": [
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-23.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-24.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-25.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-26.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-27.jpeg",
         "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-1.jpeg",
         "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-2.jpeg",
-        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-3.jpeg",
-        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-4.jpeg",
-        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-5.jpeg",
-        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-6.jpeg",
-        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-7.jpeg",
-        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-8.jpeg"
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-3.jpeg"
       ],
       "tags": [
         "prime",
         "underMarket"
       ],
-      "createdAt": "2026-04-12T22:00:02.681Z",
-      "updatedAt": "2026-04-12T22:00:02.681Z"
+      "createdAt": "2026-04-13T02:45:31.427Z",
+      "updatedAt": "2026-04-13T02:45:31.427Z"
     },
     {
       "slug": "desktop-sale-24-amwaj-chalet",
@@ -637,21 +715,21 @@
       "price": 8400000,
       "contactPhone": "01286394219",
       "imageUrls": [
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-24.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-25.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-26.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-27.jpeg",
         "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-1.jpeg",
         "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-2.jpeg",
         "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-3.jpeg",
-        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-4.jpeg",
-        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-5.jpeg",
-        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-6.jpeg",
-        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-7.jpeg",
-        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-8.jpeg"
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-4.jpeg"
       ],
       "tags": [
         "prime",
         "underMarket"
       ],
-      "createdAt": "2026-04-12T22:00:02.681Z",
-      "updatedAt": "2026-04-12T22:00:02.681Z"
+      "createdAt": "2026-04-13T02:45:31.427Z",
+      "updatedAt": "2026-04-13T02:45:31.427Z"
     },
     {
       "slug": "desktop-sale-25-hacienda-west-chalet",
@@ -668,20 +746,20 @@
       "price": 9630000,
       "contactPhone": "01228397313",
       "imageUrls": [
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-1.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-2.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-3.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-4.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-5.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-6.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-7.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-8.jpeg"
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-25.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-26.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-27.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-28.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-29.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-30.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-31.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-32.jpeg"
       ],
       "tags": [
         "prime"
       ],
-      "createdAt": "2026-04-12T22:00:02.682Z",
-      "updatedAt": "2026-04-12T22:00:02.682Z"
+      "createdAt": "2026-04-13T02:45:31.427Z",
+      "updatedAt": "2026-04-13T02:45:31.427Z"
     },
     {
       "slug": "desktop-sale-26-amwaj-chalet",
@@ -698,21 +776,21 @@
       "price": 9000000,
       "contactPhone": "01286394219",
       "imageUrls": [
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-26.jpeg",
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-27.jpeg",
         "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-1.jpeg",
         "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-2.jpeg",
         "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-3.jpeg",
         "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-4.jpeg",
         "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-5.jpeg",
-        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-6.jpeg",
-        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-7.jpeg",
-        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-8.jpeg"
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-6.jpeg"
       ],
       "tags": [
         "prime",
         "underMarket"
       ],
-      "createdAt": "2026-04-12T22:00:02.682Z",
-      "updatedAt": "2026-04-12T22:00:02.682Z"
+      "createdAt": "2026-04-13T02:45:31.427Z",
+      "updatedAt": "2026-04-13T02:45:31.427Z"
     },
     {
       "slug": "desktop-sale-27-amwaj-chalet",
@@ -729,21 +807,21 @@
       "price": 11000000,
       "contactPhone": "01286394219",
       "imageUrls": [
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-27.jpeg",
         "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-1.jpeg",
         "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-2.jpeg",
         "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-3.jpeg",
         "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-4.jpeg",
         "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-5.jpeg",
         "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-6.jpeg",
-        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-7.jpeg",
-        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-8.jpeg"
+        "/uploads/properties/desktop-sale/villages/amwaj/desktop-sale-village-amwaj-7.jpeg"
       ],
       "tags": [
         "prime",
         "underMarket"
       ],
-      "createdAt": "2026-04-12T22:00:02.682Z",
-      "updatedAt": "2026-04-12T22:00:02.682Z"
+      "createdAt": "2026-04-13T02:45:31.427Z",
+      "updatedAt": "2026-04-13T02:45:31.427Z"
     },
     {
       "slug": "desktop-sale-28-amwaj-chalet",
@@ -773,8 +851,8 @@
         "prime",
         "underMarket"
       ],
-      "createdAt": "2026-04-12T22:00:02.682Z",
-      "updatedAt": "2026-04-12T22:00:02.682Z"
+      "createdAt": "2026-04-13T02:45:31.427Z",
+      "updatedAt": "2026-04-13T02:45:31.427Z"
     },
     {
       "slug": "desktop-sale-29-hacienda-west-chalet",
@@ -791,20 +869,20 @@
       "price": 11000000,
       "contactPhone": "01228397313",
       "imageUrls": [
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-1.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-2.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-3.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-4.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-5.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-6.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-7.jpeg",
-        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-8.jpeg"
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-29.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-30.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-31.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-32.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-33.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-34.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-35.jpeg",
+        "/uploads/properties/desktop-sale/villages/hacienda-west/desktop-sale-village-hacienda-west-36.jpeg"
       ],
       "tags": [
         "prime"
       ],
-      "createdAt": "2026-04-12T22:00:02.682Z",
-      "updatedAt": "2026-04-12T22:00:02.682Z"
+      "createdAt": "2026-04-13T02:45:31.427Z",
+      "updatedAt": "2026-04-13T02:45:31.427Z"
     },
     {
       "slug": "desktop-sale-30-marassi-chalet",
@@ -831,8 +909,380 @@
       "tags": [
         "prime"
       ],
-      "createdAt": "2026-04-12T22:00:02.682Z",
-      "updatedAt": "2026-04-12T22:00:02.682Z"
+      "createdAt": "2026-04-13T02:45:31.428Z",
+      "updatedAt": "2026-04-13T02:45:31.428Z"
+    },
+    {
+      "slug": "desktop-sale-31-amwaj-chalet",
+      "locationSlug": "north-coast",
+      "propertyType": "chalet",
+      "bedrooms": 2,
+      "coastalVillage": "amwaj",
+      "description": "Ground Chalet for sale at Amwaj - North Coast\nArea : 115m\n2 Bedrooms\n2 Bathrooms\nReception\nGarden\nFully finished\nFully furnished\nPrice : 8.000.000",
+      "size": 115,
+      "bathrooms": 2,
+      "finishing": "full",
+      "furnishing": "furnished",
+      "listingType": "sale",
+      "price": 8000000,
+      "contactPhone": "01091096255",
+      "imageUrls": [
+        "/uploads/properties/desktop-sale/units/31/desktop-sale-folder-31-1.jpeg",
+        "/uploads/properties/desktop-sale/units/31/desktop-sale-folder-31-2.jpeg",
+        "/uploads/properties/desktop-sale/units/31/desktop-sale-folder-31-3.jpeg",
+        "/uploads/properties/desktop-sale/units/31/desktop-sale-folder-31-4.jpeg",
+        "/uploads/properties/desktop-sale/units/31/desktop-sale-folder-31-5.jpeg",
+        "/uploads/properties/desktop-sale/units/31/desktop-sale-folder-31-6.jpeg",
+        "/uploads/properties/desktop-sale/units/31/desktop-sale-folder-31-7.jpeg",
+        "/uploads/properties/desktop-sale/units/31/desktop-sale-folder-31-8.jpeg"
+      ],
+      "tags": [
+        "prime"
+      ],
+      "createdAt": "2026-04-13T02:45:31.448Z",
+      "updatedAt": "2026-04-13T02:45:31.448Z"
+    },
+    {
+      "slug": "desktop-sale-32-hacienda-bay-chalet",
+      "locationSlug": "north-coast",
+      "propertyType": "chalet",
+      "bedrooms": 4,
+      "coastalVillage": "hacienda-bay",
+      "description": "Under market price\nPrime location\nSenior chalet for sale @hacienda bay north cost\n2nd row golf\nFirst floor with roof\nBUA: 220\nRoof :90\nConsists of\nReception\nKitchen\nBedrooms: 4\nMaster bedrooms 2\nBathroom: 3\nNo furnished\nFully Finished\nA/C\nPrice : 12.500.000",
+      "size": 220,
+      "bathrooms": 2,
+      "finishing": "full",
+      "furnishing": "furnished",
+      "listingType": "sale",
+      "price": 12500000,
+      "contactPhone": "01228397313",
+      "imageUrls": [
+        "/uploads/properties/desktop-sale/units/32/desktop-sale-folder-32-1.jpeg",
+        "/uploads/properties/desktop-sale/units/32/desktop-sale-folder-32-2.jpeg",
+        "/uploads/properties/desktop-sale/units/32/desktop-sale-folder-32-3.jpeg",
+        "/uploads/properties/desktop-sale/units/32/desktop-sale-folder-32-4.jpeg",
+        "/uploads/properties/desktop-sale/units/32/desktop-sale-folder-32-5.jpeg",
+        "/uploads/properties/desktop-sale/units/32/desktop-sale-folder-32-6.jpeg",
+        "/uploads/properties/desktop-sale/units/32/desktop-sale-folder-32-7.jpeg",
+        "/uploads/properties/desktop-sale/units/32/desktop-sale-folder-32-8.jpeg",
+        "/uploads/properties/desktop-sale/units/32/desktop-sale-folder-32-9.jpeg",
+        "/uploads/properties/desktop-sale/units/32/desktop-sale-folder-32-10.jpeg"
+      ],
+      "tags": [
+        "prime",
+        "underMarket"
+      ],
+      "createdAt": "2026-04-13T02:45:31.474Z",
+      "updatedAt": "2026-04-13T02:45:31.474Z"
+    },
+    {
+      "slug": "desktop-sale-33-marassi-chalet",
+      "locationSlug": "north-coast",
+      "propertyType": "chalet",
+      "bedrooms": 2,
+      "coastalVillage": "marassi",
+      "description": "Marassi Marina Views\nChalet For Sale\nGround With Garden\nNear Marina & Lagoon\nArea 127 m\nGarden 70 m\n2 Bedrooms - 1 Master\n2 Bathrooms\nKitchen\nReception\nFully A-C\nFully Furnished\nPrice 26,000,000",
+      "size": 127,
+      "bathrooms": 2,
+      "finishing": "full",
+      "furnishing": "furnished",
+      "listingType": "sale",
+      "price": 26000000,
+      "contactPhone": "01200092764",
+      "imageUrls": [
+        "/uploads/properties/desktop-sale/units/33/desktop-sale-folder-33-1.jpeg",
+        "/uploads/properties/desktop-sale/units/33/desktop-sale-folder-33-2.jpeg",
+        "/uploads/properties/desktop-sale/units/33/desktop-sale-folder-33-3.jpeg",
+        "/uploads/properties/desktop-sale/units/33/desktop-sale-folder-33-4.jpeg",
+        "/uploads/properties/desktop-sale/units/33/desktop-sale-folder-33-5.jpeg"
+      ],
+      "tags": [
+        "prime"
+      ],
+      "createdAt": "2026-04-13T02:45:31.488Z",
+      "updatedAt": "2026-04-13T02:45:31.488Z"
+    },
+    {
+      "slug": "desktop-sale-34-marassi-villa",
+      "locationSlug": "north-coast",
+      "propertyType": "villa",
+      "bedrooms": 5,
+      "coastalVillage": "marassi",
+      "description": "💥 Standalone Villa For sale - Marassi - Blanca - North Coast  💥\n🏖️ Facing North / Prime location\n🏖️ Total land area : 540 M\n🏖️ Built area : 395 M\n🏖️ Consists of\n🏖️ Roof\n🏖️ reception\n🏖️ kitchen\n🏖️ 5 bedrooms\n🏖️ 5 bathrooms\n🏖️ Maid room with bathrooms\n🏖️ Fully finished\n🏖️ Fully furnished\n🏖️ Fully AC\n🏖️ Garage\n🏖️ price : 54.000.000",
+      "size": 540,
+      "bathrooms": 5,
+      "finishing": "full",
+      "furnishing": "furnished",
+      "listingType": "sale",
+      "price": 54000000,
+      "contactPhone": "01283399732",
+      "imageUrls": [
+        "/uploads/properties/desktop-sale/units/34/desktop-sale-folder-34-1.jpeg",
+        "/uploads/properties/desktop-sale/units/34/desktop-sale-folder-34-2.jpeg",
+        "/uploads/properties/desktop-sale/units/34/desktop-sale-folder-34-3.jpeg",
+        "/uploads/properties/desktop-sale/units/34/desktop-sale-folder-34-4.jpeg",
+        "/uploads/properties/desktop-sale/units/34/desktop-sale-folder-34-5.jpeg",
+        "/uploads/properties/desktop-sale/units/34/desktop-sale-folder-34-6.jpeg",
+        "/uploads/properties/desktop-sale/units/34/desktop-sale-folder-34-7.jpeg"
+      ],
+      "tags": [
+        "prime"
+      ],
+      "createdAt": "2026-04-13T02:45:31.506Z",
+      "updatedAt": "2026-04-13T02:45:31.506Z"
+    },
+    {
+      "slug": "desktop-sale-35-hacienda-bay-chalet",
+      "locationSlug": "north-coast",
+      "propertyType": "chalet",
+      "bedrooms": 4,
+      "coastalVillage": "hacienda-bay",
+      "description": "Senior chalet for sale @hacienda bay north cost\nFirst row golf\nFirst floor with roof\nBUA: 220\nRoof :90\nBedrooms: 4\nMaster bedrooms 2\nBathroom: 3\nFully furnished\nFully Finished\nA/C\nPrice 15.500. 000",
+      "size": 220,
+      "bathrooms": 2,
+      "finishing": "full",
+      "furnishing": "furnished",
+      "listingType": "sale",
+      "price": 15500,
+      "contactPhone": "01228739731",
+      "imageUrls": [
+        "/uploads/properties/desktop-sale/units/35/desktop-sale-folder-35-1.jpeg",
+        "/uploads/properties/desktop-sale/units/35/desktop-sale-folder-35-2.jpeg",
+        "/uploads/properties/desktop-sale/units/35/desktop-sale-folder-35-3.jpeg",
+        "/uploads/properties/desktop-sale/units/35/desktop-sale-folder-35-4.jpeg",
+        "/uploads/properties/desktop-sale/units/35/desktop-sale-folder-35-5.jpeg",
+        "/uploads/properties/desktop-sale/units/35/desktop-sale-folder-35-6.jpeg",
+        "/uploads/properties/desktop-sale/units/35/desktop-sale-folder-35-7.jpeg",
+        "/uploads/properties/desktop-sale/units/35/desktop-sale-folder-35-8.jpeg",
+        "/uploads/properties/desktop-sale/units/35/desktop-sale-folder-35-9.jpeg",
+        "/uploads/properties/desktop-sale/units/35/desktop-sale-folder-35-10.jpeg",
+        "/uploads/properties/desktop-sale/units/35/desktop-sale-folder-35-11.jpeg",
+        "/uploads/properties/desktop-sale/units/35/desktop-sale-folder-35-12.jpeg",
+        "/uploads/properties/desktop-sale/units/35/desktop-sale-folder-35-13.jpeg",
+        "/uploads/properties/desktop-sale/units/35/desktop-sale-folder-35-14.jpeg"
+      ],
+      "tags": [
+        "prime"
+      ],
+      "createdAt": "2026-04-13T02:45:31.541Z",
+      "updatedAt": "2026-04-13T02:45:31.541Z"
+    },
+    {
+      "slug": "desktop-sale-36-marassi-chalet",
+      "locationSlug": "north-coast",
+      "propertyType": "chalet",
+      "bedrooms": 3,
+      "coastalVillage": "marassi",
+      "description": "🔥لقطه ..لسرعه البيع سينيور شاليه اول صف جولف متشطب ومفروش فقط  14.500.000🔥\n🏖️ Senior Chalet for Sale at Hacienda Bay North coast\n🏖️ First Row1 golf ⛳ and lake\n🏖️ Prime location\n🏖️ Ground floor with Garden\n🏖️ Area : 220m\n🏖️ Garden area : 250m\n🏖️ Reception\n🏖️ Kitchen\n🏖️ Bedrooms 3 ( 2 masters)\n🏖️ Bathrooms 3\n🏖️ Driver room with bathroom\n🏖️ Fully finished\n🏖️ Fully furnished\n🏖️ slot parking 2\n🏖️ A/C",
+      "size": 220,
+      "bathrooms": 3,
+      "finishing": "full",
+      "furnishing": "furnished",
+      "listingType": "sale",
+      "price": 14500000,
+      "contactPhone": "01283399732",
+      "imageUrls": [
+        "/uploads/properties/desktop-sale/units/36/desktop-sale-folder-36-1.jpeg",
+        "/uploads/properties/desktop-sale/units/36/desktop-sale-folder-36-2.jpeg",
+        "/uploads/properties/desktop-sale/units/36/desktop-sale-folder-36-3.jpeg"
+      ],
+      "tags": [
+        "prime"
+      ],
+      "createdAt": "2026-04-13T02:45:31.550Z",
+      "updatedAt": "2026-04-13T02:45:31.550Z"
+    },
+    {
+      "slug": "desktop-sale-37-hacienda-bay-chalet",
+      "locationSlug": "north-coast",
+      "propertyType": "chalet",
+      "bedrooms": 4,
+      "coastalVillage": "hacienda-bay",
+      "description": "Senior Chalet for Sale @ Hacienda Bay North coast\nFirst Row1 ⛳ golF and lake\nFirst floor With Rooof\nFacing North/Prime location\nArea : 220 m\nRoof area : 90 m\nReception / Kitchen\nBedrooms: 4 ( masters:2)\nBathrooms: 3\nDriver room with bathroom\nFully finished\nFully furnished\nslot parking 2\nA/C\nprice : 14.500.000",
+      "size": 220,
+      "bathrooms": 3,
+      "finishing": "full",
+      "furnishing": "furnished",
+      "listingType": "sale",
+      "price": 14500000,
+      "contactPhone": "01286490599",
+      "imageUrls": [
+        "/uploads/properties/desktop-sale/units/37/desktop-sale-folder-37-1.jpeg",
+        "/uploads/properties/desktop-sale/units/37/desktop-sale-folder-37-2.jpeg",
+        "/uploads/properties/desktop-sale/units/37/desktop-sale-folder-37-3.jpeg",
+        "/uploads/properties/desktop-sale/units/37/desktop-sale-folder-37-4.jpeg",
+        "/uploads/properties/desktop-sale/units/37/desktop-sale-folder-37-5.jpeg",
+        "/uploads/properties/desktop-sale/units/37/desktop-sale-folder-37-6.jpeg",
+        "/uploads/properties/desktop-sale/units/37/desktop-sale-folder-37-7.jpeg",
+        "/uploads/properties/desktop-sale/units/37/desktop-sale-folder-37-8.jpeg",
+        "/uploads/properties/desktop-sale/units/37/desktop-sale-folder-37-9.jpeg"
+      ],
+      "tags": [
+        "prime"
+      ],
+      "createdAt": "2026-04-13T02:45:31.569Z",
+      "updatedAt": "2026-04-13T02:45:31.569Z"
+    },
+    {
+      "slug": "desktop-sale-38-hacienda-bay-villa",
+      "locationSlug": "north-coast",
+      "propertyType": "villa",
+      "bedrooms": 5,
+      "coastalVillage": "hacienda-bay",
+      "description": "lagoon villa with cabin for sale @hacienda bay north cost\nview lagoon\nPrivate pool\nland:1400m\nBUA:460 m\nConsists of\nReception / Kitchen\nKitchen cabins\nReception cabins\nBedrooms: 5 (Master:5)\nBathroom: 7\nnany room with toilet\nDrive room with toilet\nFully furnished / Fully Finished\n5 A/Cs\nprice : 51.250.000\nImage Investments offers you the best luxury homes with the best ways to pay in the finest areas: New Cairo - The capital city - October and Sheikh Zayed, North Coast - Ain Sokhna .\nThank you for choosing Image Investments",
+      "size": 460,
+      "bathrooms": 7,
+      "finishing": "full",
+      "furnishing": "furnished",
+      "listingType": "sale",
+      "price": 51250000,
+      "contactPhone": "01286490599",
+      "imageUrls": [
+        "/uploads/properties/desktop-sale/units/38/desktop-sale-folder-38-1.jpeg",
+        "/uploads/properties/desktop-sale/units/38/desktop-sale-folder-38-2.jpeg",
+        "/uploads/properties/desktop-sale/units/38/desktop-sale-folder-38-3.jpeg",
+        "/uploads/properties/desktop-sale/units/38/desktop-sale-folder-38-4.jpeg",
+        "/uploads/properties/desktop-sale/units/38/desktop-sale-folder-38-5.jpeg",
+        "/uploads/properties/desktop-sale/units/38/desktop-sale-folder-38-6.jpeg",
+        "/uploads/properties/desktop-sale/units/38/desktop-sale-folder-38-7.jpeg"
+      ],
+      "tags": [
+        "prime"
+      ],
+      "createdAt": "2026-04-13T02:45:31.585Z",
+      "updatedAt": "2026-04-13T02:45:31.585Z"
+    },
+    {
+      "slug": "desktop-sale-39-hacienda-bay-villa",
+      "locationSlug": "north-coast",
+      "propertyType": "villa",
+      "bedrooms": 5,
+      "coastalVillage": "hacienda-bay",
+      "description": "lagoon villa with cabin for sale @hacienda bay north cost\nview lagoon\nPrivate pool\nland:1400m\nBUA:460 m\nConsists of\nReception / Kitchen\nKitchen cabins\nReception cabins\nBedrooms: 5 (Master:5)\nBathroom: 7\nnany room with toilet\nDrive room with toilet\nFully furnished / Fully Finished\n5 A/Cs\nprice : 50.000.000\nImage Investments offers you the best luxury homes with the best ways to pay in the finest areas: New Cairo - The capital city - October and Sheikh Zayed, North Coast - Ain Sokhna .\nThank you for choosing Image Investments",
+      "size": 460,
+      "bathrooms": 7,
+      "finishing": "full",
+      "furnishing": "furnished",
+      "listingType": "sale",
+      "price": 50000000,
+      "contactPhone": "01228397313",
+      "imageUrls": [
+        "/uploads/properties/desktop-sale/units/39/desktop-sale-folder-39-1.jpeg",
+        "/uploads/properties/desktop-sale/units/39/desktop-sale-folder-39-2.jpeg",
+        "/uploads/properties/desktop-sale/units/39/desktop-sale-folder-39-3.jpeg",
+        "/uploads/properties/desktop-sale/units/39/desktop-sale-folder-39-4.jpeg",
+        "/uploads/properties/desktop-sale/units/39/desktop-sale-folder-39-5.jpeg",
+        "/uploads/properties/desktop-sale/units/39/desktop-sale-folder-39-6.jpeg",
+        "/uploads/properties/desktop-sale/units/39/desktop-sale-folder-39-7.jpeg",
+        "/uploads/properties/desktop-sale/units/39/desktop-sale-folder-39-8.jpeg",
+        "/uploads/properties/desktop-sale/units/39/desktop-sale-folder-39-9.jpeg",
+        "/uploads/properties/desktop-sale/units/39/desktop-sale-folder-39-10.jpeg",
+        "/uploads/properties/desktop-sale/units/39/desktop-sale-folder-39-11.jpeg",
+        "/uploads/properties/desktop-sale/units/39/desktop-sale-folder-39-12.jpeg",
+        "/uploads/properties/desktop-sale/units/39/desktop-sale-folder-39-13.jpeg"
+      ],
+      "tags": [
+        "prime"
+      ],
+      "createdAt": "2026-04-13T02:45:31.619Z",
+      "updatedAt": "2026-04-13T02:45:31.619Z"
+    },
+    {
+      "slug": "desktop-sale-40-amwaj-chalet",
+      "locationSlug": "north-coast",
+      "propertyType": "chalet",
+      "bedrooms": 4,
+      "coastalVillage": "amwaj",
+      "description": "أقل سعر وأفضل لوكيشن توين هاوس في أمواچ_الساحل الشمالي🏕🌊🌊\nيطل على حمام سباحة مباشرة🏊‍♀️🤽‍♀️\nإطلالة مميزة على الكلوب هاوس🤽🏽🤾‍♂️🤸\nأرضي وأول\nمساحة الأرض: ٣١٠م\nمساحة المباني: ٢٣٠م\nيتكون من : ريسبشن\n٤ غرف نوم منهم ١ ماستر\n٣ حمام\nغرفة مربية بحمام\nغرفة سائق بحمام\nحديقة خاصة\nموقع مميز _ بحري صريح\nمكيف بالكامل\nيباع بالفرش والأجهزة\nكود : KH616\nالسعر 18.500.000",
+      "size": 1,
+      "bathrooms": 3,
+      "finishing": "full",
+      "furnishing": "unfurnished",
+      "listingType": "sale",
+      "price": 18500000,
+      "contactPhone": "01223233377",
+      "imageUrls": [
+        "/uploads/properties/desktop-sale/units/40/desktop-sale-folder-40-1.jpeg",
+        "/uploads/properties/desktop-sale/units/40/desktop-sale-folder-40-2.jpeg",
+        "/uploads/properties/desktop-sale/units/40/desktop-sale-folder-40-3.jpeg",
+        "/uploads/properties/desktop-sale/units/40/desktop-sale-folder-40-4.jpeg",
+        "/uploads/properties/desktop-sale/units/40/desktop-sale-folder-40-5.jpeg",
+        "/uploads/properties/desktop-sale/units/40/desktop-sale-folder-40-6.jpeg",
+        "/uploads/properties/desktop-sale/units/40/desktop-sale-folder-40-7.jpeg",
+        "/uploads/properties/desktop-sale/units/40/desktop-sale-folder-40-8.jpeg",
+        "/uploads/properties/desktop-sale/units/40/desktop-sale-folder-40-9.jpeg",
+        "/uploads/properties/desktop-sale/units/40/desktop-sale-folder-40-10.jpeg"
+      ],
+      "tags": [
+        "prime"
+      ],
+      "createdAt": "2026-04-13T02:45:31.641Z",
+      "updatedAt": "2026-04-13T02:45:31.641Z"
+    },
+    {
+      "slug": "desktop-sale-41-marassi-chalet",
+      "locationSlug": "north-coast",
+      "propertyType": "chalet",
+      "bedrooms": 3,
+      "coastalVillage": "marassi",
+      "description": "Marassi Marina\nChalet For Sale\nPrime Location\nDirect Pool\nArea 172 m\n3 Bedrooms - 1 Master\n3 Bathrooms\nKitchen\nReception\nFully A/C\nFully Furnished\nPrice 33,000,000",
+      "size": 172,
+      "bathrooms": 3,
+      "finishing": "full",
+      "furnishing": "furnished",
+      "listingType": "sale",
+      "price": 33000000,
+      "contactPhone": "01091096255",
+      "imageUrls": [
+        "/uploads/properties/desktop-sale/units/41/desktop-sale-folder-41-1.jpeg",
+        "/uploads/properties/desktop-sale/units/41/desktop-sale-folder-41-2.jpeg",
+        "/uploads/properties/desktop-sale/units/41/desktop-sale-folder-41-3.jpeg",
+        "/uploads/properties/desktop-sale/units/41/desktop-sale-folder-41-4.jpeg",
+        "/uploads/properties/desktop-sale/units/41/desktop-sale-folder-41-5.jpeg",
+        "/uploads/properties/desktop-sale/units/41/desktop-sale-folder-41-6.jpeg",
+        "/uploads/properties/desktop-sale/units/41/desktop-sale-folder-41-7.jpeg",
+        "/uploads/properties/desktop-sale/units/41/desktop-sale-folder-41-8.jpeg",
+        "/uploads/properties/desktop-sale/units/41/desktop-sale-folder-41-9.jpeg",
+        "/uploads/properties/desktop-sale/units/41/desktop-sale-folder-41-10.jpeg",
+        "/uploads/properties/desktop-sale/units/41/desktop-sale-folder-41-11.jpeg",
+        "/uploads/properties/desktop-sale/units/41/desktop-sale-folder-41-12.jpeg",
+        "/uploads/properties/desktop-sale/units/41/desktop-sale-folder-41-13.jpeg",
+        "/uploads/properties/desktop-sale/units/41/desktop-sale-folder-41-14.jpeg",
+        "/uploads/properties/desktop-sale/units/41/desktop-sale-folder-41-15.jpeg"
+      ],
+      "tags": [
+        "prime"
+      ],
+      "createdAt": "2026-04-13T02:45:31.677Z",
+      "updatedAt": "2026-04-13T02:45:31.677Z"
+    },
+    {
+      "slug": "desktop-sale-42-marassi-chalet",
+      "locationSlug": "north-coast",
+      "propertyType": "chalet",
+      "bedrooms": 2,
+      "coastalVillage": "marassi",
+      "description": "Marassi Marina\nChalet For Sale\nGround With Garden\nNear Pool & Marina\nArea 147 m\nGarden 65 m\n2 Bedrooms - 1 Master\n2 Bathrooms\nKitchen\nReception\nFully A/C\nFully Furnished\nD.p 22,000,000\nInstallments 2,885,000\nTotal 24,885,000",
+      "size": 147,
+      "bathrooms": 2,
+      "finishing": "full",
+      "furnishing": "furnished",
+      "listingType": "sale",
+      "price": 24885000,
+      "contactPhone": "01200092764",
+      "imageUrls": [
+        "/uploads/properties/desktop-sale/units/42/desktop-sale-folder-42-1.jpeg",
+        "/uploads/properties/desktop-sale/units/42/desktop-sale-folder-42-2.jpeg",
+        "/uploads/properties/desktop-sale/units/42/desktop-sale-folder-42-3.jpeg",
+        "/uploads/properties/desktop-sale/units/42/desktop-sale-folder-42-4.jpeg",
+        "/uploads/properties/desktop-sale/units/42/desktop-sale-folder-42-5.jpeg",
+        "/uploads/properties/desktop-sale/units/42/desktop-sale-folder-42-6.jpeg"
+      ],
+      "tags": [
+        "prime"
+      ],
+      "createdAt": "2026-04-13T02:45:31.692Z",
+      "updatedAt": "2026-04-13T02:45:31.692Z"
     },
     {
       "locationSlug": "north-coast",
