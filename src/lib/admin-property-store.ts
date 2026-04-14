@@ -43,6 +43,55 @@ const locationCoordinates: Record<string, { lat: number; lng: number }> = {
   "new-capital": { lat: 30.0089, lng: 31.7284 },
 };
 
+const coastalVillageCoordinates: Record<string, { lat: number; lng: number }> = {
+  "almaza-bay": { lat: 31.1244, lng: 27.7364 },
+  "hacienda-heneish": { lat: 31.0393, lng: 28.5054 },
+  summer: { lat: 31.0451, lng: 28.6114 },
+  "silver-sand": { lat: 31.0766, lng: 28.7994 },
+  "fouka-bay": { lat: 30.9434, lng: 28.9648 },
+  "marsellia-5": { lat: 30.9956, lng: 28.6644 },
+  "hacienda-west": { lat: 30.9964, lng: 28.5987 },
+  "hyde-park-north-coast": { lat: 31.0109, lng: 28.7024 },
+  "la-vista-ras-hekma": { lat: 31.0893, lng: 28.0654 },
+  "mountain-view": { lat: 30.9998, lng: 28.7062 },
+  "swan-lake": { lat: 31.0407, lng: 28.4577 },
+  solare: { lat: 31.0831, lng: 28.1378 },
+  gaia: { lat: 31.0724, lng: 28.2695 },
+  june: { lat: 31.0079, lng: 28.7223 },
+  "cali-coast": { lat: 31.0344, lng: 28.5352 },
+  "direction-white": { lat: 31.1092, lng: 27.9786 },
+  marasem: { lat: 31.0308, lng: 28.4942 },
+  "the-med": { lat: 31.0838, lng: 28.1532 },
+  jefaira: { lat: 31.0279, lng: 28.5481 },
+  "azzar-island": { lat: 31.0184, lng: 28.6123 },
+  horizon: { lat: 31.0052, lng: 28.6889 },
+  soul: { lat: 31.0357, lng: 28.5119 },
+  lvls: { lat: 31.0145, lng: 28.6264 },
+  dose: { lat: 31.1151, lng: 27.9042 },
+  "water-way": { lat: 31.0019, lng: 28.7036 },
+  seazen: { lat: 31.0242, lng: 28.5707 },
+  "la-vista-bay-east": { lat: 31.1003, lng: 28.0098 },
+  "la-vista-bay": { lat: 31.0959, lng: 28.0224 },
+  "d-bay": { lat: 31.0664, lng: 28.2911 },
+  "la-sirena": { lat: 31.0271, lng: 28.5538 },
+  zoya: { lat: 31.0508, lng: 28.3859 },
+  playa: { lat: 31.0195, lng: 28.5976 },
+  "ghazala-bay": { lat: 31.0477, lng: 28.4278 },
+  telal: { lat: 31.1014, lng: 28.0008 },
+  "hacienda-red": { lat: 31.0382, lng: 28.4744 },
+  "hacienda-white": { lat: 31.0586, lng: 28.3371 },
+  blumar: { lat: 31.0086, lng: 28.6735 },
+  amwaj: { lat: 31.0455, lng: 28.4229 },
+  "sea-shell": { lat: 31.0734, lng: 28.2361 },
+  "stella-heights": { lat: 31.0303, lng: 28.5296 },
+  "la-vista-cascada": { lat: 31.0241, lng: 28.5689 },
+  marassi: { lat: 30.9912, lng: 28.7425 },
+  diplo: { lat: 31.0677, lng: 28.2828 },
+  "hacienda-bay": { lat: 30.9904, lng: 28.7068 },
+  zahra: { lat: 30.9855, lng: 28.7329 },
+  "palm-hills-alamein": { lat: 30.9721, lng: 28.7795 },
+};
+
 const finishingLabels: Record<string, LocalizedText> = {
   full: { ar: "تشطيب كامل", en: "Fully finished" },
   semi: { ar: "نصف تشطيب", en: "Semi-finished" },
@@ -162,6 +211,20 @@ function getCompoundLabel(record: ManagedPropertyRecord) {
   return record.listingType === "sale"
     ? { ar: "عرض بيع مباشر", en: "Direct sale listing" }
     : { ar: "عرض إيجار مباشر", en: "Direct rent listing" };
+}
+
+function getManagedCoordinates(record: ManagedPropertyRecord) {
+  if (record.locationSlug === "north-coast" && record.coastalVillage) {
+    return (
+      coastalVillageCoordinates[record.coastalVillage] ??
+      locationCoordinates["north-coast"]
+    );
+  }
+
+  return (
+    locationCoordinates[record.locationSlug] ??
+    locationCoordinates["new-cairo"]
+  );
 }
 
 function buildManagedTitle(record: ManagedPropertyRecord) {
@@ -348,9 +411,7 @@ function buildManagedProperty(record: ManagedPropertyRecord): Property {
               "en",
             )} unit available now with direct contact and fast viewing coordination.`,
           },
-    coordinates:
-      locationCoordinates[record.locationSlug] ??
-      locationCoordinates["new-cairo"],
+    coordinates: getManagedCoordinates(record),
     contactPhone: normalizePhoneForDisplay(record.contactPhone),
     listingType: record.listingType,
     source: "managed",
