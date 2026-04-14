@@ -17,6 +17,7 @@ type FormState = {
   propertyType: string;
   bedrooms: string;
   coastalVillage: string;
+  address: string;
   description: string;
   size: string;
   bathrooms: string;
@@ -37,6 +38,7 @@ const defaultState: FormState = {
   propertyType: "",
   bedrooms: "",
   coastalVillage: "",
+  address: "",
   description: "",
   size: "",
   bathrooms: "",
@@ -59,6 +61,7 @@ export function AdminPropertyForm({
           propertyType: initialProperty.propertyType,
           bedrooms: `${initialProperty.bedrooms}`,
           coastalVillage: initialProperty.coastalVillage,
+          address: initialProperty.address ?? "",
           description: initialProperty.description,
           size: `${initialProperty.size}`,
           bathrooms: `${initialProperty.bathrooms}`,
@@ -160,6 +163,7 @@ export function AdminPropertyForm({
       payload.set("propertyType", formState.propertyType);
       payload.set("bedrooms", formState.bedrooms);
       payload.set("coastalVillage", showCoastalVillage ? formState.coastalVillage : "");
+      payload.set("address", formState.address);
       payload.set("description", formState.description);
       payload.set("size", formState.size);
       payload.set("bathrooms", formState.bathrooms);
@@ -268,6 +272,21 @@ export function AdminPropertyForm({
           ) : null}
 
           <input type="tel" required value={formState.contactPhone} onChange={(event) => updateField("contactPhone", event.target.value)} placeholder="رقم الهاتف الخاص بالوحدة" className={inputClassName} />
+        </div>
+
+        <div className="mt-6">
+          <label htmlFor="property-address" className="mb-3 block text-sm font-semibold text-[var(--color-ink)]">
+            عنوان الوحدة
+          </label>
+          <input
+            id="property-address"
+            type="text"
+            maxLength={200}
+            value={formState.address}
+            onChange={(event) => updateField("address", event.target.value)}
+            placeholder="اكتب عنوان الوحدة بالتفصيل (الشارع، المبنى، أقرب علامة مميزة)."
+            className={inputClassName}
+          />
         </div>
 
         <div className="mt-6">

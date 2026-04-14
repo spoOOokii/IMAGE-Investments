@@ -29,6 +29,7 @@ export type Property = {
   title: LocalizedText;
   summary: LocalizedText;
   description: LocalizedText;
+  address?: LocalizedText;
   locationSlug: string;
   locationName: LocalizedText;
   compound: LocalizedText;

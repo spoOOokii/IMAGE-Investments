@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx tsc:*)",
+      "Bash(grep -r \"meta.*description\\\\|og:\\\\|twitter:\" /d/IMAGE-Investments/src/app/[locale]/page.tsx)"
+    ]
+  }
+}

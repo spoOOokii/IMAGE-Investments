@@ -78,6 +78,10 @@ function getCustomDescription(record: ManagedPropertyRecord) {
   return `${record.description ?? ""}`.trim();
 }
 
+function getCustomAddress(record: ManagedPropertyRecord) {
+  return `${record.address ?? ""}`.trim();
+}
+
 function formatPrice(value: number) {
   return value.toLocaleString("en-US");
 }
@@ -267,12 +271,16 @@ function buildManagedProperty(record: ManagedPropertyRecord): Property {
   const imageUrls = record.imageUrls.length
     ? record.imageUrls
     : [DEFAULT_PROPERTY_IMAGE];
+  const customAddress = getCustomAddress(record);
 
   return {
     slug: record.slug,
     title: buildManagedTitle(record),
     summary: buildManagedSummary(record),
     description: buildManagedDescription(record),
+    address: customAddress
+      ? { ar: customAddress, en: customAddress }
+      : undefined,
     locationSlug: record.locationSlug,
     locationName: locationLabel,
     compound: compoundLabel,
@@ -415,6 +423,7 @@ function propertyToEditableRecord(property: Property): ManagedPropertyRecord {
     propertyType: property.propertyType,
     bedrooms: property.bedrooms,
     coastalVillage: resolveCoastalVillageKey(property),
+    address: property.address?.ar ?? "",
     description: property.description.ar,
     size: property.size,
     bathrooms: property.bathrooms,
@@ -540,6 +549,7 @@ export async function createManagedProperty(payload: CreateManagedPropertyPayloa
   store.managedProperties.unshift({
     ...payload,
     slug,
+    address: (payload.address ?? "").trim(),
     contactPhone: normalizePhoneForDisplay(payload.contactPhone),
     imageUrls: payload.imageUrls.length ? payload.imageUrls : [DEFAULT_PROPERTY_IMAGE],
     tags: payload.tags?.length ? payload.tags : ["prime"],
@@ -569,6 +579,7 @@ export async function getEditablePropertyBySlug(
       propertyType: managedMatch.propertyType,
       bedrooms: managedMatch.bedrooms,
       coastalVillage: managedMatch.coastalVillage,
+      address: getCustomAddress(managedMatch),
       description: getCustomDescription(managedMatch),
       size: managedMatch.size,
       bathrooms: managedMatch.bathrooms,
@@ -591,6 +602,7 @@ export async function getEditablePropertyBySlug(
       propertyType: overrideMatch.propertyType,
       bedrooms: overrideMatch.bedrooms,
       coastalVillage: overrideMatch.coastalVillage,
+      address: getCustomAddress(overrideMatch),
       description: getCustomDescription(overrideMatch),
       size: overrideMatch.size,
       bathrooms: overrideMatch.bathrooms,
@@ -622,6 +634,7 @@ export async function getEditablePropertyBySlug(
     propertyType: record.propertyType,
     bedrooms: record.bedrooms,
     coastalVillage: record.coastalVillage,
+    address: getCustomAddress(record),
     description: getCustomDescription(record),
     size: record.size,
     bathrooms: record.bathrooms,
@@ -646,6 +659,7 @@ export async function updatePropertyRecord(
     propertyType: payload.propertyType,
     bedrooms: payload.bedrooms,
     coastalVillage: payload.coastalVillage,
+    address: (payload.address ?? "").trim(),
     description: payload.description.trim(),
     size: payload.size,
     bathrooms: payload.bathrooms,

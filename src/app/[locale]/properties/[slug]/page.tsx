@@ -75,6 +75,19 @@ export default async function PropertyDetailsPage({
   );
   const propertyContactPhone = property.contactPhone ?? companyProfile.phoneDisplay;
   const propertyDescription = pickLocale(property.description, locale).trim();
+  const propertyAddress = property.address
+    ? pickLocale(property.address, locale).trim()
+    : "";
+  const compoundName = pickLocale(property.compound, locale).trim();
+  const locationName = pickLocale(property.locationName, locale).trim();
+  const fallbackLocationQuery = [compoundName, locationName]
+    .filter(Boolean)
+    .join(", ");
+  const mapSearchText = propertyAddress || fallbackLocationQuery;
+  const mapQuery = mapSearchText
+    ? encodeURIComponent(mapSearchText)
+    : `${property.coordinates.lat},${property.coordinates.lng}`;
+  const mapEmbedSrc = `https://www.google.com/maps?q=${mapQuery}&z=15&output=embed`;
   const isRentListing = property.listingType === "rent";
   const isFurnished =
     pickLocale(property.summary, "ar").includes("مفروش") ||
@@ -305,6 +318,21 @@ export default async function PropertyDetailsPage({
         </div>
       </section>
 
+      {propertyAddress ? (
+        <section className="container-shell pt-10">
+          <div className="luxury-surface p-8 md:p-10">
+            <div className="mx-auto max-w-4xl text-center">
+              <div className="text-xs text-[var(--color-muted)]">
+                {locale === "ar" ? "عنوان الوحدة" : "Property Address"}
+              </div>
+              <p className="mt-5 text-base font-semibold leading-8 text-[var(--color-ink)] md:text-lg">
+                {propertyAddress}
+              </p>
+            </div>
+          </div>
+        </section>
+      ) : null}
+
       {propertyDescription ? (
         <section className="container-shell pt-10">
           <div className="luxury-surface p-8 md:p-10">
@@ -380,7 +408,7 @@ export default async function PropertyDetailsPage({
             <div className="luxury-surface overflow-hidden p-3">
               <iframe
                 title={pickLocale(property.title, locale)}
-                src={`https://www.google.com/maps?q=${property.coordinates.lat},${property.coordinates.lng}&z=14&output=embed`}
+                src={mapEmbedSrc}
                 className="h-[420px] w-full rounded-[1.5rem] border-0"
                 loading="lazy"
               />
