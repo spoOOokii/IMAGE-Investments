@@ -7,6 +7,9 @@ export type PropertyFilterState = {
   listingType: string;
   bedrooms: string;
   coastalVillage: string;
+  search: string;
+  minPrice: string;
+  maxPrice: string;
 };
 
 export const defaultPropertyFilters: PropertyFilterState = {
@@ -15,6 +18,9 @@ export const defaultPropertyFilters: PropertyFilterState = {
   listingType: "",
   bedrooms: "",
   coastalVillage: "",
+  search: "",
+  minPrice: "",
+  maxPrice: "",
 };
 
 export const staticLocationOptions = [
@@ -183,6 +189,10 @@ export function filterProperties(
   properties: Property[],
   filters: PropertyFilterState,
 ) {
+  const searchQuery = filters.search.trim().toLowerCase();
+  const minPrice = filters.minPrice ? Number(filters.minPrice) : null;
+  const maxPrice = filters.maxPrice ? Number(filters.maxPrice) : null;
+
   return properties.filter((property) => {
     const matchesLocation =
       !filters.location || property.locationSlug === filters.location;
@@ -195,12 +205,44 @@ export function filterProperties(
       !filters.coastalVillage ||
       resolveCoastalVillageKey(property) === filters.coastalVillage;
 
+    const matchesSearch =
+      !searchQuery ||
+      [
+        property.title.ar,
+        property.title.en,
+        property.summary.ar,
+        property.summary.en,
+        property.description.ar,
+        property.description.en,
+        property.compound.ar,
+        property.compound.en,
+        property.locationName.ar,
+        property.locationName.en,
+        property.address?.ar ?? "",
+        property.address?.en ?? "",
+      ]
+        .join(" ")
+        .toLowerCase()
+        .includes(searchQuery);
+
+    const matchesMinPrice =
+      minPrice === null ||
+      !Number.isFinite(minPrice) ||
+      (property.price > 0 && property.price >= minPrice);
+    const matchesMaxPrice =
+      maxPrice === null ||
+      !Number.isFinite(maxPrice) ||
+      (property.price > 0 && property.price <= maxPrice);
+
     return (
       matchesLocation &&
       matchesType &&
       matchesListingType &&
       matchesBedrooms &&
-      matchesCoastalVillage
+      matchesCoastalVillage &&
+      matchesSearch &&
+      matchesMinPrice &&
+      matchesMaxPrice
     );
   });
 }

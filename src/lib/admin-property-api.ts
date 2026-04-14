@@ -9,6 +9,7 @@ import type {
   ManagedFinishing,
   ManagedFurnishing,
   ManagedListingType,
+  PropertyStatus,
 } from "@/lib/admin-property-types";
 import {
   staticCoastalVillageOptions,
@@ -29,6 +30,11 @@ const allowedFurnishingValues = new Set<ManagedFurnishing>([
   "unfurnished",
 ]);
 const allowedListingTypes = new Set<ManagedListingType>(["sale", "rent"]);
+const allowedStatuses = new Set<PropertyStatus>([
+  "draft",
+  "published",
+  "archived",
+]);
 const allowedLocations = new Set(staticLocationOptions.map((item) => item.value));
 const allowedTypes = new Set(staticTypeOptions.map((item) => item.value));
 const allowedCoastalVillages = new Set(
@@ -97,6 +103,7 @@ export function parseCreatePayload(
   const listingType = getTextValue(payload, "listingType") as ManagedListingType;
   const priceInput = getTextValue(payload, "price");
   const contactPhone = getTextValue(payload, "contactPhone");
+  const statusInput = (getTextValue(payload, "status") || "published") as PropertyStatus;
 
   if (!allowedLocations.has(locationSlug)) {
     return badRequest("Invalid location");
@@ -142,6 +149,10 @@ export function parseCreatePayload(
     return badRequest("Invalid listing type");
   }
 
+  if (!allowedStatuses.has(statusInput)) {
+    return badRequest("Invalid status");
+  }
+
   if (!contactPhone || contactPhone.replace(/[^\d]/g, "").length < 8) {
     return badRequest("Invalid contact phone");
   }
@@ -171,6 +182,7 @@ export function parseCreatePayload(
     price,
     contactPhone,
     imageUrls,
+    status: statusInput,
   };
 
   return result;

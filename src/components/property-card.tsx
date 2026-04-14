@@ -1,6 +1,7 @@
 ﻿import Image from "next/image";
 import Link from "next/link";
 
+import { PropertyCardActions } from "@/components/property-card-actions";
 import { getUiCopy, localizedPath, pickLocale, type Locale } from "@/lib/i18n";
 import {
   propertyTypeLabels,
@@ -73,6 +74,7 @@ export function PropertyCard({ locale, property }: PropertyCardProps) {
           <span className="property-card-tag rounded-full px-3 py-1 text-xs font-bold backdrop-blur">
             {primaryTag}
           </span>
+          <PropertyCardActions slug={property.slug} locale={locale} />
         </div>
 
         <div className="property-card-media-copy absolute bottom-4 left-4 right-4">

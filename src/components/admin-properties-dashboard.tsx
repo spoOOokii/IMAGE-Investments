@@ -16,6 +16,7 @@ import {
 import { AnimatedSelect } from "@/components/animated-select";
 
 type AdminFilters = {
+  search: string;
   location: string;
   propertyType: string;
   bedrooms: string;
@@ -23,6 +24,7 @@ type AdminFilters = {
 };
 
 const defaultFilters: AdminFilters = {
+  search: "",
   location: "",
   propertyType: "",
   bedrooms: "",
@@ -34,6 +36,18 @@ function filterAdminProperties(
   filters: AdminFilters,
 ) {
   return properties.filter((property) => {
+    const matchesSearch =
+      !filters.search ||
+      [
+        property.title,
+        property.location,
+        property.compound,
+        property.propertyType,
+        property.slug,
+      ]
+        .join(" ")
+        .toLowerCase()
+        .includes(filters.search.toLowerCase());
     const matchesLocation =
       !filters.location || property.locationSlug === filters.location;
     const matchesType =
@@ -44,6 +58,7 @@ function filterAdminProperties(
       !filters.coastalVillage || property.compoundSlug === filters.coastalVillage;
 
     return (
+      matchesSearch &&
       matchesLocation &&
       matchesType &&
       matchesBedrooms &&
@@ -58,6 +73,8 @@ export function AdminPropertiesDashboard() {
   const [isLoading, setIsLoading] = useState(true);
   const [activeSlug, setActiveSlug] = useState("");
   const [error, setError] = useState("");
+  const [importFile, setImportFile] = useState<File | null>(null);
+  const [isImporting, setIsImporting] = useState(false);
   const railRef = useRef<HTMLDivElement>(null);
 
   const locationOptions = [{ value: "", label: "المنطقة" }, ...buildLocationOptions("ar")];
@@ -92,18 +109,7 @@ export function AdminPropertiesDashboard() {
 
     try {
       const response = await fetch("/api/admin/properties", { cache: "no-store" });
-      const result = (await response.json()) as
-        | ({ ok: true } & PropertyAdminResponse)
-        | { ok: false; error?: string };
-
-      if (!response.ok || !result.ok) {
-        throw new Error(result.ok ? "تعذر تحميل الوحدات" : result.error);
-      }
-
-      setData({
-        visibleProperties: result.visibleProperties,
-        hiddenProperties: result.hiddenProperties,
-      });
+      await refreshFromResponse(response);
     } catch (requestError) {
       setError(
         requestError instanceof Error
@@ -128,44 +134,22 @@ export function AdminPropertiesDashboard() {
     }));
   }
 
-  async function hideProperty(slug: string) {
-    if (!window.confirm("هل تريد إزالة هذه الوحدة من الموقع؟")) {
-      return;
+  async function refreshFromResponse(response: Response) {
+    const result = (await response.json()) as
+      | ({ ok: true } & PropertyAdminResponse)
+      | { ok: false; error?: string };
+
+    if (!response.ok || !result.ok) {
+      throw new Error(result.ok ? "تعذر تنفيذ الطلب" : result.error);
     }
 
-    setActiveSlug(slug);
-    setError("");
-
-    try {
-      const response = await fetch("/api/admin/properties", {
-        method: "DELETE",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ slug }),
-      });
-      const result = (await response.json()) as
-        | ({ ok: true } & PropertyAdminResponse)
-        | { ok: false; error?: string };
-
-      if (!response.ok || !result.ok) {
-        throw new Error(result.ok ? "تعذر حذف الوحدة" : result.error);
-      }
-
-      setData({
-        visibleProperties: result.visibleProperties,
-        hiddenProperties: result.hiddenProperties,
-      });
-    } catch (requestError) {
-      setError(
-        requestError instanceof Error
-          ? requestError.message
-          : "تعذر حذف الوحدة",
-      );
-    } finally {
-      setActiveSlug("");
-    }
+    setData({
+      visibleProperties: result.visibleProperties,
+      hiddenProperties: result.hiddenProperties,
+    });
   }
 
-  async function restoreProperty(slug: string) {
+  async function updateStatus(slug: string, status: "published" | "draft" | "archived") {
     setActiveSlug(slug);
     setError("");
 
@@ -173,35 +157,63 @@ export function AdminPropertiesDashboard() {
       const response = await fetch("/api/admin/properties", {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ slug }),
+        body: JSON.stringify({ slug, status }),
       });
-      const result = (await response.json()) as
-        | ({ ok: true } & PropertyAdminResponse)
-        | { ok: false; error?: string };
-
-      if (!response.ok || !result.ok) {
-        throw new Error(result.ok ? "تعذر استعادة الوحدة" : result.error);
-      }
-
-      setData({
-        visibleProperties: result.visibleProperties,
-        hiddenProperties: result.hiddenProperties,
-      });
+      await refreshFromResponse(response);
     } catch (requestError) {
       setError(
-        requestError instanceof Error
-          ? requestError.message
-          : "تعذر استعادة الوحدة",
+        requestError instanceof Error ? requestError.message : "تعذر تحديث الحالة",
       );
     } finally {
       setActiveSlug("");
     }
   }
 
+  async function importProperties() {
+    if (!importFile) {
+      setError("اختر ملف CSV أو Excel أولاً.");
+      return;
+    }
+
+    setIsImporting(true);
+    setError("");
+
+    try {
+      const payload = new FormData();
+      payload.set("file", importFile);
+      const response = await fetch("/api/admin/properties/import", {
+        method: "POST",
+        body: payload,
+      });
+      await refreshFromResponse(response);
+      setImportFile(null);
+    } catch (requestError) {
+      setError(
+        requestError instanceof Error ? requestError.message : "تعذر استيراد الملف",
+      );
+    } finally {
+      setIsImporting(false);
+    }
+  }
+
+  async function hideProperty(slug: string) {
+    if (!window.confirm("هل تريد إزالة هذه الوحدة من الموقع؟")) {
+      return;
+    }
+    await updateStatus(slug, "archived");
+  }
+
+  async function restoreProperty(slug: string) {
+    await updateStatus(slug, "published");
+  }
+
   const showCoastalVillageFilter =
     !filters.location || filters.location === "north-coast";
   const visibleProperties = data
     ? filterAdminProperties(data.visibleProperties, filters)
+    : [];
+  const hiddenProperties = data
+    ? filterAdminProperties(data.hiddenProperties, filters)
     : [];
 
   return (
@@ -218,16 +230,47 @@ export function AdminPropertiesDashboard() {
               بدون تعديل ملفات الكود.
             </p>
           </div>
-          <Link
-            href="/admin/new"
-            className="inline-flex items-center justify-center rounded-full bg-[var(--color-gold)] px-6 py-3 text-sm font-bold text-[var(--color-navy)] transition hover:bg-[var(--color-gold-bright)]"
-          >
-            إضافة وحدة جديدة
-          </Link>
+          <div className="flex flex-col gap-3 lg:min-w-[360px]">
+            <Link
+              href="/admin/new"
+              className="inline-flex items-center justify-center rounded-full bg-[var(--color-gold)] px-6 py-3 text-sm font-bold text-[var(--color-navy)] transition hover:bg-[var(--color-gold-bright)]"
+            >
+              إضافة وحدة جديدة
+            </Link>
+            <div className="rounded-[1.5rem] border border-[rgba(235,210,165,0.18)] bg-[rgba(255,255,255,0.05)] p-4">
+              <div className="text-sm font-semibold text-[var(--theme-dark-heading)]">
+                استيراد CSV / Excel
+              </div>
+              <p className="mt-2 text-xs leading-6 text-[var(--theme-dark-copy)]">
+                الأعمدة المدعومة: `locationSlug`, `propertyType`, `bedrooms`, `coastalVillage`, `address`, `description`, `size`, `bathrooms`, `finishing`, `furnishing`, `listingType`, `price`, `contactPhone`, `imageUrls`, `status`.
+              </p>
+              <input
+                type="file"
+                accept=".csv,.xlsx,.xls"
+                onChange={(event) => setImportFile(event.target.files?.[0] ?? null)}
+                className="mt-3 block w-full rounded-2xl border border-[rgba(235,210,165,0.18)] bg-[rgba(255,255,255,0.05)] px-4 py-3 text-xs text-[var(--theme-dark-heading)] file:ml-4 file:rounded-full file:border-0 file:bg-[var(--color-gold)] file:px-3 file:py-2 file:text-xs file:font-bold file:text-[var(--color-navy)]"
+              />
+              <button
+                type="button"
+                onClick={() => void importProperties()}
+                disabled={!importFile || isImporting}
+                className="mt-3 inline-flex items-center justify-center rounded-full bg-white px-4 py-2 text-xs font-bold text-[var(--color-navy)] transition disabled:cursor-not-allowed disabled:opacity-60"
+              >
+                {isImporting ? "جاري الاستيراد..." : "استيراد الملف"}
+              </button>
+            </div>
+          </div>
         </div>
       </section>
 
       <section className="luxury-surface rounded-[2rem] p-4 md:p-6">
+        <input
+          type="search"
+          value={filters.search}
+          onChange={(event) => updateFilter("search", event.target.value)}
+          placeholder="ابحث بالاسم أو الـ slug أو المنطقة أو نوع العقار"
+          className="mb-3 w-full rounded-2xl border border-[var(--color-border)] bg-[rgba(255,255,255,0.05)] px-4 py-3 text-sm text-[var(--color-ink)] outline-none placeholder:text-[var(--color-ink-soft)]"
+        />
         <div
           className={[
             "grid gap-3 md:grid-cols-2",
@@ -355,6 +398,13 @@ export function AdminPropertiesDashboard() {
                       <span className="property-card-tag rounded-full border px-3 py-1 text-xs font-bold backdrop-blur">
                         {property.source === "managed" ? "مضافة من الأدمن" : "وحدة أساسية"}
                       </span>
+                      <span className="property-card-tag rounded-full border px-3 py-1 text-xs font-bold backdrop-blur">
+                        {property.status === "published"
+                          ? "منشورة"
+                          : property.status === "draft"
+                            ? "مسودة"
+                            : "مؤرشفة"}
+                      </span>
                       {property.listingType ? (
                         <span className="property-card-tag rounded-full border px-3 py-1 text-xs font-bold backdrop-blur">
                           {property.listingType === "sale" ? "للبيع" : "للإيجار"}
@@ -391,6 +441,34 @@ export function AdminPropertiesDashboard() {
                       هاتف التواصل
                     </div>
                     <div className="mt-1 font-semibold">{property.contactPhone}</div>
+                    <div className="mt-4 grid grid-cols-2 gap-3">
+                      <div className="rounded-2xl bg-[rgba(255,255,255,0.04)] px-3 py-3">
+                        <div className="text-xs text-[var(--color-muted)]">المشاهدات</div>
+                        <div className="mt-1 font-bold">{property.analytics.views}</div>
+                      </div>
+                      <div className="rounded-2xl bg-[rgba(255,255,255,0.04)] px-3 py-3">
+                        <div className="text-xs text-[var(--color-muted)]">الـ Leads</div>
+                        <div className="mt-1 font-bold">{property.analytics.leads}</div>
+                      </div>
+                    </div>
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      <button
+                        type="button"
+                        onClick={() => void updateStatus(property.slug, "draft")}
+                        disabled={activeSlug === property.slug}
+                        className="rounded-full border border-[var(--color-border)] px-3 py-2 text-xs font-bold text-[var(--color-ink)]"
+                      >
+                        مسودة
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => void hideProperty(property.slug)}
+                        disabled={activeSlug === property.slug}
+                        className="rounded-full bg-rose-500 px-3 py-2 text-xs font-bold text-white"
+                      >
+                        {activeSlug === property.slug ? "..." : "أرشفة"}
+                      </button>
+                    </div>
                   </div>
                 </div>
               </article>
@@ -406,16 +484,16 @@ export function AdminPropertiesDashboard() {
       <section className="space-y-4">
         <div>
           <h2 className="text-2xl font-bold text-[var(--color-ink)]">
-            الوحدات المخفية من الموقع
+            الوحدات غير المنشورة
           </h2>
           <p className="mt-1 text-sm text-[var(--color-ink-soft)]">
-            يمكن إعادة أي وحدة إلى الظهور مرة أخرى.
+            تشمل المسودات والوحدات المؤرشفة.
           </p>
         </div>
 
-        {data?.hiddenProperties.length ? (
+        {hiddenProperties.length ? (
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {data.hiddenProperties.map((property) => (
+            {hiddenProperties.map((property) => (
               <div key={property.slug} className="luxury-surface rounded-[1.75rem] p-5">
                 <div className="flex items-start justify-between gap-4">
                   <div>
@@ -425,14 +503,33 @@ export function AdminPropertiesDashboard() {
                     <p className="mt-2 text-sm leading-7 text-[var(--color-ink-soft)]">
                       {property.location} • {property.compound}
                     </p>
+                    <div className="mt-3 flex flex-wrap gap-2 text-xs">
+                      <span className="rounded-full border border-[var(--color-border)] px-3 py-1">
+                        {property.status === "draft" ? "مسودة" : "مؤرشفة"}
+                      </span>
+                      <span className="rounded-full border border-[var(--color-border)] px-3 py-1">
+                        {property.analytics.views} مشاهدة
+                      </span>
+                      <span className="rounded-full border border-[var(--color-border)] px-3 py-1">
+                        {property.analytics.leads} lead
+                      </span>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2">
+                  <div className="flex flex-wrap items-center gap-2">
                     <Link
                       href={`/admin/${property.slug}/edit`}
                       className="rounded-full bg-[var(--color-gold)] px-4 py-2 text-xs font-bold text-[var(--color-navy)] transition hover:bg-[var(--color-gold-bright)]"
                     >
                       تعديل
                     </Link>
+                    <button
+                      type="button"
+                      onClick={() => void updateStatus(property.slug, "draft")}
+                      disabled={activeSlug === property.slug}
+                      className="rounded-full border border-[var(--color-border)] px-4 py-2 text-xs font-bold text-[var(--color-ink)] transition disabled:opacity-70"
+                    >
+                      مسودة
+                    </button>
                     <button
                       type="button"
                       onClick={() => void restoreProperty(property.slug)}

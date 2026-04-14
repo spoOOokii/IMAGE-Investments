@@ -1,5 +1,4 @@
 import {
-  blogPosts,
   categories,
   companyProfile,
   faqs,
@@ -7,6 +6,10 @@ import {
   testimonials,
   trustPoints,
 } from "@/lib/site-data";
+import {
+  getBlogPostBySlug as getManagedBlogPostBySlug,
+  getPublishedBlogPosts,
+} from "@/lib/admin-blog-store";
 import { getVisiblePropertiesWithAdminStore } from "@/lib/admin-property-store";
 
 export async function getCompanyProfile() {
@@ -56,7 +59,12 @@ export async function getLocationProperties(slug: string) {
 }
 
 export async function getBlogPosts() {
-  return blogPosts;
+  return getPublishedBlogPosts();
+}
+
+export async function getBlogPostBySlug(slug: string) {
+  const post = await getManagedBlogPostBySlug(slug);
+  return post && post.status === "published" ? post : null;
 }
 
 export async function getHomeCollections() {

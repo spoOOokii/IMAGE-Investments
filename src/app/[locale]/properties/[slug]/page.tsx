@@ -3,8 +3,11 @@
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { LeadForm } from "@/components/lead-form";
 import { PropertyCard } from "@/components/property-card";
+import { PropertyAnalyticsTracker } from "@/components/property-analytics-tracker";
+import { PropertyDetailFavoriteBar } from "@/components/property-detail-favorite-bar";
 import { PropertyGallery } from "@/components/property-gallery";
 import { SectionHeading } from "@/components/section-heading";
+import { ShareButtons } from "@/components/share-buttons";
 import { getPropertyBySlug, getRelatedProperties } from "@/lib/cms";
 import { getUiCopy, isLocale, pickLocale } from "@/lib/i18n";
 import { buildMetadata } from "@/lib/seo";
@@ -273,9 +276,12 @@ export default async function PropertyDetailsPage({
   const propertySchema = {
     "@context": "https://schema.org",
     "@type": "Residence",
+    "@id": `https://www.imageinvestments-eg.com/${locale}/properties/${property.slug}`,
     name: property.title.en,
     description: property.summary.en,
     image: property.gallery,
+    url: `https://www.imageinvestments-eg.com/${locale}/properties/${property.slug}`,
+    category: propertyTypeLabel,
     floorSize: {
       "@type": "QuantitativeValue",
       value: property.size,
@@ -285,6 +291,7 @@ export default async function PropertyDetailsPage({
     numberOfBathroomsTotal: property.bathrooms,
     address: {
       "@type": "PostalAddress",
+      streetAddress: property.address?.en ?? property.compound.en,
       addressLocality: property.locationName.en,
       addressCountry: "EG",
     },
@@ -295,14 +302,30 @@ export default async function PropertyDetailsPage({
     },
     offers: {
       "@type": "Offer",
+      priceCurrency: "EGP",
+      price: property.price || undefined,
+      url: `https://www.imageinvestments-eg.com/${locale}/properties/${property.slug}`,
       availability: property.isReady
         ? "https://schema.org/InStock"
         : "https://schema.org/PreOrder",
+    },
+    amenityFeature: property.amenities.map((amenity) => ({
+      "@type": "LocationFeatureSpecification",
+      name: amenity.en,
+      value: true,
+    })),
+    seller: {
+      "@type": "Organization",
+      name: "Image Investments",
+      telephone: companyProfile.phoneDisplay,
+      email: companyProfile.email,
     },
   };
 
   return (
     <>
+      <PropertyAnalyticsTracker slug={property.slug} />
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(propertySchema) }}
@@ -325,6 +348,14 @@ export default async function PropertyDetailsPage({
           <h1 className="display-heading mt-5 max-w-5xl text-4xl font-bold leading-tight text-[var(--color-ink)] md:text-6xl">
             {pickLocale(property.title, locale)}
           </h1>
+          <div className="mt-6 flex flex-wrap items-center justify-between gap-4">
+            <PropertyDetailFavoriteBar slug={property.slug} locale={locale} />
+            <ShareButtons
+              locale={locale}
+              title={pickLocale(property.title, locale)}
+              url={`https://www.imageinvestments-eg.com/${locale}/properties/${property.slug}`}
+            />
+          </div>
         </div>
       </section>
 

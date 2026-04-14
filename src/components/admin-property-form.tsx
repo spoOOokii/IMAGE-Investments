@@ -26,6 +26,7 @@ type FormState = {
   listingType: string;
   price: string;
   contactPhone: string;
+  status: string;
 };
 
 type AdminPropertyFormProps = {
@@ -47,6 +48,7 @@ const defaultState: FormState = {
   listingType: "",
   price: "",
   contactPhone: "",
+  status: "published",
 };
 
 export function AdminPropertyForm({
@@ -70,6 +72,7 @@ export function AdminPropertyForm({
           listingType: initialProperty.listingType,
           price: initialProperty.price ? `${initialProperty.price}` : "",
           contactPhone: initialProperty.contactPhone,
+          status: initialProperty.status,
         }
       : defaultState,
   );
@@ -126,6 +129,11 @@ export function AdminPropertyForm({
     { value: "sale", label: "للبيع" },
     { value: "rent", label: "للإيجار" },
   ];
+  const statusOptions = [
+    { value: "published", label: "منشورة" },
+    { value: "draft", label: "مسودة" },
+    { value: "archived", label: "مؤرشفة" },
+  ];
 
   const selectTriggerClassName =
     "w-full rounded-2xl border border-[var(--color-border)] bg-[rgba(255,255,255,0.05)] px-4 py-3 text-sm text-[var(--color-ink)] outline-none transition-colors duration-300 ease-in-out focus-visible:border-[var(--color-gold)]";
@@ -172,6 +180,7 @@ export function AdminPropertyForm({
       payload.set("listingType", formState.listingType);
       payload.set("price", showPrice ? formState.price : "");
       payload.set("contactPhone", formState.contactPhone);
+      payload.set("status", formState.status);
       payload.set("existingImageUrls", JSON.stringify(existingImageUrls));
       selectedFiles.forEach((file) => payload.append("images", file));
 
@@ -266,6 +275,7 @@ export function AdminPropertyForm({
           <AnimatedSelect value={formState.finishing} onChange={(value) => updateField("finishing", value)} options={finishingOptions} placeholder="التشطيب" triggerClassName={selectTriggerClassName} menuClassName={selectMenuClassName} optionClassName={selectOptionClassName} selectedOptionClassName={selectedOptionClassName} />
           <AnimatedSelect value={formState.furnishing} onChange={(value) => updateField("furnishing", value)} options={furnishingOptions} placeholder="الفرش" triggerClassName={selectTriggerClassName} menuClassName={selectMenuClassName} optionClassName={selectOptionClassName} selectedOptionClassName={selectedOptionClassName} />
           <AnimatedSelect value={formState.listingType} onChange={(value) => updateField("listingType", value)} options={listingTypeOptions} placeholder="نوع العرض" triggerClassName={selectTriggerClassName} menuClassName={selectMenuClassName} optionClassName={selectOptionClassName} selectedOptionClassName={selectedOptionClassName} />
+          <AnimatedSelect value={formState.status} onChange={(value) => updateField("status", value)} options={statusOptions} placeholder="الحالة" triggerClassName={selectTriggerClassName} menuClassName={selectMenuClassName} optionClassName={selectOptionClassName} selectedOptionClassName={selectedOptionClassName} />
 
           {showPrice ? (
             <input type="number" min="1" required value={formState.price} onChange={(event) => updateField("price", event.target.value)} placeholder="السعر" className={inputClassName} />
@@ -273,6 +283,53 @@ export function AdminPropertyForm({
 
           <input type="tel" required value={formState.contactPhone} onChange={(event) => updateField("contactPhone", event.target.value)} placeholder="رقم الهاتف الخاص بالوحدة" className={inputClassName} />
         </div>
+
+        {initialProperty ? (
+          <div className="mt-6 grid gap-4 lg:grid-cols-[0.9fr_1.1fr]">
+            <div className="rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(255,255,255,0.04)] p-5">
+              <h3 className="text-lg font-bold text-[var(--color-ink)]">Analytics</h3>
+              <div className="mt-4 grid grid-cols-2 gap-3 text-sm">
+                <div className="rounded-2xl bg-[rgba(255,255,255,0.04)] p-4">
+                  <div className="text-xs text-[var(--color-ink-soft)]">المشاهدات</div>
+                  <div className="mt-2 text-2xl font-bold text-[var(--color-ink)]">
+                    {initialProperty.analytics.views}
+                  </div>
+                </div>
+                <div className="rounded-2xl bg-[rgba(255,255,255,0.04)] p-4">
+                  <div className="text-xs text-[var(--color-ink-soft)]">الـ Leads</div>
+                  <div className="mt-2 text-2xl font-bold text-[var(--color-ink)]">
+                    {initialProperty.analytics.leads}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-[1.5rem] border border-[var(--color-border)] bg-[rgba(255,255,255,0.04)] p-5">
+              <h3 className="text-lg font-bold text-[var(--color-ink)]">سجل التعديلات</h3>
+              <div className="mt-4 space-y-3">
+                {initialProperty.history.length ? (
+                  initialProperty.history.slice(0, 6).map((entry) => (
+                    <div
+                      key={entry.id}
+                      className="rounded-2xl border border-[var(--color-border)] px-4 py-3"
+                    >
+                      <div className="text-sm font-semibold text-[var(--color-ink)]">
+                        {entry.description}
+                      </div>
+                      <div className="mt-1 text-xs text-[var(--color-ink-soft)]">
+                        {new Date(entry.at).toLocaleString("ar-EG")}
+                      </div>
+                    </div>
+                  ))
+                ) : (
+                  <div className="text-sm text-[var(--color-ink-soft)]">
+                    لا يوجد سجل تعديلات بعد.
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        ) : null}
 
         <div className="mt-6">
           <label htmlFor="property-address" className="mb-3 block text-sm font-semibold text-[var(--color-ink)]">

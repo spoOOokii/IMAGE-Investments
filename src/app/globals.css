@@ -1,5 +1,7 @@
 ﻿@import "tailwindcss";
 
+@import "leaflet/dist/leaflet.css";
+
 :root {
   --color-navy: #081728;
   --color-navy-soft: #10243b;

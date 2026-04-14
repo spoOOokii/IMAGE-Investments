@@ -11,13 +11,35 @@ import {
   getEditablePropertyBySlug,
   updatePropertyRecord,
 } from "@/lib/admin-property-store";
+import { checkRateLimit, getClientIp } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
 
+function enforceRateLimit(request: Request, mode: "read" | "write") {
+  const ip = getClientIp(request);
+  const rate = checkRateLimit({
+    key: `admin-property-${mode}:${ip}`,
+    limit: mode === "read" ? 120 : 30,
+    windowMs: 60_000,
+  });
+
+  if (!rate.ok) {
+    return NextResponse.json(
+      { ok: false, error: "طلبات كثيرة. حاول لاحقاً." },
+      { status: 429 },
+    );
+  }
+
+  return null;
+}
+
 export async function GET(
-  _request: Request,
+  request: Request,
   context: { params: Promise<{ slug: string }> },
 ) {
+  const limited = enforceRateLimit(request, "read");
+  if (limited) return limited;
+
   const { slug } = await context.params;
   const property = await getEditablePropertyBySlug(slug);
 
@@ -32,6 +54,9 @@ export async function PUT(
   request: Request,
   context: { params: Promise<{ slug: string }> },
 ) {
+  const limited = enforceRateLimit(request, "write");
+  if (limited) return limited;
+
   const { slug } = await context.params;
   const editableProperty = await getEditablePropertyBySlug(slug);
 

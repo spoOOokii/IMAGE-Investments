@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(npx tsc:*)",
-      "Bash(grep -r \"meta.*description\\\\|og:\\\\|twitter:\" /d/IMAGE-Investments/src/app/[locale]/page.tsx)"
+      "Bash(grep -r \"meta.*description\\\\|og:\\\\|twitter:\" /d/IMAGE-Investments/src/app/[locale]/page.tsx)",
+      "Bash(ls src/app/admin src/app/api src/app/[locale]/properties src/app/[locale]/blog)",
+      "Bash(ls -la .env*)"
     ]
   }
 }

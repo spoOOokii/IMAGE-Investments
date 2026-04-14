@@ -1,5 +1,6 @@
 ﻿import "server-only";
 
+import { randomUUID } from "node:crypto";
 import { promises as fs } from "node:fs";
 import path from "node:path";
 
@@ -12,6 +13,10 @@ import type {
   ManagedListingType,
   PropertyAdminResponse,
   PropertyAdminStore,
+  PropertyAnalytics,
+  PropertyHistoryAction,
+  PropertyHistoryEntry,
+  PropertyStatus,
 } from "@/lib/admin-property-types";
 import { pickLocale } from "@/lib/i18n";
 import {
@@ -32,8 +37,15 @@ const DEFAULT_STORE: PropertyAdminStore = {
   managedProperties: [],
   propertyOverrides: [],
   hiddenPropertySlugs: [],
+  propertyAnalytics: {},
+  propertyHistory: {},
 };
 const DEFAULT_PROPERTY_IMAGE = "/media/property-placeholder.svg";
+const DEFAULT_PROPERTY_ANALYTICS: PropertyAnalytics = {
+  views: 0,
+  leads: 0,
+};
+const DEFAULT_BASE_UPDATED_AT = "2026-01-01T00:00:00.000Z";
 
 const locationCoordinates: Record<string, { lat: number; lng: number }> = {
   "north-coast": { lat: 30.9828, lng: 28.7308 },
@@ -109,18 +121,168 @@ const listingTypeLabels: Record<ManagedListingType, LocalizedText> = {
   rent: { ar: "للإيجار", en: "For Rent" },
 };
 
+function normalizeStatus(value: unknown): PropertyStatus {
+  return value === "draft" || value === "archived" ? value : "published";
+}
+
+function normalizeManagedRecord(
+  record: Partial<ManagedPropertyRecord>,
+): ManagedPropertyRecord {
+  return {
+    ...record,
+    slug: `${record.slug ?? ""}`.trim(),
+    address: `${record.address ?? ""}`.trim(),
+    description: `${record.description ?? ""}`.trim(),
+    contactPhone: normalizePhoneForDisplay(`${record.contactPhone ?? ""}`),
+    imageUrls: Array.isArray(record.imageUrls)
+      ? record.imageUrls.filter((image): image is string => typeof image === "string")
+      : [],
+    tags: Array.isArray(record.tags)
+      ? record.tags.filter((tag): tag is ManagedPropertyRecord["tags"][number] => typeof tag === "string")
+      : [],
+    status: normalizeStatus(record.status),
+    createdAt: `${record.createdAt ?? DEFAULT_BASE_UPDATED_AT}`,
+    updatedAt: `${record.updatedAt ?? DEFAULT_BASE_UPDATED_AT}`,
+  } as ManagedPropertyRecord;
+}
+
+function normalizeAnalytics(value: unknown): PropertyAnalytics {
+  if (!value || typeof value !== "object") {
+    return { ...DEFAULT_PROPERTY_ANALYTICS };
+  }
+
+  const source = value as Partial<PropertyAnalytics>;
+
+  return {
+    views:
+      typeof source.views === "number" && Number.isFinite(source.views) && source.views > 0
+        ? source.views
+        : 0,
+    leads:
+      typeof source.leads === "number" && Number.isFinite(source.leads) && source.leads > 0
+        ? source.leads
+        : 0,
+    lastViewedAt:
+      typeof source.lastViewedAt === "string" && source.lastViewedAt
+        ? source.lastViewedAt
+        : undefined,
+    lastLeadAt:
+      typeof source.lastLeadAt === "string" && source.lastLeadAt
+        ? source.lastLeadAt
+        : undefined,
+  };
+}
+
+function normalizeHistoryEntries(value: unknown): PropertyHistoryEntry[] {
+  if (!Array.isArray(value)) {
+    return [];
+  }
+
+  return value.filter((entry): entry is PropertyHistoryEntry => {
+    if (!entry || typeof entry !== "object") {
+      return false;
+    }
+
+    const source = entry as Partial<PropertyHistoryEntry>;
+    return (
+      typeof source.id === "string" &&
+      typeof source.at === "string" &&
+      typeof source.action === "string" &&
+      typeof source.actor === "string" &&
+      typeof source.description === "string"
+    );
+  });
+}
+
 function normalizeStore(store: Partial<PropertyAdminStore>): PropertyAdminStore {
   return {
     managedProperties: Array.isArray(store.managedProperties)
-      ? store.managedProperties
+      ? store.managedProperties.map(normalizeManagedRecord)
       : [],
     propertyOverrides: Array.isArray(store.propertyOverrides)
-      ? store.propertyOverrides
+      ? store.propertyOverrides.map(normalizeManagedRecord)
       : [],
     hiddenPropertySlugs: Array.isArray(store.hiddenPropertySlugs)
-      ? store.hiddenPropertySlugs
+      ? store.hiddenPropertySlugs.filter((slug): slug is string => typeof slug === "string")
       : [],
+    propertyAnalytics: Object.fromEntries(
+      Object.entries(store.propertyAnalytics ?? {}).map(([slug, analytics]) => [
+        slug,
+        normalizeAnalytics(analytics),
+      ]),
+    ),
+    propertyHistory: Object.fromEntries(
+      Object.entries(store.propertyHistory ?? {}).map(([slug, entries]) => [
+        slug,
+        normalizeHistoryEntries(entries),
+      ]),
+    ),
   };
+}
+
+function getEffectiveStatus(
+  store: PropertyAdminStore,
+  slug: string,
+  fallbackStatus: PropertyStatus,
+) {
+  if (fallbackStatus === "published" && store.hiddenPropertySlugs.includes(slug)) {
+    return "archived" as const;
+  }
+
+  return fallbackStatus;
+}
+
+function getAnalyticsForSlug(store: PropertyAdminStore, slug: string): PropertyAnalytics {
+  return normalizeAnalytics(store.propertyAnalytics[slug]);
+}
+
+function getHistoryForSlug(
+  store: PropertyAdminStore,
+  slug: string,
+): PropertyHistoryEntry[] {
+  return [...(store.propertyHistory[slug] ?? [])].sort(
+    (first, second) =>
+      new Date(second.at).getTime() - new Date(first.at).getTime(),
+  );
+}
+
+function syncHiddenSlugForStatus(
+  store: PropertyAdminStore,
+  slug: string,
+  status: PropertyStatus,
+) {
+  store.hiddenPropertySlugs = store.hiddenPropertySlugs.filter(
+    (hiddenSlug) => hiddenSlug !== slug,
+  );
+
+  if (status !== "published") {
+    store.hiddenPropertySlugs.push(slug);
+  }
+}
+
+function createHistoryEntry(
+  action: PropertyHistoryAction,
+  description: string,
+  actor: "admin" | "system" = "admin",
+): PropertyHistoryEntry {
+  return {
+    id: randomUUID(),
+    at: new Date().toISOString(),
+    action,
+    actor,
+    description,
+  };
+}
+
+function appendHistory(
+  store: PropertyAdminStore,
+  slug: string,
+  entry: PropertyHistoryEntry,
+) {
+  store.propertyHistory[slug] = [entry, ...(store.propertyHistory[slug] ?? [])].slice(
+    0,
+    50,
+  );
 }
 
 function getCustomDescription(record: ManagedPropertyRecord) {
@@ -497,55 +659,73 @@ function propertyToEditableRecord(property: Property): ManagedPropertyRecord {
     ),
     imageUrls: property.gallery.length ? property.gallery : [DEFAULT_PROPERTY_IMAGE],
     tags: property.tags.length ? property.tags : ["prime"],
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
+    status: "published",
+    createdAt: DEFAULT_BASE_UPDATED_AT,
+    updatedAt: DEFAULT_BASE_UPDATED_AT,
   };
 }
 
-function mergeVisibleProperties(store: PropertyAdminStore) {
-  const hiddenSlugs = new Set(store.hiddenPropertySlugs);
+function mergeAllProperties(store: PropertyAdminStore) {
   const overrideMap = new Map(
-    sortManagedProperties(store.propertyOverrides).map((record) => [
-      record.slug,
-      buildManagedProperty(record),
-    ]),
+    sortManagedProperties(store.propertyOverrides).map((record) => [record.slug, record]),
   );
-  const managedProperties = sortManagedProperties(store.managedProperties)
-    .filter((record) => !hiddenSlugs.has(record.slug))
-    .map(buildManagedProperty);
-  const visibleBaseProperties = baseProperties
-    .filter((property) => !hiddenSlugs.has(property.slug))
-    .map((property) => {
-      const override = overrideMap.get(property.slug);
-
-      if (override) {
-        return {
-          ...override,
+  const managedEntries = sortManagedProperties(store.managedProperties).map((record) => ({
+    property: buildManagedProperty(record),
+    source: "managed" as const,
+    status: getEffectiveStatus(store, record.slug, record.status),
+    updatedAt: record.updatedAt,
+    analytics: getAnalyticsForSlug(store, record.slug),
+    history: getHistoryForSlug(store, record.slug),
+  }));
+  const baseEntries = baseProperties.map((property) => {
+    const override = overrideMap.get(property.slug);
+    const mergedProperty = override
+      ? {
+          ...buildManagedProperty(override),
           source: "built-in" as const,
+        }
+      : {
+          ...property,
+          source: property.source ?? "built-in",
+          contactPhone: property.contactPhone ?? companyProfile.phoneDisplay,
         };
-      }
 
-      return {
-        ...property,
-        source: property.source ?? "built-in",
-        contactPhone: property.contactPhone ?? companyProfile.phoneDisplay,
-      };
-    });
+    return {
+      property: mergedProperty,
+      source: "built-in" as const,
+      status: getEffectiveStatus(store, property.slug, override?.status ?? "published"),
+      updatedAt: override?.updatedAt ?? DEFAULT_BASE_UPDATED_AT,
+      analytics: getAnalyticsForSlug(store, property.slug),
+      history: getHistoryForSlug(store, property.slug),
+    };
+  });
 
-  return [...managedProperties, ...visibleBaseProperties];
+  return [...managedEntries, ...baseEntries].sort(
+    (first, second) =>
+      new Date(second.updatedAt).getTime() - new Date(first.updatedAt).getTime(),
+  );
 }
 
 export async function getVisiblePropertiesWithAdminStore() {
   const store = await readPropertyAdminStore();
-  return mergeVisibleProperties(store);
+  return mergeAllProperties(store)
+    .filter((entry) => entry.status === "published")
+    .map((entry) => entry.property);
 }
 
-function toAdminSummary(property: Property, hidden: boolean): AdminPropertySummary {
+function toAdminSummary(
+  property: Property,
+  source: "built-in" | "managed",
+  status: PropertyStatus,
+  updatedAt: string,
+  analytics: PropertyAnalytics,
+  history: PropertyHistoryEntry[],
+): AdminPropertySummary {
   const compoundSlug = resolveCoastalVillageKey(property);
 
   return {
     slug: property.slug,
-    source: property.source ?? "built-in",
+    source,
     title: pickLocale(property.title, "ar"),
     locationSlug: property.locationSlug,
     location: pickLocale(property.locationName, "ar"),
@@ -559,26 +739,31 @@ function toAdminSummary(property: Property, hidden: boolean): AdminPropertySumma
     image: property.gallery[0] ?? DEFAULT_PROPERTY_IMAGE,
     contactPhone: property.contactPhone ?? companyProfile.phoneDisplay,
     listingType: property.listingType ?? null,
-    hidden,
+    hidden: status !== "published",
+    status,
+    analytics,
+    updatedAt,
+    history,
   };
 }
 
 export async function getAdminPropertyResponse(): Promise<PropertyAdminResponse> {
   const store = await readPropertyAdminStore();
-  const hiddenSlugs = new Set(store.hiddenPropertySlugs);
-  const allProperties = mergeVisibleProperties({
-    ...store,
-    hiddenPropertySlugs: [],
-  });
+  const merged = mergeAllProperties(store).map((entry) =>
+    toAdminSummary(
+      entry.property,
+      entry.source,
+      entry.status,
+      entry.updatedAt,
+      entry.analytics,
+      entry.history,
+    ),
+  );
 
-  const visibleProperties = allProperties
-    .filter((property) => !hiddenSlugs.has(property.slug))
-    .map((property) => toAdminSummary(property, false));
-  const hiddenProperties = allProperties
-    .filter((property) => hiddenSlugs.has(property.slug))
-    .map((property) => toAdminSummary(property, true));
-
-  return { visibleProperties, hiddenProperties };
+  return {
+    visibleProperties: merged.filter((property) => property.status === "published"),
+    hiddenProperties: merged.filter((property) => property.status !== "published"),
+  };
 }
 
 function createUniqueSlug(
@@ -614,16 +799,62 @@ export async function createManagedProperty(payload: CreateManagedPropertyPayloa
     contactPhone: normalizePhoneForDisplay(payload.contactPhone),
     imageUrls: payload.imageUrls.length ? payload.imageUrls : [DEFAULT_PROPERTY_IMAGE],
     tags: payload.tags?.length ? payload.tags : ["prime"],
+    status: payload.status ?? "published",
     createdAt: now,
     updatedAt: now,
   });
-  store.hiddenPropertySlugs = store.hiddenPropertySlugs.filter(
-    (hiddenSlug) => hiddenSlug !== slug,
+  syncHiddenSlugForStatus(store, slug, payload.status ?? "published");
+  appendHistory(
+    store,
+    slug,
+    createHistoryEntry("created", "تمت إضافة الوحدة من لوحة الإدارة."),
   );
 
   await writePropertyAdminStore(store);
 
   return getAdminPropertyResponse();
+}
+
+export async function importManagedProperties(
+  payloads: CreateManagedPropertyPayload[],
+) {
+  const store = await readPropertyAdminStore();
+  const existingSlugs = new Set([
+    ...baseProperties.map((property) => property.slug),
+    ...store.managedProperties.map((property) => property.slug),
+  ]);
+  let importedCount = 0;
+
+  for (const payload of payloads) {
+    const slug = createUniqueSlug(payload, existingSlugs);
+    const now = new Date().toISOString();
+    existingSlugs.add(slug);
+    store.managedProperties.unshift({
+      ...payload,
+      slug,
+      address: (payload.address ?? "").trim(),
+      contactPhone: normalizePhoneForDisplay(payload.contactPhone),
+      imageUrls: payload.imageUrls.length ? payload.imageUrls : [DEFAULT_PROPERTY_IMAGE],
+      tags: payload.tags?.length ? payload.tags : ["prime"],
+      status: payload.status ?? "published",
+      createdAt: now,
+      updatedAt: now,
+    });
+    syncHiddenSlugForStatus(store, slug, payload.status ?? "published");
+    appendHistory(
+      store,
+      slug,
+      createHistoryEntry("imported", "تمت إضافة الوحدة عبر الاستيراد الجماعي.", "system"),
+    );
+    importedCount += 1;
+  }
+
+  await writePropertyAdminStore(store);
+
+  return {
+    importedCount,
+    ...(await getAdminPropertyResponse()),
+  };
 }
 
 export async function getEditablePropertyBySlug(
@@ -650,6 +881,9 @@ export async function getEditablePropertyBySlug(
       price: managedMatch.price,
       contactPhone: managedMatch.contactPhone,
       imageUrls: managedMatch.imageUrls,
+      status: getEffectiveStatus(store, slug, managedMatch.status),
+      analytics: getAnalyticsForSlug(store, slug),
+      history: getHistoryForSlug(store, slug),
     };
   }
 
@@ -673,6 +907,9 @@ export async function getEditablePropertyBySlug(
       price: overrideMatch.price,
       contactPhone: overrideMatch.contactPhone,
       imageUrls: overrideMatch.imageUrls,
+      status: getEffectiveStatus(store, slug, overrideMatch.status),
+      analytics: getAnalyticsForSlug(store, slug),
+      history: getHistoryForSlug(store, slug),
     };
   }
 
@@ -705,6 +942,9 @@ export async function getEditablePropertyBySlug(
     price: record.price,
     contactPhone: record.contactPhone,
     imageUrls: record.imageUrls,
+    status: getEffectiveStatus(store, slug, "published"),
+    analytics: getAnalyticsForSlug(store, slug),
+    history: getHistoryForSlug(store, slug),
   };
 }
 
@@ -731,6 +971,7 @@ export async function updatePropertyRecord(
     contactPhone: normalizePhoneForDisplay(payload.contactPhone),
     imageUrls: payload.imageUrls.length ? payload.imageUrls : [DEFAULT_PROPERTY_IMAGE],
     tags: payload.tags?.length ? payload.tags : ["prime"],
+    status: payload.status ?? "published",
     createdAt: now,
     updatedAt: now,
   };
@@ -743,6 +984,12 @@ export async function updatePropertyRecord(
       createdAt: existing.createdAt,
       tags: payload.tags?.length ? payload.tags : existing.tags,
     };
+    syncHiddenSlugForStatus(
+      store,
+      slug,
+      payload.status ?? existing.status ?? "published",
+    );
+    appendHistory(store, slug, createHistoryEntry("updated", "تم تعديل بيانات الوحدة."));
     await writePropertyAdminStore(store);
     return getAdminPropertyResponse();
   }
@@ -764,6 +1011,11 @@ export async function updatePropertyRecord(
         ? store.propertyOverrides[existingOverrideIndex].createdAt
         : baseRecord.createdAt,
     tags: payload.tags?.length ? payload.tags : baseRecord.tags,
+    status:
+      payload.status ??
+      (existingOverrideIndex >= 0
+        ? store.propertyOverrides[existingOverrideIndex].status
+        : baseRecord.status),
   };
 
   if (existingOverrideIndex >= 0) {
@@ -772,29 +1024,95 @@ export async function updatePropertyRecord(
     store.propertyOverrides.unshift(overrideRecord);
   }
 
+  syncHiddenSlugForStatus(store, slug, overrideRecord.status);
+  appendHistory(store, slug, createHistoryEntry("updated", "تم تعديل بيانات الوحدة."));
   await writePropertyAdminStore(store);
   return getAdminPropertyResponse();
 }
 
-export async function hidePropertyFromSite(slug: string) {
+export async function updatePropertyStatus(slug: string, status: PropertyStatus) {
   const store = await readPropertyAdminStore();
+  const managedIndex = store.managedProperties.findIndex((property) => property.slug === slug);
 
-  if (!store.hiddenPropertySlugs.includes(slug)) {
-    store.hiddenPropertySlugs.push(slug);
-    await writePropertyAdminStore(store);
+  if (managedIndex >= 0) {
+    store.managedProperties[managedIndex] = {
+      ...store.managedProperties[managedIndex],
+      status,
+      updatedAt: new Date().toISOString(),
+    };
+  } else {
+    const overrideIndex = store.propertyOverrides.findIndex(
+      (property) => property.slug === slug,
+    );
+
+    if (overrideIndex >= 0) {
+      store.propertyOverrides[overrideIndex] = {
+        ...store.propertyOverrides[overrideIndex],
+        status,
+        updatedAt: new Date().toISOString(),
+      };
+    } else {
+      const baseMatch = baseProperties.find((property) => property.slug === slug);
+
+      if (!baseMatch) {
+        throw new Error("Property not found");
+      }
+
+      store.propertyOverrides.unshift({
+        ...propertyToEditableRecord(baseMatch),
+        slug,
+        status,
+        updatedAt: new Date().toISOString(),
+      });
+    }
   }
 
-  return getAdminPropertyResponse();
-}
-
-export async function restorePropertyToSite(slug: string) {
-  const store = await readPropertyAdminStore();
-  store.hiddenPropertySlugs = store.hiddenPropertySlugs.filter(
-    (hiddenSlug) => hiddenSlug !== slug,
+  syncHiddenSlugForStatus(store, slug, status);
+  appendHistory(
+    store,
+    slug,
+    createHistoryEntry(
+      "status_changed",
+      status === "published"
+        ? "تم نشر الوحدة على الموقع."
+        : status === "draft"
+          ? "تم نقل الوحدة إلى المسودة."
+          : "تمت أرشفة الوحدة وإخفاؤها من الموقع.",
+    ),
   );
   await writePropertyAdminStore(store);
 
   return getAdminPropertyResponse();
+}
+
+export async function hidePropertyFromSite(slug: string) {
+  return updatePropertyStatus(slug, "archived");
+}
+
+export async function restorePropertyToSite(slug: string) {
+  return updatePropertyStatus(slug, "published");
+}
+
+export async function recordPropertyView(slug: string) {
+  const store = await readPropertyAdminStore();
+  const current = getAnalyticsForSlug(store, slug);
+  store.propertyAnalytics[slug] = {
+    ...current,
+    views: current.views + 1,
+    lastViewedAt: new Date().toISOString(),
+  };
+  await writePropertyAdminStore(store);
+}
+
+export async function recordPropertyLead(slug: string) {
+  const store = await readPropertyAdminStore();
+  const current = getAnalyticsForSlug(store, slug);
+  store.propertyAnalytics[slug] = {
+    ...current,
+    leads: current.leads + 1,
+    lastLeadAt: new Date().toISOString(),
+  };
+  await writePropertyAdminStore(store);
 }
 
 export function getDefaultPropertyImage() {
