@@ -10,10 +10,63 @@ import { getUiCopy, isLocale, pickLocale } from "@/lib/i18n";
 import { buildMetadata } from "@/lib/seo";
 import { companyProfile, properties, propertyTypeLabels } from "@/lib/site-data";
 import {
+  getCoastalVillageOption,
+  resolveCoastalVillageKey,
+} from "@/lib/property-search";
+import {
   buildPhoneHref,
   buildPropertyInquiryMessage,
   buildWhatsAppHref,
 } from "@/lib/whatsapp";
+
+const coastalVillageMapQueries: Record<string, string> = {
+  "almaza-bay": "Almaza Bay North Coast Egypt",
+  "hacienda-heneish": "Hacienda Heneish North Coast Egypt",
+  summer: "Summer North Coast Egypt",
+  "silver-sand": "Silver Sand North Coast Egypt",
+  "fouka-bay": "Fouka Bay North Coast Egypt",
+  "marsellia-5": "Marsellia 5 North Coast Egypt",
+  "hacienda-west": "Hacienda West Palm Hills Ras El Hekma North Coast Egypt",
+  "hyde-park-north-coast": "Hyde Park North Coast Egypt",
+  "la-vista-ras-hekma": "La Vista Ras Hekma North Coast Egypt",
+  "mountain-view": "Mountain View North Coast Egypt",
+  "swan-lake": "Swan Lake North Coast Egypt",
+  solare: "Solare North Coast Egypt",
+  gaia: "Gaia North Coast Egypt",
+  june: "June North Coast Egypt",
+  "cali-coast": "Cali Coast North Coast Egypt",
+  "direction-white": "Direction White North Coast Egypt",
+  marasem: "Marasem North Coast Egypt",
+  "the-med": "The Med North Coast Egypt",
+  jefaira: "Jefaira North Coast Egypt",
+  "azzar-island": "Azzar Island North Coast Egypt",
+  horizon: "Horizon North Coast Egypt",
+  soul: "Soul North Coast Egypt",
+  lvls: "LVLS North Coast Egypt",
+  dose: "Dose North Coast Egypt",
+  "water-way": "Waterway North Coast Egypt",
+  seazen: "Seazen North Coast Egypt",
+  "la-vista-bay-east": "La Vista Bay East North Coast Egypt",
+  "la-vista-bay": "La Vista Bay North Coast Egypt",
+  "d-bay": "D Bay North Coast Egypt",
+  "la-sirena": "La Sirena North Coast Egypt",
+  zoya: "Zoya North Coast Egypt",
+  playa: "Playa North Coast Egypt",
+  "ghazala-bay": "Ghazala Bay North Coast Egypt",
+  telal: "Telal North Coast Egypt",
+  "hacienda-red": "Hacienda Red North Coast Egypt",
+  "hacienda-white": "Hacienda White North Coast Egypt",
+  blumar: "Blumar North Coast Egypt",
+  amwaj: "Amwaj North Coast Egypt",
+  "sea-shell": "Sea Shell North Coast Egypt",
+  "stella-heights": "Stella Heights North Coast Egypt",
+  "la-vista-cascada": "La Vista Cascada North Coast Egypt",
+  marassi: "Marassi Sidi Abdel Rahman North Coast Egypt",
+  diplo: "Diplomats North Coast Egypt",
+  "hacienda-bay": "Hacienda Bay Sidi Abdel Rahman North Coast Egypt",
+  zahra: "Zahra North Coast Egypt",
+  "palm-hills-alamein": "Palm Hills Alamein Egypt",
+};
 
 export const dynamic = "force-dynamic";
 
@@ -69,6 +122,7 @@ export default async function PropertyDetailsPage({
     property.slug,
     property.locationSlug,
   );
+  const coastalVillageKey = resolveCoastalVillageKey(property);
   const propertyTypeLabel = pickLocale(
     propertyTypeLabels[property.propertyType],
     locale,
@@ -76,6 +130,18 @@ export default async function PropertyDetailsPage({
   const propertyContactPhone = property.contactPhone ?? companyProfile.phoneDisplay;
   const propertyDescription = pickLocale(property.description, locale).trim();
   const isRentListing = property.listingType === "rent";
+  const propertyCompoundEn =
+    (coastalVillageKey && getCoastalVillageOption(coastalVillageKey)?.label.en) ||
+    pickLocale(property.compound, "en").trim();
+  const propertyLocationEn = pickLocale(property.locationName, "en").trim();
+  const propertyMapQuery =
+    coastalVillageMapQueries[coastalVillageKey] ||
+    (propertyCompoundEn
+      ? `${propertyCompoundEn}, ${propertyLocationEn}, Egypt`
+      : `${propertyLocationEn}, Egypt`);
+  const propertyMapSrc = `https://www.google.com/maps?q=${encodeURIComponent(
+    propertyMapQuery,
+  )}&z=15&output=embed`;
   const isFurnished =
     pickLocale(property.summary, "ar").includes("مفروش") ||
     pickLocale(property.summary, "en").toLowerCase().includes("furnished");
@@ -380,7 +446,7 @@ export default async function PropertyDetailsPage({
             <div className="luxury-surface overflow-hidden p-3">
               <iframe
                 title={pickLocale(property.title, locale)}
-                src={`https://www.google.com/maps?q=${property.coordinates.lat},${property.coordinates.lng}&z=14&output=embed`}
+                src={propertyMapSrc}
                 className="h-[420px] w-full rounded-[1.5rem] border-0"
                 loading="lazy"
               />
