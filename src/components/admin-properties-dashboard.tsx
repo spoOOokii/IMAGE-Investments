@@ -242,7 +242,9 @@ export function AdminPropertiesDashboard() {
                 استيراد CSV / Excel
               </div>
               <p className="mt-2 text-xs leading-6 text-[var(--theme-dark-copy)]">
-                الأعمدة المدعومة: `locationSlug`, `propertyType`, `bedrooms`, `coastalVillage`, `address`, `description`, `size`, `bathrooms`, `finishing`, `furnishing`, `listingType`, `price`, `contactPhone`, `imageUrls`, `status`.
+                الأعمدة المدعومة: locationSlug, propertyType, bedrooms, coastalVillage,
+                address, description, size, bathrooms, finishing, furnishing,
+                listingType, price, contactPhone, imageUrls, status.
               </p>
               <input
                 type="file"

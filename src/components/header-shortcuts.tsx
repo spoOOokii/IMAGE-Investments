@@ -17,6 +17,24 @@ export function HeaderShortcuts({ locale }: { locale: Locale }) {
   return (
     <div className="flex items-center gap-2">
       <Link
+        href={localizedPath(locale, "/map")}
+        aria-label={locale === "ar" ? "الخريطة" : "Map"}
+        className={linkClass}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          className="h-4 w-4"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 18 3 20V6l6-2 6 2 6-2v14l-6 2-6-2Z" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 4v14" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M15 6v14" />
+        </svg>
+      </Link>
+      <Link
         href={localizedPath(locale, "/favorites")}
         aria-label={locale === "ar" ? "المفضلة" : "Favorites"}
         className={linkClass}

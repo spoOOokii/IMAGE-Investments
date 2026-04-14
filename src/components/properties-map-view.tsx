@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import L from "leaflet";
+import type { LayerGroup, Map as LeafletMap } from "leaflet";
 
 import { localizedPath, pickLocale, type Locale } from "@/lib/i18n";
 import type { Property } from "@/lib/site-data";
@@ -14,83 +14,104 @@ type PropertiesMapViewProps = {
 
 export function PropertiesMapView({ locale, properties }: PropertiesMapViewProps) {
   const mapElementRef = useRef<HTMLDivElement | null>(null);
-  const mapRef = useRef<L.Map | null>(null);
-  const markersLayerRef = useRef<L.LayerGroup | null>(null);
+  const mapRef = useRef<LeafletMap | null>(null);
+  const markersLayerRef = useRef<LayerGroup | null>(null);
+  const [mapReady, setMapReady] = useState(false);
   const [selectedSlug, setSelectedSlug] = useState(properties[0]?.slug ?? "");
   const selectedProperty =
     properties.find((property) => property.slug === selectedSlug) ?? properties[0];
 
   useEffect(() => {
-    if (!mapElementRef.current || mapRef.current) {
-      return;
+    let cancelled = false;
+
+    async function setupMap() {
+      if (!mapElementRef.current || mapRef.current) {
+        return;
+      }
+
+      const L = await import("leaflet");
+
+      if (cancelled || !mapElementRef.current) {
+        return;
+      }
+
+      const map = L.map(mapElementRef.current, {
+        zoomControl: true,
+        scrollWheelZoom: false,
+      }).setView([29.9, 30.9], 6);
+
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: "&copy; OpenStreetMap contributors",
+        maxZoom: 18,
+      }).addTo(map);
+
+      mapRef.current = map;
+      markersLayerRef.current = L.layerGroup().addTo(map);
+      setMapReady(true);
     }
 
-    const map = L.map(mapElementRef.current, {
-      zoomControl: true,
-      scrollWheelZoom: false,
-    }).setView([29.9, 30.9], 6);
-
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      attribution: "&copy; OpenStreetMap contributors",
-      maxZoom: 18,
-    }).addTo(map);
-
-    mapRef.current = map;
-    markersLayerRef.current = L.layerGroup().addTo(map);
+    void setupMap();
 
     return () => {
-      map.remove();
+      cancelled = true;
+      setMapReady(false);
+      mapRef.current?.remove();
       mapRef.current = null;
       markersLayerRef.current = null;
     };
   }, []);
 
   useEffect(() => {
-    const map = mapRef.current;
-    const markersLayer = markersLayerRef.current;
+    async function renderMarkers() {
+      const map = mapRef.current;
+      const markersLayer = markersLayerRef.current;
 
-    if (!map || !markersLayer) {
-      return;
+      if (!map || !markersLayer) {
+        return;
+      }
+
+      const L = await import("leaflet");
+      markersLayer.clearLayers();
+
+      const bounds = L.latLngBounds([]);
+
+      for (const property of properties) {
+        const isSelected = property.slug === selectedProperty?.slug;
+        const marker = L.circleMarker(
+          [property.coordinates.lat, property.coordinates.lng],
+          {
+            radius: isSelected ? 9 : 7,
+            weight: 2,
+            color: isSelected ? "#ebd2a5" : "#ffffff",
+            fillColor: isSelected ? "#cda86d" : "#081728",
+            fillOpacity: 0.95,
+          },
+        );
+
+        marker.bindPopup(`
+          <div style="direction:${locale === "ar" ? "rtl" : "ltr"};min-width:220px">
+            <div style="font-weight:700;margin-bottom:6px;">${pickLocale(property.title, locale)}</div>
+            <div style="font-size:12px;color:#44576b;">${pickLocale(property.locationName, locale)} • ${pickLocale(property.compound, locale)}</div>
+          </div>
+        `);
+        marker.on("click", () => setSelectedSlug(property.slug));
+        marker.addTo(markersLayer);
+        bounds.extend([property.coordinates.lat, property.coordinates.lng]);
+      }
+
+      if (selectedProperty) {
+        map.flyTo(
+          [selectedProperty.coordinates.lat, selectedProperty.coordinates.lng],
+          11,
+          { duration: 0.8 },
+        );
+      } else if (bounds.isValid()) {
+        map.fitBounds(bounds.pad(0.2));
+      }
     }
 
-    markersLayer.clearLayers();
-
-    const bounds = L.latLngBounds([]);
-
-    for (const property of properties) {
-      const isSelected = property.slug === selectedProperty?.slug;
-      const marker = L.circleMarker(
-        [property.coordinates.lat, property.coordinates.lng],
-        {
-          radius: isSelected ? 9 : 7,
-          weight: 2,
-          color: isSelected ? "#ebd2a5" : "#ffffff",
-          fillColor: isSelected ? "#cda86d" : "#081728",
-          fillOpacity: 0.95,
-        },
-      );
-
-      marker.bindPopup(`
-        <div style="direction:${locale === "ar" ? "rtl" : "ltr"};min-width:220px">
-          <div style="font-weight:700;margin-bottom:6px;">${pickLocale(property.title, locale)}</div>
-          <div style="font-size:12px;color:#44576b;">${pickLocale(property.locationName, locale)} • ${pickLocale(property.compound, locale)}</div>
-        </div>
-      `);
-      marker.on("click", () => setSelectedSlug(property.slug));
-      marker.addTo(markersLayer);
-      bounds.extend([property.coordinates.lat, property.coordinates.lng]);
-    }
-
-    if (selectedProperty) {
-      map.flyTo(
-        [selectedProperty.coordinates.lat, selectedProperty.coordinates.lng],
-        11,
-        { duration: 0.8 },
-      );
-    } else if (bounds.isValid()) {
-      map.fitBounds(bounds.pad(0.2));
-    }
-  }, [locale, properties, selectedProperty]);
+    void renderMarkers();
+  }, [locale, mapReady, properties, selectedProperty]);
 
   if (!selectedProperty) {
     return (

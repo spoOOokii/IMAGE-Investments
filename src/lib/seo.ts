@@ -10,7 +10,7 @@ export function buildMetadata({
   title,
   description,
   path = "",
-  image = "/media/logo.png",
+  image,
 }: {
   locale: Locale;
   title: string;
@@ -20,6 +20,11 @@ export function buildMetadata({
 }): Metadata {
   const url = `${baseUrl}${localizedPath(locale, path)}`;
   const alternatePath = path || "";
+  const resolvedImage = image
+    ? image.startsWith("http")
+      ? image
+      : `${baseUrl}${image}`
+    : `${baseUrl}${localizedPath(locale, "/opengraph-image")}`;
 
   return {
     title,
@@ -36,7 +41,7 @@ export function buildMetadata({
       description,
       url,
       siteName: "Image Investments",
-      images: [{ url: image }],
+      images: [{ url: resolvedImage }],
       locale: locale === "ar" ? "ar_EG" : "en_US",
       type: "website",
     },
@@ -44,7 +49,7 @@ export function buildMetadata({
       card: "summary_large_image",
       title,
       description,
-      images: [image],
+      images: [resolvedImage],
     },
   };
 }

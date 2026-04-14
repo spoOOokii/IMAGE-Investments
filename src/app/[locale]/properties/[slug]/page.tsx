@@ -99,7 +99,7 @@ export async function generateMetadata({
     path: `/properties/${slug}`,
     title: pickLocale(property.title, locale),
     description: pickLocale(property.summary, locale),
-    image: property.gallery[0],
+    image: `/${locale}/properties/${slug}/opengraph-image`,
   });
 }
 

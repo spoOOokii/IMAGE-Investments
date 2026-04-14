@@ -50,8 +50,8 @@ export default async function MapPage({
         }
         description={
           locale === "ar"
-            ? "اضغط على أي منطقة لعرض الوحدات المتاحة فيها."
-            : "Tap any area to see the properties available there."
+            ? "اختَر أي marker أو أي وحدة من القائمة لمعاينتها على الخريطة."
+            : "Pick any marker or listing from the sidebar to inspect it on the map."
         }
       />
       <section className="container-shell py-10 md:py-14">
