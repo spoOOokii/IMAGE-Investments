@@ -28,7 +28,9 @@
         "underMarket"
       ],
       "createdAt": "2026-04-13T02:45:31.168Z",
-      "updatedAt": "2026-04-13T02:45:31.168Z"
+      "updatedAt": "2026-04-13T02:45:31.168Z",
+      "address": "",
+      "status": "published"
     },
     {
       "slug": "desktop-sale-2-hacienda-bay-chalet",
@@ -56,7 +58,9 @@
         "prime"
       ],
       "createdAt": "2026-04-13T02:45:31.188Z",
-      "updatedAt": "2026-04-13T02:45:31.188Z"
+      "updatedAt": "2026-04-13T02:45:31.188Z",
+      "address": "",
+      "status": "published"
     },
     {
       "slug": "desktop-sale-3-hacienda-bay-villa",
@@ -85,7 +89,9 @@
         "underMarket"
       ],
       "createdAt": "2026-04-13T02:45:31.215Z",
-      "updatedAt": "2026-04-13T02:45:31.215Z"
+      "updatedAt": "2026-04-13T02:45:31.215Z",
+      "address": "",
+      "status": "published"
     },
     {
       "slug": "desktop-sale-4-marassi-chalet",
@@ -113,7 +119,9 @@
         "prime"
       ],
       "createdAt": "2026-04-13T02:45:31.249Z",
-      "updatedAt": "2026-04-13T02:45:31.249Z"
+      "updatedAt": "2026-04-13T02:45:31.249Z",
+      "address": "",
+      "status": "published"
     },
     {
       "slug": "desktop-sale-5-hacienda-bay-chalet",
@@ -139,7 +147,9 @@
         "prime"
       ],
       "createdAt": "2026-04-13T02:45:31.270Z",
-      "updatedAt": "2026-04-13T02:45:31.270Z"
+      "updatedAt": "2026-04-13T02:45:31.270Z",
+      "address": "",
+      "status": "published"
     },
     {
       "slug": "desktop-sale-6-marassi-chalet",
@@ -166,7 +176,9 @@
         "prime"
       ],
       "createdAt": "2026-04-13T02:45:31.301Z",
-      "updatedAt": "2026-04-13T02:45:31.301Z"
+      "updatedAt": "2026-04-13T02:45:31.301Z",
+      "address": "",
+      "status": "published"
     },
     {
       "slug": "desktop-sale-7-amwaj-penthouse",
@@ -192,7 +204,9 @@
         "underMarket"
       ],
       "createdAt": "2026-04-13T02:45:31.315Z",
-      "updatedAt": "2026-04-13T02:45:31.315Z"
+      "updatedAt": "2026-04-13T02:45:31.315Z",
+      "address": "",
+      "status": "published"
     },
     {
       "slug": "desktop-sale-8-marassi-twinhouse",
@@ -244,7 +258,9 @@
         "prime"
       ],
       "createdAt": "2026-04-13T02:45:31.424Z",
-      "updatedAt": "2026-04-13T02:45:31.424Z"
+      "updatedAt": "2026-04-13T02:45:31.424Z",
+      "address": "",
+      "status": "published"
     },
     {
       "slug": "desktop-sale-9-marassi-chalet",
@@ -272,7 +288,9 @@
         "prime"
       ],
       "createdAt": "2026-04-13T02:45:31.424Z",
-      "updatedAt": "2026-04-13T02:45:31.424Z"
+      "updatedAt": "2026-04-13T02:45:31.424Z",
+      "address": "",
+      "status": "published"
     },
     {
       "slug": "desktop-sale-10-hacienda-bay-villa",
@@ -302,7 +320,9 @@
         "prime"
       ],
       "createdAt": "2026-04-13T02:45:31.425Z",
-      "updatedAt": "2026-04-13T02:45:31.425Z"
+      "updatedAt": "2026-04-13T02:45:31.425Z",
+      "address": "",
+      "status": "published"
     },
     {
       "slug": "desktop-sale-11-amwaj-chalet",
@@ -333,7 +353,9 @@
         "underMarket"
       ],
       "createdAt": "2026-04-13T02:45:31.425Z",
-      "updatedAt": "2026-04-13T02:45:31.425Z"
+      "updatedAt": "2026-04-13T02:45:31.425Z",
+      "address": "",
+      "status": "published"
     },
     {
       "slug": "desktop-sale-12-amwaj-penthouse",
@@ -364,7 +386,9 @@
         "underMarket"
       ],
       "createdAt": "2026-04-13T02:45:31.425Z",
-      "updatedAt": "2026-04-13T02:45:31.425Z"
+      "updatedAt": "2026-04-13T02:45:31.425Z",
+      "address": "",
+      "status": "published"
     },
     {
       "slug": "desktop-sale-13-hacienda-west-chalet",
@@ -394,7 +418,9 @@
         "prime"
       ],
       "createdAt": "2026-04-13T02:45:31.425Z",
-      "updatedAt": "2026-04-13T02:45:31.425Z"
+      "updatedAt": "2026-04-13T02:45:31.425Z",
+      "address": "",
+      "status": "published"
     },
     {
       "slug": "desktop-sale-14-hacienda-west-chalet",
@@ -424,7 +450,9 @@
         "prime"
       ],
       "createdAt": "2026-04-13T02:45:31.425Z",
-      "updatedAt": "2026-04-13T02:45:31.425Z"
+      "updatedAt": "2026-04-13T02:45:31.425Z",
+      "address": "",
+      "status": "published"
     },
     {
       "slug": "desktop-sale-15-hacienda-west-penthouse",
@@ -454,7 +482,9 @@
         "prime"
       ],
       "createdAt": "2026-04-13T02:45:31.425Z",
-      "updatedAt": "2026-04-13T02:45:31.425Z"
+      "updatedAt": "2026-04-13T02:45:31.425Z",
+      "address": "",
+      "status": "published"
     },
     {
       "slug": "desktop-sale-16-hacienda-west-penthouse",
@@ -484,7 +514,9 @@
         "prime"
       ],
       "createdAt": "2026-04-13T02:45:31.426Z",
-      "updatedAt": "2026-04-13T02:45:31.426Z"
+      "updatedAt": "2026-04-13T02:45:31.426Z",
+      "address": "",
+      "status": "published"
     },
     {
       "slug": "desktop-sale-17-hacienda-west-chalet",
@@ -515,7 +547,9 @@
         "underMarket"
       ],
       "createdAt": "2026-04-13T02:45:31.426Z",
-      "updatedAt": "2026-04-13T02:45:31.426Z"
+      "updatedAt": "2026-04-13T02:45:31.426Z",
+      "address": "",
+      "status": "published"
     },
     {
       "slug": "desktop-sale-18-hacienda-west-chalet",
@@ -545,7 +579,9 @@
         "prime"
       ],
       "createdAt": "2026-04-13T02:45:31.426Z",
-      "updatedAt": "2026-04-13T02:45:31.426Z"
+      "updatedAt": "2026-04-13T02:45:31.426Z",
+      "address": "",
+      "status": "published"
     },
     {
       "slug": "desktop-sale-19-hacienda-west-chalet",
@@ -575,7 +611,9 @@
         "prime"
       ],
       "createdAt": "2026-04-13T02:45:31.426Z",
-      "updatedAt": "2026-04-13T02:45:31.426Z"
+      "updatedAt": "2026-04-13T02:45:31.426Z",
+      "address": "",
+      "status": "published"
     },
     {
       "slug": "desktop-sale-20-hacienda-bay-chalet",
@@ -606,7 +644,9 @@
         "underMarket"
       ],
       "createdAt": "2026-04-13T02:45:31.426Z",
-      "updatedAt": "2026-04-13T02:45:31.426Z"
+      "updatedAt": "2026-04-13T02:45:31.426Z",
+      "address": "",
+      "status": "published"
     },
     {
       "slug": "desktop-sale-21-hacienda-bay-chalet",
@@ -637,7 +677,9 @@
         "underMarket"
       ],
       "createdAt": "2026-04-13T02:45:31.426Z",
-      "updatedAt": "2026-04-13T02:45:31.426Z"
+      "updatedAt": "2026-04-13T02:45:31.426Z",
+      "address": "",
+      "status": "published"
     },
     {
       "slug": "desktop-sale-22-hacienda-bay-chalet",
@@ -667,7 +709,9 @@
         "prime"
       ],
       "createdAt": "2026-04-13T02:45:31.426Z",
-      "updatedAt": "2026-04-13T02:45:31.426Z"
+      "updatedAt": "2026-04-13T02:45:31.426Z",
+      "address": "",
+      "status": "published"
     },
     {
       "slug": "desktop-sale-23-amwaj-chalet",
@@ -698,7 +742,9 @@
         "underMarket"
       ],
       "createdAt": "2026-04-13T02:45:31.427Z",
-      "updatedAt": "2026-04-13T02:45:31.427Z"
+      "updatedAt": "2026-04-13T02:45:31.427Z",
+      "address": "",
+      "status": "published"
     },
     {
       "slug": "desktop-sale-24-amwaj-chalet",
@@ -729,7 +775,9 @@
         "underMarket"
       ],
       "createdAt": "2026-04-13T02:45:31.427Z",
-      "updatedAt": "2026-04-13T02:45:31.427Z"
+      "updatedAt": "2026-04-13T02:45:31.427Z",
+      "address": "",
+      "status": "published"
     },
     {
       "slug": "desktop-sale-25-hacienda-west-chalet",
@@ -759,7 +807,9 @@
         "prime"
       ],
       "createdAt": "2026-04-13T02:45:31.427Z",
-      "updatedAt": "2026-04-13T02:45:31.427Z"
+      "updatedAt": "2026-04-13T02:45:31.427Z",
+      "address": "",
+      "status": "published"
     },
     {
       "slug": "desktop-sale-26-amwaj-chalet",
@@ -790,7 +840,9 @@
         "underMarket"
       ],
       "createdAt": "2026-04-13T02:45:31.427Z",
-      "updatedAt": "2026-04-13T02:45:31.427Z"
+      "updatedAt": "2026-04-13T02:45:31.427Z",
+      "address": "",
+      "status": "published"
     },
     {
       "slug": "desktop-sale-27-amwaj-chalet",
@@ -821,7 +873,9 @@
         "underMarket"
       ],
       "createdAt": "2026-04-13T02:45:31.427Z",
-      "updatedAt": "2026-04-13T02:45:31.427Z"
+      "updatedAt": "2026-04-13T02:45:31.427Z",
+      "address": "",
+      "status": "published"
     },
     {
       "slug": "desktop-sale-28-amwaj-chalet",
@@ -852,7 +906,9 @@
         "underMarket"
       ],
       "createdAt": "2026-04-13T02:45:31.427Z",
-      "updatedAt": "2026-04-13T02:45:31.427Z"
+      "updatedAt": "2026-04-13T02:45:31.427Z",
+      "address": "",
+      "status": "published"
     },
     {
       "slug": "desktop-sale-29-hacienda-west-chalet",
@@ -882,7 +938,9 @@
         "prime"
       ],
       "createdAt": "2026-04-13T02:45:31.427Z",
-      "updatedAt": "2026-04-13T02:45:31.427Z"
+      "updatedAt": "2026-04-13T02:45:31.427Z",
+      "address": "",
+      "status": "published"
     },
     {
       "slug": "desktop-sale-30-marassi-chalet",
@@ -910,7 +968,9 @@
         "prime"
       ],
       "createdAt": "2026-04-13T02:45:31.428Z",
-      "updatedAt": "2026-04-13T02:45:31.428Z"
+      "updatedAt": "2026-04-13T02:45:31.428Z",
+      "address": "",
+      "status": "published"
     },
     {
       "slug": "desktop-sale-31-amwaj-chalet",
@@ -940,7 +1000,9 @@
         "prime"
       ],
       "createdAt": "2026-04-13T02:45:31.448Z",
-      "updatedAt": "2026-04-13T02:45:31.448Z"
+      "updatedAt": "2026-04-13T02:45:31.448Z",
+      "address": "",
+      "status": "published"
     },
     {
       "slug": "desktop-sale-32-hacienda-bay-chalet",
@@ -973,7 +1035,9 @@
         "underMarket"
       ],
       "createdAt": "2026-04-13T02:45:31.474Z",
-      "updatedAt": "2026-04-13T02:45:31.474Z"
+      "updatedAt": "2026-04-13T02:45:31.474Z",
+      "address": "",
+      "status": "published"
     },
     {
       "slug": "desktop-sale-33-marassi-chalet",
@@ -1000,7 +1064,9 @@
         "prime"
       ],
       "createdAt": "2026-04-13T02:45:31.488Z",
-      "updatedAt": "2026-04-13T02:45:31.488Z"
+      "updatedAt": "2026-04-13T02:45:31.488Z",
+      "address": "",
+      "status": "published"
     },
     {
       "slug": "desktop-sale-34-marassi-villa",
@@ -1029,7 +1095,9 @@
         "prime"
       ],
       "createdAt": "2026-04-13T02:45:31.506Z",
-      "updatedAt": "2026-04-13T02:45:31.506Z"
+      "updatedAt": "2026-04-13T02:45:31.506Z",
+      "address": "",
+      "status": "published"
     },
     {
       "slug": "desktop-sale-35-hacienda-bay-chalet",
@@ -1065,7 +1133,9 @@
         "prime"
       ],
       "createdAt": "2026-04-13T02:45:31.541Z",
-      "updatedAt": "2026-04-13T02:45:31.541Z"
+      "updatedAt": "2026-04-13T02:45:31.541Z",
+      "address": "",
+      "status": "published"
     },
     {
       "slug": "desktop-sale-36-marassi-chalet",
@@ -1090,7 +1160,9 @@
         "prime"
       ],
       "createdAt": "2026-04-13T02:45:31.550Z",
-      "updatedAt": "2026-04-13T02:45:31.550Z"
+      "updatedAt": "2026-04-13T02:45:31.550Z",
+      "address": "",
+      "status": "published"
     },
     {
       "slug": "desktop-sale-37-hacienda-bay-chalet",
@@ -1121,7 +1193,9 @@
         "prime"
       ],
       "createdAt": "2026-04-13T02:45:31.569Z",
-      "updatedAt": "2026-04-13T02:45:31.569Z"
+      "updatedAt": "2026-04-13T02:45:31.569Z",
+      "address": "",
+      "status": "published"
     },
     {
       "slug": "desktop-sale-38-hacienda-bay-villa",
@@ -1150,7 +1224,9 @@
         "prime"
       ],
       "createdAt": "2026-04-13T02:45:31.585Z",
-      "updatedAt": "2026-04-13T02:45:31.585Z"
+      "updatedAt": "2026-04-13T02:45:31.585Z",
+      "address": "",
+      "status": "published"
     },
     {
       "slug": "desktop-sale-39-hacienda-bay-villa",
@@ -1185,7 +1261,9 @@
         "prime"
       ],
       "createdAt": "2026-04-13T02:45:31.619Z",
-      "updatedAt": "2026-04-13T02:45:31.619Z"
+      "updatedAt": "2026-04-13T02:45:31.619Z",
+      "address": "",
+      "status": "published"
     },
     {
       "slug": "desktop-sale-40-amwaj-chalet",
@@ -1217,7 +1295,9 @@
         "prime"
       ],
       "createdAt": "2026-04-13T02:45:31.641Z",
-      "updatedAt": "2026-04-13T02:45:31.641Z"
+      "updatedAt": "2026-04-13T02:45:31.641Z",
+      "address": "",
+      "status": "published"
     },
     {
       "slug": "desktop-sale-41-marassi-chalet",
@@ -1254,7 +1334,9 @@
         "prime"
       ],
       "createdAt": "2026-04-13T02:45:31.677Z",
-      "updatedAt": "2026-04-13T02:45:31.677Z"
+      "updatedAt": "2026-04-13T02:45:31.677Z",
+      "address": "",
+      "status": "published"
     },
     {
       "slug": "desktop-sale-42-marassi-chalet",
@@ -1282,7 +1364,9 @@
         "prime"
       ],
       "createdAt": "2026-04-13T02:45:31.692Z",
-      "updatedAt": "2026-04-13T02:45:31.692Z"
+      "updatedAt": "2026-04-13T02:45:31.692Z",
+      "address": "",
+      "status": "published"
     },
     {
       "locationSlug": "north-coast",
@@ -1310,7 +1394,9 @@
         "prime"
       ],
       "createdAt": "2026-04-11T19:43:34.301Z",
-      "updatedAt": "2026-04-11T19:43:34.301Z"
+      "updatedAt": "2026-04-11T19:43:34.301Z",
+      "address": "",
+      "status": "published"
     },
     {
       "locationSlug": "north-coast",
@@ -1338,7 +1424,10 @@
         "prime"
       ],
       "createdAt": "2026-04-11T14:18:38.172Z",
-      "updatedAt": "2026-04-11T14:18:38.172Z"
+      "updatedAt": "2026-04-11T14:18:38.172Z",
+      "address": "",
+      "description": "",
+      "status": "published"
     }
   ],
   "propertyOverrides": [
@@ -1370,7 +1459,10 @@
         "prime"
       ],
       "createdAt": "2026-04-10T22:14:13.799Z",
-      "updatedAt": "2026-04-10T22:14:13.799Z"
+      "updatedAt": "2026-04-10T22:14:13.799Z",
+      "address": "",
+      "description": "",
+      "status": "published"
     }
   ],
   "hiddenPropertySlugs": [
@@ -1378,5 +1470,18 @@
     "hacienda-bay-villa-rent-5br-5m",
     "hacienda-bay-villa-rent-5br-3m-private-pool",
     "hacienda-bay-chalet-rent-3br-2m"
-  ]
+  ],
+  "propertyAnalytics": {
+    "desktop-sale-21-hacienda-bay-chalet": {
+      "views": 1,
+      "leads": 0,
+      "lastViewedAt": "2026-04-15T00:06:55.378Z"
+    },
+    "desktop-sale-7-amwaj-penthouse": {
+      "views": 1,
+      "leads": 0,
+      "lastViewedAt": "2026-04-15T00:10:20.854Z"
+    }
+  },
+  "propertyHistory": {}
 }
